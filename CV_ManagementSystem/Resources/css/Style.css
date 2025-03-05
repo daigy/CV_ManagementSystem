@@ -1,0 +1,83 @@
+﻿body {
+}
+.radgrid {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.5s ease-in-out;
+    font-weight: bolder;
+}
+
+    .radgrid th {
+        padding: 10px;
+        height: 80px;
+    }
+
+    .radgrid td {
+        padding: 10px;
+        height: 50px;
+    }
+
+input[type='radio'] {
+    transform: scale(2);
+}
+
+td {
+    padding: 10px;
+}
+
+.RAD_LBL {
+    text-align: left;
+    border-top: none;
+    border-left: none;
+    border-right: 1px solid #0d8d9e;
+    border-bottom: 2px solid #0d8d9e;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.swal2-container.swal2-center > .swal2-popup {
+    background-color: white !important;
+}
+
+.swal2-html-container, .swal2-title {
+    color: #0d8d9e !important;
+    font: bolder;
+    font-size: 20px;
+}
+
+.swal2-html-container, .swal2-text {
+    color: #DE6262 !important;
+    font: bolder;
+    font-size: 15px;
+}
+
+::placeholder {
+    color: #DE6262;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #DE6262;
+}
+
+.fd_manager {
+    border: 3px solid #0d8d9e;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #EEE;
+    border-radius: 15px;
+}
+
+.fd_manager_legend {
+    text-align: center;
+}
+
+.fd_manager_legend_txt {
+    background-color: #0d8d9e;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}

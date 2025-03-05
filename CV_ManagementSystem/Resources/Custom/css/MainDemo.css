@@ -1,0 +1,34 @@
+﻿body {
+
+}
+.fd_manager {
+    border: 3px solid #0d8d9e;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.fd_manager_legend {
+    text-align: center;
+}
+
+.fd_manager_legend_txt {
+    background-color: #0d8d9e;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.container-fluid {
+    background-color: white;
+    padding: 20px;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2), 3px 3px 10px 10px rgba(0, 0, 0, 0.19);
+    transition: 0.5s ease-in-out;
+}
+

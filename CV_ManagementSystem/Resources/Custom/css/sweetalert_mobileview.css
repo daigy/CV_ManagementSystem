@@ -1,0 +1,123 @@
+﻿@media only screen and (max-width: 500px) {
+   
+    .swal2-title {
+        font-size: 1.0em !important;
+    }
+    .swal2-icon .swal2-icon-content {
+        font-size: 1.75em !important;
+    }
+    .swal2-icon {
+        width: 5em !important;
+        height: 5em !important;
+    }
+    .swal2-actions {
+        margin: .25em auto 0 !important;
+    }
+    .swal2-styled.swal2-confirm {
+        font-size: 0.8em !important;
+    }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .swal2-title {
+        font-size: 1.0em !important;
+    }
+    .swal2-icon .swal2-icon-content {
+        font-size: 1.75em !important;
+    }
+    .swal2-icon {
+        width: 5em !important;
+        height: 5em !important;
+    }
+    .swal2-actions {
+        margin: .25em auto 0 !important;
+    }
+    .swal2-styled.swal2-confirm {
+        font-size: 0.8em !important;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .swal2-title {
+        font-size: 1.0em !important;
+    }
+    .swal2-icon .swal2-icon-content {
+        font-size: 1.75em !important;
+    }
+    .swal2-icon {
+        width: 5em !important;
+        height: 5em !important;
+    }
+    .swal2-actions {
+        margin: .25em auto 0 !important;
+    }
+    .swal2-styled.swal2-confirm {
+        font-size: 0.8em !important;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  
+    .swal2-title {
+        font-size: 1.0em !important;
+    }
+    .swal2-icon .swal2-icon-content {
+        font-size: 2.5em !important;
+    }
+    .swal2-icon {
+        width: 5em !important;
+        height: 5em !important;
+    }
+    .swal2-actions {
+        margin: .9em auto 0 !important;
+    }
+    .swal2-styled.swal2-confirm {
+        font-size: 1.0625em !important;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+   
+    .swal2-title {
+        font-size: 1.3em !important;
+    }
+    .swal2-icon .swal2-icon-content {
+        font-size: 3.75em !important;
+    }
+    .swal2-icon {
+        width: 5em !important;
+        height: 5em !important;
+    }
+    .swal2-actions {
+        margin: 1.25em auto 0 !important;
+    }
+    .swal2-styled.swal2-confirm {
+        font-size: 1.0625em !important;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+    .swal2-title {
+        font-size: 1.3em !important;
+    }
+    .swal2-icon .swal2-icon-content {
+        font-size: 3.75em !important;
+    }
+    .swal2-icon {
+        width: 5em !important;
+        height: 5em !important;
+    }
+    .swal2-actions {
+        margin: 1.25em auto 0 !important;
+    }
+    .swal2-styled.swal2-confirm {
+        font-size: 1.0625em!important;
+    }
+}

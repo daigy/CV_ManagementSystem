@@ -1,0 +1,56 @@
+﻿/* Styling for fieldset */
+.custom-fieldset {
+    border: 2px solid #1f497d; /* Blue border for fieldset */
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Styling for legend */
+.custom-legend {
+    font-size: 1rem; /* Larger font size for the legend */
+    font-weight: bold;
+    text-decoration: underline;
+    color: #1f497d; /* Matching the color of the fieldset border */
+    padding: 0.5rem 1rem;
+    background-color: #f2f9fc; /* Light background for the legend */
+    border-radius: 5px; /* Rounded corners for the legend */
+}
+
+/* Styling for TextBox */
+.custom-textbox {
+    font-size: 1rem; /* Adjust font size */
+    padding: 0.75rem;
+    border-radius: 8px; /* Rounded corners for the textbox */
+    border: 1px solid #007bff; /* Border color for the textbox */
+    transition: border 0.3s ease; /* Smooth transition for border color */
+}
+
+    /* Focus effect for TextBox */
+    .custom-textbox:focus {
+        border-color: #0056b3; /* Darker border color when focused */
+        outline: none;
+    }
+
+/* Styling for Button */
+.custom-button, .custom-save-button {
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    background-color: #14afca;
+    color: white;
+    border: none;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+    /* Hover effect for Buttons */
+    .custom-button:hover, .custom-save-button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        cursor: pointer;
+    }
+
+    /* Button icon */
+    .custom-button .fa {
+        margin-right: 10px;
+    }

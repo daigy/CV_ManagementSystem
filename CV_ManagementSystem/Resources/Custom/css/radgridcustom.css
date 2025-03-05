@@ -1,0 +1,44 @@
+﻿.RadGrid .rgFilterBox {
+    margin: 0;
+    vertical-align: middle;
+    width: 50px !important;
+}
+
+.RadGrid .rgFilter {
+    width: 1em !important;
+}
+
+.RadGrid .t-font-icon, .RadTreeList .t-font-icon, .RadCalendar .t-font-icon {
+    min-width: 0.428571em !important;
+}
+
+.RadGrid {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.RadGrid_Silk .rgHeader {
+    background-color: #17a2b8 !important;
+    border: 1px solid #258899 !important;
+    border-left-width: 0px !important;
+    color: #dfe5ea !important;
+    text-align: center !important;
+    font-weight: bold !important;
+}
+
+.RadGrid_Silk .rgRow > td, .RadGrid_Silk .rgAltRow > td, .RadGrid_Silk .rgEditRow > td {
+    border-bottom: 1px solid #51b0c0 !important;
+    border-right: 1px solid #51b0c0 !important;
+}
+
+.RadGrid_Silk .rgHeader a {
+    color: #FFF !important;
+}
+
+.RadGrid_Silk .rgHeader a {
+    color: #FFF !important;
+}
+
+.RadGrid_Silk .rgRow > td, .RadGrid_Silk .rgAltRow > td, .RadGrid_Silk .rgEditRow > td {
+    font-size: 12px !important;
+}

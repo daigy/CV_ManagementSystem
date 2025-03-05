@@ -1,0 +1,327 @@
+D:\2025\CV_ManagementSystem\bin\CV_ManagementSystem.dll.config
+D:\2025\CV_ManagementSystem\bin\CV_ManagementSystem.dll
+D:\2025\CV_ManagementSystem\bin\CV_ManagementSystem.pdb
+D:\2025\CV_ManagementSystem\bin\roslyn\csc.exe
+D:\2025\CV_ManagementSystem\bin\roslyn\csc.exe.config
+D:\2025\CV_ManagementSystem\bin\roslyn\csc.rsp
+D:\2025\CV_ManagementSystem\bin\roslyn\csi.exe
+D:\2025\CV_ManagementSystem\bin\roslyn\csi.exe.config
+D:\2025\CV_ManagementSystem\bin\roslyn\csi.rsp
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.Managed.Core.targets
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\2025\CV_ManagementSystem\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.AppContext.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Collections.Immutable.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Console.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Globalization.Calendars.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.IO.Compression.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.IO.FileSystem.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Net.Http.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Net.Sockets.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Reflection.Metadata.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.ValueTuple.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Xml.XmlDocument.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Xml.XPath.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\2025\CV_ManagementSystem\bin\roslyn\vbc.exe
+D:\2025\CV_ManagementSystem\bin\roslyn\vbc.exe.config
+D:\2025\CV_ManagementSystem\bin\roslyn\vbc.rsp
+D:\2025\CV_ManagementSystem\bin\roslyn\VBCSCompiler.exe
+D:\2025\CV_ManagementSystem\bin\roslyn\VBCSCompiler.exe.config
+D:\2025\CV_ManagementSystem\bin\Antlr3.Runtime.dll
+D:\2025\CV_ManagementSystem\bin\AspNet.ScriptManager.jQuery.dll
+D:\2025\CV_ManagementSystem\bin\EntityFramework.dll
+D:\2025\CV_ManagementSystem\bin\EntityFramework.SqlServer.dll
+D:\2025\CV_ManagementSystem\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\2025\CV_ManagementSystem\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\2025\CV_ManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\2025\CV_ManagementSystem\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\2025\CV_ManagementSystem\bin\Microsoft.ScriptManager.WebForms.dll
+D:\2025\CV_ManagementSystem\bin\Microsoft.Web.Infrastructure.dll
+D:\2025\CV_ManagementSystem\bin\Newtonsoft.Json.dll
+D:\2025\CV_ManagementSystem\bin\System.Web.Optimization.dll
+D:\2025\CV_ManagementSystem\bin\Telerik.Web.Design.dll
+D:\2025\CV_ManagementSystem\bin\Telerik.Web.Device.Detection.dll
+D:\2025\CV_ManagementSystem\bin\Telerik.Web.UI.dll
+D:\2025\CV_ManagementSystem\bin\Telerik.Web.UI.Skins.dll
+D:\2025\CV_ManagementSystem\bin\WebGrease.dll
+D:\2025\CV_ManagementSystem\bin\EnvDTE.dll
+D:\2025\CV_ManagementSystem\bin\stdole.dll
+D:\2025\CV_ManagementSystem\bin\EntityFramework.xml
+D:\2025\CV_ManagementSystem\bin\EntityFramework.SqlServer.xml
+D:\2025\CV_ManagementSystem\bin\System.Web.Optimization.xml
+D:\2025\CV_ManagementSystem\bin\Newtonsoft.Json.xml
+D:\2025\CV_ManagementSystem\bin\Antlr3.Runtime.pdb
+D:\2025\CV_ManagementSystem\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\2025\CV_ManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\2025\CV_ManagementSystem\bin\EnvDTE.xml
+D:\2025\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.csproj.AssemblyReference.cache
+D:\2025\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.dll.licenses
+D:\2025\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.csproj.CoreCompileInputs.cache
+D:\2025\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.csproj.CopyComplete
+D:\2025\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.dll
+D:\2025\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.pdb
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\SqlServerTypes\x64\msvcr120.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\SqlServerTypes\x86\msvcr120.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\CV_ManagementSystem.dll.config
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\CV_ManagementSystem.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\CV_ManagementSystem.pdb
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\csc.exe
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\csc.exe.config
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\csc.rsp
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\csi.exe
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\csi.exe.config
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\csi.rsp
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.Managed.Core.targets
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.AppContext.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Collections.Immutable.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Console.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Globalization.Calendars.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.IO.Compression.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.IO.FileSystem.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Net.Http.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Net.Sockets.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Reflection.Metadata.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.ValueTuple.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Xml.XmlDocument.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Xml.XPath.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\vbc.exe
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\vbc.exe.config
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\vbc.rsp
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\VBCSCompiler.exe
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\roslyn\VBCSCompiler.exe.config
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Antlr3.Runtime.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\AspNet.ScriptManager.jQuery.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Azure.Core.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Azure.Identity.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\EntityFramework.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\EntityFramework.SqlServer.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Bcl.Cryptography.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Data.SqlClient.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.Caching.Abstractions.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.Caching.Memory.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.Options.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.Primitives.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Identity.Client.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.Abstractions.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.Logging.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.Protocols.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.Tokens.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.ReportViewer.Common.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.ReportViewer.Design.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.ReportViewer.WebDesign.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.ReportViewer.WebForms.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.ScriptManager.WebForms.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.SqlServer.Types.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Web.Infrastructure.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Newtonsoft.Json.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Buffers.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.ClientModel.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Diagnostics.DiagnosticSource.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.IO.FileSystem.AccessControl.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Memory.Data.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Memory.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Numerics.Vectors.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Security.AccessControl.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Security.Cryptography.Pkcs.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Security.Cryptography.ProtectedData.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Security.Principal.Windows.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Text.Encodings.Web.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Text.Json.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Threading.Tasks.Extensions.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.ValueTuple.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Web.Optimization.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Telerik.Web.Design.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Telerik.Web.Device.Detection.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Telerik.Web.UI.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Telerik.Web.UI.Skins.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\WebGrease.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\EnvDTE.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.ReportViewer.WinForms.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\stdole.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Azure.Core.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Azure.Identity.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\EntityFramework.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\EntityFramework.SqlServer.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Bcl.Cryptography.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Data.SqlClient.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.Caching.Abstractions.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.Caching.Memory.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.Options.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Extensions.Primitives.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Identity.Client.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.Abstractions.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.Logging.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.Protocols.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.IdentityModel.Tokens.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Buffers.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.ClientModel.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Diagnostics.DiagnosticSource.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.IO.FileSystem.AccessControl.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Memory.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Memory.Data.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Numerics.Vectors.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Security.AccessControl.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Security.Cryptography.Pkcs.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Security.Cryptography.ProtectedData.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Security.Principal.Windows.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Text.Encodings.Web.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Text.Json.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Threading.Tasks.Extensions.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.ValueTuple.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\System.Web.Optimization.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Newtonsoft.Json.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Antlr3.Runtime.pdb
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\EnvDTE.xml
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\cs\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\de\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\es\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\fr\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\it\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ja\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ko\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\pl\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ru\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\tr\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\de\Microsoft.ReportViewer.Common.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\es\Microsoft.ReportViewer.Common.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\it\Microsoft.ReportViewer.Common.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\de\Microsoft.ReportViewer.Design.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\es\Microsoft.ReportViewer.Design.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\it\Microsoft.ReportViewer.Design.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\de\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\es\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\it\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\de\Microsoft.ReportViewer.WebForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\es\Microsoft.ReportViewer.WebForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\fr\Microsoft.ReportViewer.WebForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\it\Microsoft.ReportViewer.WebForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ja\Microsoft.ReportViewer.WebForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ko\Microsoft.ReportViewer.WebForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\pt\Microsoft.ReportViewer.WebForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ru\Microsoft.ReportViewer.WebForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.csproj.AssemblyReference.cache
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.dll.licenses
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.csproj.CoreCompileInputs.cache
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.csproj.CopyComplete
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.dll
+D:\2025\CV Generation\CV_Management_System\CV_ManagementSystem\obj\Debug\CV_ManagementSystem.pdb

@@ -1,0 +1,249 @@
+﻿/* RadButton Predefined Icons */
+.demo-container table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+    .demo-container table th,
+    .demo-container table td {
+        padding: 6px 10px;
+        border: 1px solid #dddddd;
+        text-align: left;
+    }
+
+.rbPredefined16, .rbPredefined24 {
+    background-image: url(images/rbPredefinedIcons.png);
+    background-repeat: no-repeat;
+}
+
+.rbPredefined16 {
+    width: 16px !important;
+    height: 16px;
+}
+
+.rbPredefined24 {
+    width: 24px;
+    height: 24px;
+}
+
+/* 16x16 Icons*/
+.rbAdd16 {
+    background-position: 0 0 !important;
+}
+
+.rbRemove16 {
+    background-position: -24px 0 !important;
+}
+
+.rbOk16 {
+    background-position: -48px 0 !important;
+}
+
+.rbCancel16 {
+    background-position: -72px 0 !important;
+}
+
+.rbUpload16 {
+    background-position: -94px 0 !important;
+}
+
+.rbDownload16 {
+    background-position: -120px 0 !important;
+}
+
+.rbPrevious16 {
+    background-position: -144px 0 !important;
+}
+
+.rbNext16 {
+    background-position: -168px 0 !important;
+}
+
+.rbOpen16 {
+    background-position: -192px 0 !important;
+}
+
+.rbAttach16 {
+    background-position: -210px 0 !important;
+}
+
+.rbSave16 {
+    background-position: -232px 0 !important;
+}
+
+.rbConfig16 {
+    background-position: -256px 0 !important;
+}
+
+.rbPrint16 {
+    background-position: -280px 0 !important;
+}
+
+.rbRefresh16 {
+    background-position: -306px 0 !important;
+}
+
+.rbSearch16 {
+    background-position: -332px 0 !important;
+}
+
+.rbHelp16 {
+    background-position: -356px 0 !important;
+}
+
+.rbCart16 {
+    background-position: -380px 0 !important;
+}
+
+.rbEdit16 {
+    background-position: -406px 0 !important;
+}
+
+.rbRSS16 {
+    background-position: -432px 0 !important;
+}
+
+.rbMail16 {
+    background-position: -456px 0 !important;
+}
+
+.rbFB16 {
+    background-position: -498px 0 !important;
+}
+
+.rbTwitter16 {
+    background-position: -526px 0 !important;
+}
+
+/* 24x24 Icons */
+.rbAdd24 {
+    background-position: 0 -18px !important;
+}
+
+.rbRemove24 {
+    background-position: -24px -18px !important;
+}
+
+.rbOk24 {
+    background-position: -48px -18px !important;
+}
+
+.rbCancel24 {
+    background-position: -72px -18px !important;
+}
+
+.rbUpload24 {
+    background-position: -94px -18px !important;
+}
+
+.rbDownload24 {
+    background-position: -120px -18px !important;
+}
+
+.rbPrevious24 {
+    background-position: -144px -18px !important;
+}
+
+.rbNext24 {
+    background-position: -168px -18px !important;
+}
+
+.rbOpen24 {
+    background-position: -192px -18px !important;
+}
+
+.rbAttach24 {
+    background-position: -210px -18px !important;
+}
+
+.rbSave24 {
+    background-position: -232px -18px !important;
+}
+
+.rbConfig24 {
+    background-position: -256px -18px !important;
+}
+
+.rbPrint24 {
+    background-position: -280px -18px !important;
+}
+
+.rbRefresh24 {
+    background-position: -306px -18px !important;
+}
+
+.rbSearch24 {
+    background-position: -332px -18px !important;
+}
+
+.rbHelp24 {
+    background-position: -356px -18px !important;
+}
+
+.rbCart24 {
+    background-position: -380px -18px !important;
+}
+
+.rbEdit24 {
+    background-position: -406px -18px !important;
+}
+
+.predIcons {
+    color: #000;
+}
+
+    .predIcons td {
+        padding: 6px 6px 6px 10px;
+        border: 1px solid #ddd;
+    }
+
+    .predIcons thead tr {
+        background-color: #eee;
+    }
+
+    .predIcons tr {
+        background-color: #fff;
+    }
+
+        .predIcons tr.dark {
+            background-color: #efefef;
+        }
+
+        .predIcons tr:hover {
+            background-color: #FDFEE3;
+        }
+
+        .predIcons tr.head {
+            border: 0;
+            background: transparent;
+        }
+
+            .predIcons tr.head:hover {
+                background: none;
+            }
+
+            .predIcons tr.head td {
+                border: 0;
+            }
+
+.rbPredefinedIcons {
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    background-image: url(images/rbPredefinedIcons.png);
+}
+
+.text {
+    display: block;
+    width: 100px;
+    float: right;
+    text-align: left;
+    padding-right: 15px;
+}
+
+.predIcons .rborder {
+    padding-right: 10px;
+}

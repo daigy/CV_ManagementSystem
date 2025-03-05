@@ -1,0 +1,104 @@
+﻿#example {
+    text-align: center;
+}
+
+    #example .demo-container {
+        display: inline-block;
+        text-align: left;
+        padding: 50px 40px 35px 40px;
+    }
+
+.demo-container .RadTabStrip {
+    margin-left: 8px;
+}
+
+    .demo-container .RadTabStrip .rtsLevel1 {
+        border: none;
+    }
+
+    .demo-container .RadTabStrip .tab {
+        background-color: #9ab5c1;
+        width: 14%;
+        height: 70px;
+        border-right: 1px solid #FFF;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+        .demo-container .RadTabStrip .tab.overviewTab {
+            border-top-left-radius: 5px;
+        }
+
+        .demo-container .RadTabStrip .tab.priceTab {
+            background-color: #6991a3;
+            border-top-right-radius: 5px;
+        }
+
+        .demo-container .RadTabStrip .tab.selectedTab {
+            background-color: #f77462;
+        }
+
+        .demo-container .RadTabStrip .tab.hoveredTab {
+            background-color: #81a3b2;
+        }
+
+            .demo-container .RadTabStrip .tab.hoveredTab.selectedTab {
+                background-color: #f77462;
+            }
+
+        .demo-container .RadTabStrip .tab .rtsLink {
+            border: none;
+            padding: 12px 0 0 0;
+        }
+
+        .demo-container .RadTabStrip .tab .rtsTxt {
+            color: white;
+            font-family: 'Segoe UI';
+            font-size: 14px;
+        }
+
+            .demo-container .RadTabStrip .tab .rtsTxt:before {
+                display: block;
+                height: 22px;
+                width: 22px;
+                border-radius: 15px;
+                background-color: #FFF;
+                color: #f77462;
+                font-family: TelerikWebUI;
+                font-size: 16px;
+                text-align: center;
+                margin: 0 auto 1px auto;
+                padding: 4px;
+            }
+
+        .demo-container .RadTabStrip .tab.overviewTab .rtsTxt:before {
+            content: "\e0f9";
+        }
+
+        .demo-container .RadTabStrip .tab.attractionsTab .rtsTxt:before {
+            content: "\e07c";
+        }
+
+        .demo-container .RadTabStrip .tab.locationTab .rtsTxt:before {
+            content: "\e125";
+        }
+
+        .demo-container .RadTabStrip .tab.calendarTab .rtsTxt:before {
+            content: "\e089";
+        }
+        .demo-container .RadTabStrip .tab.historyTab .rtsTxt:before {
+            content: "\e08d";
+        }
+        .demo-container .RadTabStrip .tab.downloadTab .rtsTxt:before {
+            content: "\e096";
+        }
+        .demo-container .RadTabStrip .tab.priceTab .rtsTxt:before {
+            content: "$";
+            font-family: Arial;
+            font-size: 20px;
+            font-weight: 700;
+            padding-top: 4px;
+            height: 28px;
+            width: 28px;
+            padding: 1px;
+        }
