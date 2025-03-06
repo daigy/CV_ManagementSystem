@@ -117,6 +117,7 @@
                           <Style>None</Style>
                         </Border>
                         <BottomBorder>
+                          <Color>#135592</Color>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </BottomBorder>
@@ -326,7 +327,7 @@
                           <Style>None</Style>
                         </Border>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>#135592</Color>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </BottomBorder>
@@ -2344,7 +2345,7 @@
           <Source>Embedded</Source>
           <Value>ECC50YearLogo</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.34925cm</Top>
+          <Top>0.39511cm</Top>
           <Left>0.3175cm</Left>
           <Height>1.43466cm</Height>
           <Width>5.16819cm</Width>
@@ -2554,7 +2555,6 @@
             <VerticalAlign>Top</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
