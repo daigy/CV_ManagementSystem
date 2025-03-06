@@ -984,13 +984,15 @@ namespace CV_ManagementSystem
         {
             try
             {
+                string TemplateVal = Combo_Template.SelectedValue.ToString();
                 DataSet ds =obj.GetUserCVData_Report(Session["LOGIN_Epromise"].ToString());
                 DataTable dt_Personal = ds.Tables[0];
                 DataTable dt_Courses = ds.Tables[1];
                 DataTable dt_Skills = ds.Tables[2];
                 
                 DataTable dt_Experience = ds.Tables[3];
-                DataTable dt_Projects = ds.Tables[4];
+                DataTable dt_Experience2 = ds.Tables[4];
+                DataTable dt_Projects = ds.Tables[5];
            
 
 
@@ -1007,14 +1009,29 @@ namespace CV_ManagementSystem
                 // });
                 if (dt_Personal.Rows.Count > 0)
                 {
-                   
-                    ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/CV_Report.rdlc");
+                    if (TemplateVal == "1")
+                    {
+                        ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp.rdlc");
+                    }
+                    else if (TemplateVal == "2")
+                    {
+                        ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_2.rdlc");
+                    }
+                    else if (TemplateVal == "3")
+                    {
+                        ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_3.rdlc");
+                    }
+                    else if (TemplateVal == "4")
+                    {
+                        ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_4.rdlc");
+                    }
                     ReportViewer1.LocalReport.DataSources.Clear();
                     ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Personal_Info", dt_Personal));
                     ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Skills", dt_Skills));
                     ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Courses", dt_Courses));
                     ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Experience", dt_Experience));
                     ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Projects", dt_Projects));
+                    ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Experience2", dt_Experience2));
                     ReportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(ReportProcessing);
                     ReportViewer1.AsyncRendering = false;
                     ReportViewer1.Visible = true;
@@ -1079,6 +1096,11 @@ namespace CV_ManagementSystem
             ReportDataSource ds_Project = new ReportDataSource("Projects", dt_Projects);
             e.DataSources.Add(ds_Project);
            
+        }
+
+        protected void Combo_Template_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
+        {
+            BindReportsSection();
         }
     }
 }

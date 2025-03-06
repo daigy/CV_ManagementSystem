@@ -138,15 +138,16 @@
             }
 
 
-        .RadForm_Silk .AllExperience_List fieldset,.RadForm_Silk .Edit_ProjectList fieldset,.Project_Section fieldset {
+        .RadForm_Silk .AllExperience_List fieldset, .RadForm_Silk .Edit_ProjectList fieldset, .Project_Section fieldset {
             background-color: #fff !important;
             margin-bottom: -3% !important;
             border-color: white !important;
         }
 
-        .RadForm_Silk .AllExperience_List legend,.RadForm_Silk .Edit_ProjectList legend,.Project_Section legend{
+        .RadForm_Silk .AllExperience_List legend, .RadForm_Silk .Edit_ProjectList legend, .Project_Section legend {
             display: none !important;
         }
+
         .btn-custom::before {
             content: "\f044"; /* Unicode for FontAwesome pencil icon */
             font-family: FontAwesome;
@@ -982,11 +983,30 @@
                         <telerik:RadWizardStep Title="DOWNLOAD" >
                             <div class="card mb-4">
                                 <div class="card-body">
+                                     <div class="form-row" style="margin-top: -1%;">
+                                          <div class="form-group col-md-3">
+                                                <label for="ScopeOfWork">Choose Template</label>
+                                               <telerik:RadComboBox ID="Combo_Template" runat="server" RenderMode="Lightweight" CausesValidation="false" Filter="Contains"
+                                                AllowCustomText="true" Width="100%" Skin="Silk" CssClass="minfo"
+                                                AutoPostBack="true" OnSelectedIndexChanged="Combo_Template_SelectedIndexChanged">
+                                                <Items>
+                                                    <telerik:RadComboBoxItem Text="Template 1" Value="1" Selected="true" />
+                                                    <telerik:RadComboBoxItem Text="Template 2" Value="2" />
+                                                    <telerik:RadComboBoxItem Text="Template 3" Value="3" />
+                                                    <telerik:RadComboBoxItem Text="Template 4" Value="4" />
+                                                </Items>
+                                            </telerik:RadComboBox>
+                                            </div>
+                                         </div>
+                                      <div class="form-row" style="margin-top: -1%;">
+                                        <div class="form-group col-md-12">
+                                            <hr />
+                                            </div>
+                                        </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-12">
-                                            <%-- <GleamTech:DocumentViewerControl ID="DocumentViewerControl1" Width="1100px" Height="650px" runat="server" Visible="false"  ></GleamTech:DocumentViewerControl>--%>
                                             <div id="ReportSection" style="height: 950px; overflow-x: auto; width: 100%; margin-top: -1%; margin-bottom: 0px;">
-                                                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%" Height="600px">
+                                                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%" Height="800px">
                                                 </rsweb:ReportViewer>
                                                 <div id="NoData" runat="server" visible="false" style="margin-left: 40%; margin-top: 10%;">
                                                     <h5 style="color: #17a2b8">No records found.</h5>

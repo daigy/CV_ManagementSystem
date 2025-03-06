@@ -103,7 +103,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <Color>#478dce</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -115,8 +117,9 @@
                           <Style>None</Style>
                         </Border>
                         <BottomBorder>
+                          <Color>#478dce</Color>
                           <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Width>1.25pt</Width>
                         </BottomBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -310,7 +313,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <Color>#478dce</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -322,7 +327,7 @@
                           <Style>None</Style>
                         </Border>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>#478dce</Color>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </BottomBorder>
@@ -443,7 +448,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -473,7 +478,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -503,7 +508,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -533,7 +538,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -568,7 +573,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -614,7 +619,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -649,7 +654,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -682,7 +687,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -715,7 +720,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -745,7 +750,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -782,7 +787,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -804,7 +809,7 @@
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -816,7 +821,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -850,7 +855,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -887,7 +892,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -908,7 +913,7 @@
                                   <Value>Nationality</Value>
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -920,7 +925,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -941,7 +946,7 @@
                                   <Value>=Fields!Nationality.Value</Value>
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -953,7 +958,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -985,7 +990,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1022,7 +1027,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1043,7 +1048,7 @@
                                   <Value>Languages</Value>
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1055,7 +1060,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1076,7 +1081,7 @@
                                   <Value>=Fields!Languages.Value</Value>
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1088,7 +1093,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1120,7 +1125,7 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1296,7 +1301,7 @@
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1365,7 +1370,7 @@
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1380,7 +1385,7 @@
                               <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1402,7 +1407,7 @@
                                   <Value>=Fields!Details.Value</Value>
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1591,7 +1596,7 @@
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1660,7 +1665,7 @@
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1675,7 +1680,7 @@
                               <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
-                            <BackgroundColor>Black</BackgroundColor>
+                            <BackgroundColor>#478dce</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1697,7 +1702,7 @@
                                   <Value>=Fields!Details.Value</Value>
                                   <Style>
                                     <FontFamily>Trebuchet MS</FontFamily>
-                                    <Color>White</Color>
+                                    <Color>#0d3961</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1764,7 +1769,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>Black</BackgroundColor>
+          <BackgroundColor>#478dce</BackgroundColor>
         </Style>
       </Rectangle>
       <Tablix Name="Tablix2">
