@@ -259,28 +259,16 @@
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
-                                            
-                                        </ul>
-                                    </li>
-                                </ul>
-                               <%-- <ul class="pcoded-item pcoded-left-item" id="ul_ReportsSection">
-                                    <li class="pcoded-hasmenu" id="ReportsSection">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
-                                            <span class="pcoded-mtext">Reports</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" " id="CCE_Log">
-                                                <a href="CCE_Log.aspx" class="waves-effect waves-dark">
+                                            <li class="" id="PM_CV_List" runat="server">
+                                                <a href="PM_CVList.aspx" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">Cost Saving Log</span>
+                                                    <span class="pcoded-mtext">CV Log</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
-                                </ul>--%>
+                                </ul>
                             </div>
                         </nav>
                         <div class="pcoded-content">
@@ -344,7 +332,7 @@
     
         <script src="Resources/sweetalert2/sweetalert2.min.js"></script>
     <script type="text/javascript">
-       <%-- $(document).ready(function () {
+     $(document).ready(function () {
             //debugger;
             var ROLE = '<%= Session["LOGIN_ROLE"].ToString().ToUpper() %>';
             var LOGIN_Epromise = '<%= Session["LOGIN_Epromise"].ToString() %>';
@@ -352,45 +340,13 @@
 
             }
             else if (ROLE == "PM") {
-                $("#MasterEntry").addClass("disable-click");
-                $("#CCERequest").addClass("disable-click");
-                $("#CCE_ReSubmission").addClass("disable-click");
-                $("#SCCE_PCCM_Action").addClass("disable-click");
-                $("#ul_ReportsSection").addClass("disable-click");
+                $("#PM_CV_List").addClass("disable-click");
             }
-            else if (ROLE == "CCE") {
-                $("#PMRequest").addClass("disable-click");
-                $("#SCCE_PCCM_Action").addClass("disable-click");
-                if (LOGIN_Epromise == '013448') {//jobel needs master entry(she have access in master entry,cce pages)
-                    $("#MasterEntry").removeClass("disable-click");
-                }
-                else {
-                    $("#MasterEntry").addClass("disable-click");
-
-                }
+            else if (ROLE == "HR") {
+                $("#CV_Entry").addClass("disable-click");
+               
             }
-            else if (ROLE == "ADMIN") {
-                if (LOGIN_Epromise == '001627')//joy needs master entry & all pages (for testing)- she have access in cce,scce,pm pages
-                {
-                    $("#PMRequest").removeClass("disable-click");
-                }
-                else {
-                    $("#SCCE_PCCM_Action").addClass("disable-click");
-                    $("#PMRequest").addClass("disable-click");
-                }
-            }
-            else if (ROLE == 'CCE_SCCE') {
-                $("#MasterEntry").addClass("disable-click");
-                $("#PMRequest").addClass("disable-click");
-                /*$("#ul_ReportsSection").addClass("disable-click");*/
-            }
-            else if (ROLE == 'SCCE') {
-                $("#MasterEntry").addClass("disable-click");
-                $("#PMRequest").addClass("disable-click");
-               /* $("#ul_ReportsSection").addClass("disable-click");*/
-                $("#CCERequest").addClass("disable-click");
-                $("#CCE_ReSubmission").addClass("disable-click");
-            }
+            
             //-----------------------------------------------------------------------------------------
 
             var currentPage = window.location.pathname.split('/').pop();
@@ -412,7 +368,7 @@
                     $(this).parents("li").addClass("active  pcoded-trigger");
                 }
             });
-        });--%>
+        });
         //----------------------------------------------------------------------------------------------tooltip
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();

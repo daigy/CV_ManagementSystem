@@ -37,20 +37,19 @@ namespace CV_ManagementSystem
                         if (dt.Rows.Count >= 1)
                         {
                             Session["LOGIN_Epromise"] = dt.Rows[0]["UserName"].ToString();
-                            Session["LOGIN_Name"] = dt.Rows[0]["EmployeeName"].ToString();
-                            DataTable dtrole = obj.GetLoginRole(EmployeeCode);
-                            if (dtrole.Rows.Count > 0)
+                            Session["LOGIN_ROLE"] = dt.Rows[0]["Role"].ToString();
+
+                            switch (Session["LOGIN_ROLE"].ToString())
                             {
-                                Session["LOGIN_ROLE"] = dtrole.Rows[0]["Login_Role"].ToString();
-                                switch (Session["LOGIN_ROLE"].ToString())
-                                {
-                                    case "PM":
-                                        Response.Redirect("PM_Action.aspx", false);
-                                        break;
-                                    default:
-                                        Response.Redirect("Default.aspx", false);
-                                        break;
-                                }
+                                case "PM":
+                                    Response.Redirect("CV_Entry.aspx", false);
+                                    break;
+                                case "HR":
+                                    Response.Redirect("PM_CVList.aspx", false);
+                                    break;
+                                default:
+                                    Response.Redirect("Default.aspx", false);
+                                    break;
                             }
                         }
                         else
@@ -104,36 +103,36 @@ namespace CV_ManagementSystem
                 DataTable dtLog = obj.epromiseLoginValidated(txt_UserName.Text.ToString(), txt_Password.Text.ToString());
                 if (dtLog.Rows.Count >= 1)
                 {
-                    //DataTable dt = obj.LoginValidate(txt_UserName.Text.ToString());
-                    //if (dt.Rows.Count >= 1)
-                    //{
-                        Session["LOGIN_Epromise"] = txt_UserName.Text.ToString();
-                    //Session["LOGIN_Name"] = dt.Rows[0]["EmployeeName"].ToString();
-                    //DataTable dtrole = obj.GetLoginRole(txt_UserName.Text.ToString());
-                    //if (dtrole.Rows.Count > 0)
-                    //{
-                    //    Session["LOGIN_ROLE"] = dtrole.Rows[0]["Login_Role"].ToString();
-                    //    switch (Session["LOGIN_ROLE"].ToString())
-                    //    {
-                    //        case "PM":
-                    //            Response.Redirect("PM_Action.aspx", false);
-                    //            break;
-                   // default:
-                                    Response.Redirect("Default.aspx", false);
-                    //break;
-                    //    }
-                    //}
-                    //}
-                    //else
-                    //{
-                    //    Response.Redirect("Login.aspx");
-                    //}
+                    DataTable dt = obj.LoginValidate(txt_UserName.Text.ToString());
+                    if (dt.Rows.Count >= 1)
+                    {
+                        Session["LOGIN_Epromise"] = dt.Rows[0]["UserName"].ToString();
+                        Session["LOGIN_ROLE"] = dt.Rows[0]["Role"].ToString();
+
+                        switch (Session["LOGIN_ROLE"].ToString())
+                        {
+                            case "PM":
+                                Response.Redirect("CV_Entry.aspx", false);
+                                break;
+                            case "HR":
+                                Response.Redirect("PM_CVList.aspx", false);
+                                break;
+                            default:
+                                Response.Redirect("Default.aspx", false);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Response.Redirect("Login.aspx");
+                    }
                 }
                 else
                 {
                     Response.Redirect("Login.aspx");
                 }
             }
+
             catch (Exception ex)
             {
 

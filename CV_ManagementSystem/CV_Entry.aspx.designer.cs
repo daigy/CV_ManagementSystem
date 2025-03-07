@@ -699,6 +699,15 @@ namespace CV_ManagementSystem
         protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
 
         /// <summary>
+        /// DocumentViewerControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::GleamTech.DocumentUltimate.AspNet.WebForms.DocumentViewerControl DocumentViewerControl1;
+
+        /// <summary>
         /// NoData control.
         /// </summary>
         /// <remarks>

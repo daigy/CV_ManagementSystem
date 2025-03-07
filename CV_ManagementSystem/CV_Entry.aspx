@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CV_Entry.aspx.cs" Inherits="CV_ManagementSystem.CV_Entry" %>
-
+<%@ Register Assembly="GleamTech.DocumentUltimate" Namespace="GleamTech.DocumentUltimate.AspNet.WebForms" TagPrefix="GleamTech" %>
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -1008,6 +1008,7 @@
                                             <div id="ReportSection" style="height: 950px; overflow-x: auto; width: 100%; margin-top: -1%; margin-bottom: 0px;">
                                                 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%" Height="800px">
                                                 </rsweb:ReportViewer>
+                                                <GleamTech:DocumentViewerControl ID="DocumentViewerControl1" Width="1425px" Height="800px" runat="server"></GleamTech:DocumentViewerControl>
                                                 <div id="NoData" runat="server" visible="false" style="margin-left: 40%; margin-top: 10%;">
                                                     <h5 style="color: #17a2b8">No records found.</h5>
                                                 </div>

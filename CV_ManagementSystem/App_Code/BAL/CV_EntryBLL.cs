@@ -361,5 +361,29 @@ namespace CV_ManagementSystem.App_Code.BAL
                 obj.Closeconnection();
             }
         }
+        public DataTable GetAllCV_Data()
+        {
+            try
+            {
+                obj.Openconnection();
+                obj.getcommand.CommandType = CommandType.StoredProcedure;
+                obj.getcommand.Parameters.Clear();
+                obj.getcommand.CommandText = "USP_GetAllCV_Data";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                dataAdapter.SelectCommand = obj.getcommand;
+                dataAdapter.Fill(ds);
+                return ds.Tables[0];
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                obj.getcommand.Dispose();
+                obj.Closeconnection();
+            }
+        }
     }
 }

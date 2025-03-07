@@ -1,5 +1,6 @@
 ﻿using CV_ManagementSystem.App_Code.BAL;
 using CV_ManagementSystem.App_Code.BO;
+using GleamTech.DocumentUltimate.AspNet.WebForms;
 using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
@@ -1009,20 +1010,25 @@ namespace CV_ManagementSystem
                 // });
                 if (dt_Personal.Rows.Count > 0)
                 {
+                    string DownloadedFileName = "";
                     if (TemplateVal == "1")
                     {
+                        DownloadedFileName = "CV_Template1.";
                         ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp.rdlc");
                     }
                     else if (TemplateVal == "2")
                     {
+                        DownloadedFileName = "CV_Template2.";
                         ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_2.rdlc");
                     }
                     else if (TemplateVal == "3")
                     {
+                        DownloadedFileName = "CV_Template3.";
                         ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_3.rdlc");
                     }
                     else if (TemplateVal == "4")
                     {
+                        DownloadedFileName = "CV_Template4.";
                         ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_4.rdlc");
                     }
                     ReportViewer1.LocalReport.DataSources.Clear();
@@ -1034,52 +1040,44 @@ namespace CV_ManagementSystem
                     ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Experience2", dt_Experience2));
                     ReportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(ReportProcessing);
                     ReportViewer1.AsyncRendering = false;
-                    ReportViewer1.Visible = true;
+                    ReportViewer1.Visible = false;
                     ReportViewer1.LocalReport.Refresh();
-                    #region Commented
-                    //    Warning[] warnings;
-                    //    string[] streamIds;
-                    //    string contentType;
-                    //    string encoding;
-                    //    string extension;
-                    //    byte[] bytes = ReportViewer1.LocalReport.Render("PDF", null, out contentType, out encoding, out extension, out streamIds, out warnings);
 
-                    //    string serverFilePath = "";
-                    //    string folderPath = HttpContext.Current.Server.MapPath("~/FileView_Data/");  // Ensure the folder exists on the server
-                    //    if (!Directory.Exists(folderPath))
-                    //    {
-                    //        Directory.CreateDirectory(folderPath);  // Create the folder if it doesn't exist
-                    //    }
-                    //    else
-                    //    {
-                    //        serverFilePath = Server.MapPath("~/FileView_Data/" + Path.GetFileName("EvaluationReport." + extension));
+                    Warning[] warnings;
+                    string[] streamIds;
+                    string contentType;
+                    string encoding;
+                    string extension;
+                    byte[] bytes = ReportViewer1.LocalReport.Render("PDF", null, out contentType, out encoding, out extension, out streamIds, out warnings);
 
-                    //        FileInfo file = new FileInfo(serverFilePath);
-                    //        if (file.Exists)//check file exsit or not  
-                    //        {
-                    //            file.Delete();
-                    //        }
-                    //    }
-                    //    string filePath = Path.Combine(folderPath, "EvaluationReport." + extension);
-                    //    try
-                    //    {
-                    //        File.WriteAllBytes(filePath, bytes);
+                    string serverFilePath = "";
+                    string folderPath = HttpContext.Current.Server.MapPath("~/FileView_Data/");  // Ensure the folder exists on the server
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(folderPath);  // Create the folder if it doesn't exist
+                    }
+                    else
+                    {
+                        serverFilePath = Server.MapPath("~/FileView_Data/" + Path.GetFileName(DownloadedFileName + extension));
 
-                    //    }
-                    //    catch (Exception ex)
-                    //    {
-                    //        Response.Write("Error: " + ex.Message);
-                    //    }
-                    //    //DocumentViewerControl1.Visible = true;
-                    //    //DocumentViewerControl1.Document = serverFilePath;
-                    //}
-                    //else
-                    //{
-                    //    ReportViewer1.Visible = true;
-                    //    NoData.Visible = true;
-                    //    //DocumentViewerControl1.Visible = false;
-                    //}
-                    #endregion
+                        FileInfo file = new FileInfo(serverFilePath);
+                        if (file.Exists)//check file exsit or not  
+                        {
+                            file.Delete();
+                        }
+                    }
+                    string filePath = Path.Combine(folderPath, DownloadedFileName + extension);
+                    try
+                    {
+                        File.WriteAllBytes(filePath, bytes);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write("Error: " + ex.Message);
+                    }
+                    DocumentViewerControl1.Visible = true;
+                    DocumentViewerControl1.Document = serverFilePath;
                 }
             }
             catch (Exception)

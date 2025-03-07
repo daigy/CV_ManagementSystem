@@ -11,52 +11,52 @@ namespace CV_ManagementSystem
 {
 
 
-    public partial class SiteMaster
+    public partial class PM_CVList
     {
 
         /// <summary>
-        /// head control.
+        /// RadFormDecorator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::Telerik.Web.UI.RadFormDecorator RadFormDecorator1;
 
         /// <summary>
-        /// form1 control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// CV_Entry control.
+        /// Combo_Template control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CV_Entry;
+        protected global::Telerik.Web.UI.RadComboBox Combo_Template;
 
         /// <summary>
-        /// PM_CV_List control.
+        /// btn_DownloadAllCV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PM_CV_List;
+        protected global::Telerik.Web.UI.RadButton btn_DownloadAllCV;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// RadGrid_CV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::Telerik.Web.UI.RadGrid RadGrid_CV;
     }
 }
