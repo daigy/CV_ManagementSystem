@@ -620,128 +620,158 @@
                                         </Triggers>
                                     </asp:UpdatePanel>--%>
                                     
-                                    <div id="AllExperience_List"  class="form-row AllExperience_List" runat="server" style="margin-top: -2%;">
-                                        <div class="form-group col-md-12">
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-12">
-                                                        <h5 style="text-decoration:underline;">WORK EXPERIENCE</h5>
-                                                        <telerik:RadListView ID="AllExperience_RadListView" runat="server" RenderMode="Lightweight" ItemPlaceholderID="DataGroupPlaceHolder3"
-                                                            InsertItemPosition="BeforeDataGroups" AllowMultiFieldSorting="True"
-                                                            AllowPaging="false" GroupAggregatesScope="AllItems" DataKeyNames="ExperienceTranID,Employer" OnItemDataBound="AllExperience_RadListView_ItemDataBound"
-                                                            OnItemCommand="AllExperience_RadListView_ItemCommand">
-                                                            <ItemTemplate>
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="card  direct-chat direct-chat-primary shadow-none">
-                                                                            <div class="card-body">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-12">
-                                                                                        <div class="rlvI_">
-                                                                                            <div class="row d-flex justify-content-between" style="margin-left: -15px;">
-                                                                                               <div class="col-md-4 text-left">
-                                                                                                    <h5><span style="color: #17a2b8;"><%#Eval("Employer")%></span></h5>
-                                                                                                </div>
-                                                                                                <div class="col-md-4 text-left">
-                                                                                                    <h6 class=""><span style="color: #17a2b8;"><%#Eval("S_MonthName")%></span>
-                                                                                                        <span style="color: #17a2b8;"><%#Eval("StartYear")%> - 
+                                            <div id="AllExperience_List" class="form-row AllExperience_List" runat="server" style="margin-top: -2%;">
+                                                <div class="form-group col-md-12">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-12">
+                                                            <h5 style="text-decoration: underline;">WORK EXPERIENCE</h5>
+                                                            <telerik:RadListView ID="AllExperience_RadListView" runat="server" RenderMode="Lightweight" ItemPlaceholderID="DataGroupPlaceHolder3"
+                                                                InsertItemPosition="BeforeDataGroups" AllowMultiFieldSorting="True"
+                                                                AllowPaging="false" GroupAggregatesScope="AllItems" DataKeyNames="ExperienceTranID,Employer" OnItemDataBound="AllExperience_RadListView_ItemDataBound"
+                                                                OnItemCommand="AllExperience_RadListView_ItemCommand">
+                                                                <ItemTemplate>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="card  direct-chat direct-chat-primary shadow-none">
+                                                                                <div class="card-body">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-12">
+                                                                                            <div class="rlvI_">
+                                                                                                <div class="row d-flex justify-content-between" style="margin-left: -15px;">
+                                                                                                    <div class="col-md-4 text-left">
+                                                                                                        <h5><span style="color: #17a2b8;"><%#Eval("Employer")%></span></h5>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-4 text-left">
+                                                                                                        <h6 class=""><span style="color: #17a2b8;"><%#Eval("S_MonthName")%></span>
+                                                                                                            <span style="color: #17a2b8;"><%#Eval("StartYear")%> - 
                                                                                                             <%# Convert.ToBoolean(Eval("CurrentlyWorkStatus")) ? "Present": Eval("E_MonthName")+" "+ Eval("EndYear")   %> 
-                                                                                                    </h6>
-                                                                                                </div>
-                                                                                                  <div class="col-md-1 text-right" style="margin-left: 16%;">
-                                                                                                      <asp:LinkButton ID="btn_ExperienceEdit" runat="server" CssClass="btn btn-primary" CommandName="EditItem"   CommandArgument='<%#Eval("ExperienceTranID")%>'  >
+                                                                                                        </h6>
+                                                                                                    </div>
+                                                                                                    <div class="col-md-1 text-right" style="margin-left: 16%;">
+                                                                                                        <asp:LinkButton ID="btn_ExperienceEdit" runat="server" CssClass="btn btn-primary" CommandName="EditItem" CommandArgument='<%#Eval("ExperienceTranID")%>'>
                                                                                                             <i class="fa fa-pencil-square-o"></i> Edit
                                                                                                         </asp:LinkButton>
 
-                                                                                                  </div>
-                                                                                                <div class="col-md-1 text-left">
-                                                                                                      <asp:LinkButton ID="btn_ExperienceDelete" runat="server" CssClass="btn btn-danger" CommandName="DeleteItem"  CommandArgument='<%#Eval("ExperienceTranID")%>' >
+                                                                                                    </div>
+                                                                                                    <div class="col-md-1 text-left">
+                                                                                                        <asp:LinkButton ID="btn_ExperienceDelete" runat="server" CssClass="btn btn-danger" CommandName="DeleteItem" CommandArgument='<%#Eval("ExperienceTranID")%>'>
                                                                                                             <i class="fa fa-recycle"></i> Delete
                                                                                                         </asp:LinkButton>
 
-                                                                                                  </div>
-                                                                                            </div>
-                                                                                             
-                                                                                            <table>
-                                                                                                <tr>
-                                                                                                    <td style="text-align: left!important; border-bottom-color: white!important;color:#aba3a3;font-weight:bold;">
-                                                                                                        <%#Eval("JobTitle")%>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td><%#Eval("JobDescription")%></td>
-                                                                                                </tr>
-                                                                                            </table>
-                                                                                            <telerik:RadListView ID="lvProjects" runat="server" OnItemDataBound="lvProjects_ItemDataBound">
-                                                                                                <ItemTemplate>
-                                                                                                    <div class="project-item">
-                                                                                                        <table style="width:100%;">
-                                                                                                            <tr>
-                                                                                                                <td style="width:10%;"><p><strong>Project </strong></p> </td>
-                                                                                                                <td style="width:1%;"><p>:</p> </td>
-                                                                                                                <td style="width:60%;"><p><%# Eval("ProjectName") %></p> </td>
-                                                                                                            </tr>
-                                                                                                             <tr>
-                                                                                                               <td><p><strong>ScopeOfWork </strong></p> </td>
-                                                                                                                <td style="width:1%;"><p>:</p> </td>
-                                                                                                                <td><p><%# Eval("ScopeOfWork") %> </p></td>
-                                                                                                            </tr>
-                                                                                                             <tr runat="server" visible='<%# !string.IsNullOrEmpty(Eval("Client").ToString()) %>'>
-                                                                                                                <td><p><strong>Client </strong></p> </td>
-                                                                                                                 <td style="width:1%;"><p>:</p> </td>
-                                                                                                                <td><p><%# Eval("Client") %></p> </td>
-                                                                                                            </tr>
-                                                                                                            <tr runat="server" visible='<%# !string.IsNullOrEmpty(Eval("ContractPrice").ToString()) %>'>
-                                                                                                                <td><p><strong>Contract Price </strong></p> </td>
-                                                                                                                 <td style="width:1%;"><p>:</p> </td>
-                                                                                                                <td><p><%# Eval("ContractPrice") %></p> </td>
-                                                                                                            </tr>
-                                                                                                            <tr runat="server" visible='<%# !string.IsNullOrEmpty(Eval("Consultant").ToString()) %>'>
-                                                                                                                <td><p><strong>Consultant </strong></p> </td>
-                                                                                                                 <td style="width:1%;"><p>:</p> </td>
-                                                                                                                <td><p><%# Eval("Consultant") %></p> </td>
-                                                                                                            </tr>
-                                                                                                        </table>
                                                                                                     </div>
-                                                                                                </ItemTemplate>
-                                                                                            </telerik:RadListView>
+                                                                                                </div>
+
+                                                                                                <table>
+                                                                                                    <tr>
+                                                                                                        <td style="text-align: left!important; border-bottom-color: white!important; color: #aba3a3; font-weight: bold;">
+                                                                                                            <%#Eval("JobTitle")%>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td><%#Eval("JobDescription")%></td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                                <telerik:RadListView ID="lvProjects" runat="server" OnItemDataBound="lvProjects_ItemDataBound">
+                                                                                                    <ItemTemplate>
+                                                                                                        <div class="project-item">
+                                                                                                            <table style="width: 100%;">
+                                                                                                                <tr>
+                                                                                                                    <td style="width: 10%;">
+                                                                                                                        <p><strong>Project </strong></p>
+                                                                                                                    </td>
+                                                                                                                    <td style="width: 1%;">
+                                                                                                                        <p>:</p>
+                                                                                                                    </td>
+                                                                                                                    <td style="width: 60%;">
+                                                                                                                        <p><%# Eval("ProjectName") %></p>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                                <tr>
+                                                                                                                    <td>
+                                                                                                                        <p><strong>ScopeOfWork </strong></p>
+                                                                                                                    </td>
+                                                                                                                    <td style="width: 1%;">
+                                                                                                                        <p>:</p>
+                                                                                                                    </td>
+                                                                                                                    <td>
+                                                                                                                        <p><%# Eval("ScopeOfWork") %> </p>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                                <tr runat="server" visible='<%# !string.IsNullOrEmpty(Eval("Client").ToString()) %>'>
+                                                                                                                    <td>
+                                                                                                                        <p><strong>Client </strong></p>
+                                                                                                                    </td>
+                                                                                                                    <td style="width: 1%;">
+                                                                                                                        <p>:</p>
+                                                                                                                    </td>
+                                                                                                                    <td>
+                                                                                                                        <p><%# Eval("Client") %></p>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                                <tr runat="server" visible='<%# !string.IsNullOrEmpty(Eval("ContractPrice").ToString()) %>'>
+                                                                                                                    <td>
+                                                                                                                        <p><strong>Contract Price </strong></p>
+                                                                                                                    </td>
+                                                                                                                    <td style="width: 1%;">
+                                                                                                                        <p>:</p>
+                                                                                                                    </td>
+                                                                                                                    <td>
+                                                                                                                        <p><%# Eval("ContractPrice") %></p>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                                <tr runat="server" visible='<%# !string.IsNullOrEmpty(Eval("Consultant").ToString()) %>'>
+                                                                                                                    <td>
+                                                                                                                        <p><strong>Consultant </strong></p>
+                                                                                                                    </td>
+                                                                                                                    <td style="width: 1%;">
+                                                                                                                        <p>:</p>
+                                                                                                                    </td>
+                                                                                                                    <td>
+                                                                                                                        <p><%# Eval("Consultant") %></p>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </ItemTemplate>
+                                                                                                </telerik:RadListView>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                            </ItemTemplate>
-                                                            <LayoutTemplate>
-                                                                <asp:Panel ID="DataGroup_AllExperience" runat="server">
-                                                                </asp:Panel>
-                                                                <telerik:RadDataPager RenderMode="Lightweight" ID="RadDataPager1" runat="server" PagedControlID="RadListView1" Visible="false"
-                                                                    Skin="Silk" PageSize="15" class="clearfix">
-                                                                    <Fields>
-                                                                        <telerik:RadDataPagerButtonField FieldType="FirstPrev" FirstButtonText="First" PrevButtonText="Prev"></telerik:RadDataPagerButtonField>
-                                                                        <telerik:RadDataPagerButtonField FieldType="Numeric" PageButtonCount="10"></telerik:RadDataPagerButtonField>
-                                                                        <telerik:RadDataPagerButtonField FieldType="NextLast" NextButtonText="Next" LastButtonText="Last"></telerik:RadDataPagerButtonField>
-                                                                    </Fields>
-                                                                </telerik:RadDataPager>
-                                                            </LayoutTemplate>
-                                                            <GroupSeparatorTemplate>
-                                                            </GroupSeparatorTemplate>
-                                                            <DataGroups>
-                                                                <telerik:ListViewDataGroup GroupField="Employer" DataGroupPlaceholderID="DataGroup_AllExperience"
-                                                                    SortOrder="Ascending">
-                                                                    <DataGroupTemplate>
-                                                                        <asp:Panel runat="server" ID="Panel3" CssClass="dataGroup" GroupingText='<%# (Container as RadListViewDataGroupItem).DataGroupKey %>'>
-                                                                            <asp:PlaceHolder runat="server" ID="DataGroupPlaceHolder3"></asp:PlaceHolder>
-                                                                        </asp:Panel>
-                                                                    </DataGroupTemplate>
-
-                                                                </telerik:ListViewDataGroup>
-                                                            </DataGroups>
-                                                        </telerik:RadListView>
+                                                                </ItemTemplate>
+                                                                <LayoutTemplate>
+                                                                    <asp:Panel ID="DataGroup_AllExperience" runat="server">
+                                                                    </asp:Panel>
+                                                                    <telerik:RadDataPager RenderMode="Lightweight" ID="RadDataPager1" runat="server" PagedControlID="RadListView1" Visible="false"
+                                                                        Skin="Silk" PageSize="15" class="clearfix">
+                                                                        <Fields>
+                                                                            <telerik:RadDataPagerButtonField FieldType="FirstPrev" FirstButtonText="First" PrevButtonText="Prev"></telerik:RadDataPagerButtonField>
+                                                                            <telerik:RadDataPagerButtonField FieldType="Numeric" PageButtonCount="10"></telerik:RadDataPagerButtonField>
+                                                                            <telerik:RadDataPagerButtonField FieldType="NextLast" NextButtonText="Next" LastButtonText="Last"></telerik:RadDataPagerButtonField>
+                                                                        </Fields>
+                                                                    </telerik:RadDataPager>
+                                                                </LayoutTemplate>
+                                                                <DataGroups>
+                                                                    <telerik:ListViewDataGroup GroupField="Employer" DataGroupPlaceholderID="DataGroup_AllExperience" >
+                                                                        <DataGroupTemplate>
+                                                                            <asp:Panel runat="server" ID="Panel3" CssClass="dataGroup" GroupingText='<%# (Container as RadListViewDataGroupItem).DataGroupKey %>'>
+                                                                                <asp:PlaceHolder runat="server" ID="DataGroupPlaceHolder3"></asp:PlaceHolder>
+                                                                            </asp:Panel>
+                                                                        </DataGroupTemplate>
+                                                                    </telerik:ListViewDataGroup>
+                                                                </DataGroups>
+                                                                <SortExpressions>
+                                                                    <telerik:RadListViewSortExpression FieldName="CurrentlyWorkStatus" SortOrder="Descending" />
+                                                                    <telerik:RadListViewSortExpression FieldName="EndYear" SortOrder="Descending" />
+                                                                </SortExpressions>
+                                                            </telerik:RadListView>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                        </div>
-                                    </div>
+                                            </div>
                                    <%-- <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                         <ContentTemplate>--%>
                                   <div id="EditWorkExperience" runat="server" style="display: none;">

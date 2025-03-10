@@ -45,6 +45,99 @@ namespace CV_ManagementSystem
                 ddl_EditEndMonth.Items.Add(new DropDownListItem(CultureInfo.CurrentCulture.DateTimeFormat.MonthNames.GetValue(x).ToString(), (x + 1).ToString()));
             }
         }
+        #region Personal info
+        protected void btn_SavePersonalDetails_Click(object sender, EventArgs e)
+        {
+            CV_BO data = new CV_BO();
+            data.Epromis = Session["LOGIN_Epromise"].ToString();
+            data.EmployeeName = txt_FullName.Text.ToString();
+            data.CurrentPosition = txt_CurrentPosition.Text.ToString();
+            data.Tel_No = txt_TelNo.Text.ToString();
+            data.Fax_No = txt_FaxNo.Text.ToString();
+            data.PO_Box = txt_POBOx.Text.ToString();
+            data.Qualification = txt_Qualification.Text.ToString();
+            data.Nationality = txt_Nationality.Text.ToString();
+            data.Languages = txt_Languages.Text.ToString();
+            data.EntryBy = Session["LOGIN_Epromise"].ToString();
+
+            int Result = obj.Insert_PersonalInfo(data);
+            if (Result > 0)
+            {
+                BindReportsSection();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(1);", true);
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(0);", true);
+            }
+        }
+        protected void btnOpenPhotoModal_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "OpenPhotoModal(1);", true);
+        }
+        protected void btnSave_ProfilePhoto_Click(object sender, EventArgs e)
+        {
+            string base64String = hiddenCroppedImage.Value;
+
+            if (string.IsNullOrEmpty(base64String))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(10);", true);
+                return;
+            }
+            try
+            {
+                string fileType = "";
+                if (base64String.StartsWith("data:image/jpeg;base64,"))
+                {
+                    base64String = base64String.Replace("data:image/jpeg;base64,", "");
+                    fileType = "image/jpeg";
+                }
+                else if (base64String.StartsWith("data:image/png;base64,"))
+                {
+                    base64String = base64String.Replace("data:image/png;base64,", "");
+                    fileType = "image/png";
+                }
+                else if (base64String.StartsWith("data:image/gif;base64,"))
+                {
+                    base64String = base64String.Replace("data:image/gif;base64,", "");
+                    fileType = "image/gif";
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "FileTypeValidation();", true);
+                    return;
+                }
+                byte[] imageBytes = Convert.FromBase64String(base64String);
+
+                string Epromis = Session["LOGIN_Epromise"]?.ToString();
+                if (string.IsNullOrEmpty(Epromis))
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Session_Expired();", true);
+                    return;
+                }
+                string fileExtension = fileType.Split('/')[1]; // "jpeg" -> "jpg"
+
+                if (fileExtension == "jpeg") fileExtension = "jpg";
+
+                string fileName = $"{Epromis}.{fileExtension}";
+                int result = obj.Insert_ProfilePhoto(Epromis, imageBytes, fileType, fileName);
+                if (result > 0)
+                {
+                    BindProfilePhoto();
+                    BindReportsSection();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(4);", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(0);", true);
+                }
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(0);", true);
+            }
+        }
+        #endregion
         #region Courses
         public void Set_SessionDt_Courses()
         {
@@ -426,100 +519,27 @@ namespace CV_ManagementSystem
         }
         #endregion
 
-        protected void btn_SavePersonalDetails_Click(object sender, EventArgs e)
+        #region Experience
+        public void BindExperience()
         {
-            CV_BO data= new CV_BO();
-            data.Epromis = Session["LOGIN_Epromise"].ToString();
-            data.EmployeeName=txt_FullName.Text.ToString();
-            data.CurrentPosition = txt_CurrentPosition.Text.ToString();
-            data.Tel_No = txt_TelNo.Text.ToString();
-            data.Fax_No = txt_FaxNo.Text.ToString();
-            data.PO_Box = txt_POBOx.Text.ToString();
-            data.Qualification = txt_Qualification.Text.ToString();
-            data.Nationality = txt_Nationality.Text.ToString();
-            data.Languages = txt_Languages.Text.ToString();
-            data.EntryBy = Session["LOGIN_Epromise"].ToString();
-
-            int Result = obj.Insert_PersonalInfo(data);
-            if (Result > 0)
+            DataSet ds = GetCVData();
+            DataTable dt_Experience = ds.Tables[3];
+            if (dt_Experience.Rows.Count > 0)
             {
-                BindReportsSection();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(1);", true);
+                AllExperience_List.Visible = true;
+                AllExperience_RadListView.Visible = true;
+                AllExperience_RadListView.DataSource = dt_Experience;
+                AllExperience_RadListView.DataBind();
+                //MainExperience.Visible = false;
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(0);", true);
+                AllExperience_List.Visible = false;
+                //MainExperience.Visible = true;
+                AllExperience_RadListView.Visible = false;
             }
+
         }
-
-        protected void btnOpenPhotoModal_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "OpenPhotoModal(1);", true);
-        }
-
-        protected void btnSave_ProfilePhoto_Click(object sender, EventArgs e)
-        {
-            string base64String = hiddenCroppedImage.Value;
-
-            if (string.IsNullOrEmpty(base64String))
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(10);", true);
-                return;
-            }
-            try
-            {
-                string fileType = "";
-                if (base64String.StartsWith("data:image/jpeg;base64,"))
-                {
-                    base64String = base64String.Replace("data:image/jpeg;base64,", "");
-                    fileType = "image/jpeg";
-                }
-                else if (base64String.StartsWith("data:image/png;base64,"))
-                {
-                    base64String = base64String.Replace("data:image/png;base64,", "");
-                    fileType = "image/png";
-                }
-                else if (base64String.StartsWith("data:image/gif;base64,"))
-                {
-                    base64String = base64String.Replace("data:image/gif;base64,", "");
-                    fileType = "image/gif";
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "FileTypeValidation();", true);
-                    return;
-                }
-                byte[] imageBytes = Convert.FromBase64String(base64String);
-
-                string Epromis = Session["LOGIN_Epromise"]?.ToString();
-                if (string.IsNullOrEmpty(Epromis))
-                {   
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Session_Expired();", true); 
-                    return;
-                }
-                string fileExtension = fileType.Split('/')[1]; // "jpeg" -> "jpg"
-
-                if (fileExtension == "jpeg") fileExtension = "jpg";
-
-                string fileName = $"{Epromis}.{fileExtension}";
-                int result = obj.Insert_ProfilePhoto(Epromis, imageBytes, fileType, fileName);
-                if (result > 0)
-                {
-                    BindProfilePhoto();
-                    BindReportsSection();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(4);", true);
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(0);", true);
-                }
-            }
-            catch (Exception ex)
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(0);", true);
-            }
-        }
-
         protected void btn_SaveMainExperience_Click(object sender, EventArgs e)
         {
             Experience_BO data=new Experience_BO();
@@ -555,7 +575,6 @@ namespace CV_ManagementSystem
                 SetCurretlyInserting_Experience(LastInserted_TranID);
             }
         }
-        
         public void SetCurretlyInserting_Experience(int TranID)
         {
             DataTable dt = obj.USP_GetExperienceByTranID(TranID);
@@ -618,27 +637,6 @@ namespace CV_ManagementSystem
                 SetCurretlyInserting_Experience(data.ExperienceTranID);
             }
         }
-        #region Experience
-        public void BindExperience()
-        {
-            DataSet  ds = GetCVData();
-            DataTable dt_Experience = ds.Tables[3];
-            if(dt_Experience.Rows.Count > 0)
-            {
-                AllExperience_List.Visible = true;
-                AllExperience_RadListView.Visible=true;
-                AllExperience_RadListView.DataSource = dt_Experience;
-                AllExperience_RadListView.DataBind();
-                //MainExperience.Visible = false;
-            }
-            else
-            {
-                AllExperience_List.Visible = false;
-                //MainExperience.Visible = true;
-                AllExperience_RadListView.Visible = false;
-            }
-            
-        }
         protected void AllExperience_RadListView_ItemDataBound(object sender, RadListViewItemEventArgs e)
         {
             if (e.Item is RadListViewDataItem dataItem)
@@ -671,9 +669,6 @@ namespace CV_ManagementSystem
                 }
             }
         }
-        #endregion
-
-
         protected void ShowMainExperienceEntry_Click(object sender, EventArgs e)
         {
             ShowMainExperienceEntry.Visible = false;
@@ -696,7 +691,6 @@ namespace CV_ManagementSystem
             AllExperience_List.Style["display"] = "block";
             BindExperience();
         }
-
         protected void btn_GoBack_FromAddExperiencePage_Click(object sender, EventArgs e)
         {
             ShowMainExperienceEntry.Visible = true;
@@ -711,7 +705,6 @@ namespace CV_ManagementSystem
             txt_JobDescription.Text = "";
             BindExperience();
         }
-
         public void EditClick_VisibleSection()
         {
             ShowMainExperienceEntry.Visible = false;
@@ -733,7 +726,6 @@ namespace CV_ManagementSystem
             EditWorkExperience.Style["display"] = "none";
             BindExperience();
         }
-
         protected void btn_SaveEditMainExperience_Click(object sender, EventArgs e)
         {
             #region Employer
@@ -834,6 +826,7 @@ namespace CV_ManagementSystem
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "DeleteAlert();", true);
 
                 BindExperience();
+                BindReportsSection();
             }
         }
         public void BindData_WhenClickEditButton(int ExperienceTranID)
@@ -881,9 +874,9 @@ namespace CV_ManagementSystem
                 int DeleResult = obj.DeleteExperience_ProjectData(ProjectTranID);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "DeleteAlert();", true);
                 EditClick_VisibleSection();
+                BindReportsSection();
             }
         }
-
         protected void btn_Edit_NewProject_Click(object sender, EventArgs e)
         {
             ExperienceProject_BO data = new ExperienceProject_BO();
@@ -919,7 +912,6 @@ namespace CV_ManagementSystem
               
             }
         }
-
         protected void ComboProject_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
         {
             string selectedPRJCT = ComboProject.SelectedValue.ToString().Trim();
@@ -950,7 +942,6 @@ namespace CV_ManagementSystem
     
             
         }
-
         protected void Combo_NewProject_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
         {
             string selectedPRJCT = Combo_NewProject.SelectedValue.ToString().Trim();
@@ -980,7 +971,8 @@ namespace CV_ManagementSystem
             }
             
         }
-
+        #endregion
+        #region Report Section
         public void BindReportsSection()
         {
             try
@@ -1095,10 +1087,10 @@ namespace CV_ManagementSystem
             e.DataSources.Add(ds_Project);
            
         }
-
         protected void Combo_Template_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
         {
             BindReportsSection();
         }
+        #endregion
     }
 }
