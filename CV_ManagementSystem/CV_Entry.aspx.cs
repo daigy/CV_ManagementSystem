@@ -28,11 +28,24 @@ namespace CV_ManagementSystem
                 Session["dt_SectionA"] = null;
                 Session["dt_SectionB"] = null;
                 Session["dt_Experience"] = null;
+                Session["dt_Qualification"] = null;
+                Session["dt_Hobbies"] = null;
                 BindCV_Data();
                 BindProfilePhoto();
                 BindExperience();
                 BindMonths();
                 BindReportsSection();
+                BindGraduationYears();
+            }
+        }
+        private void BindGraduationYears()
+        {
+            int startYear = DateTime.Now.Year - 80; // Example: Last 80 years
+            int endYear = DateTime.Now.Year + 1; // Allow future graduation year
+
+            for (int year = endYear; year >= startYear; year--)
+            {
+                cmb_GraduationYear.Items.Add(new Telerik.Web.UI.RadComboBoxItem(year.ToString(), year.ToString()));
             }
         }
         public void BindMonths()
@@ -231,6 +244,7 @@ namespace CV_ManagementSystem
                 dt = (DataTable)Session["dt_SectionA"];
                 SectionA_Courses.DataSource = dt;
                 SectionA_Courses.DataBind();
+                BindReportsSection();
             }
         }
 
@@ -267,6 +281,7 @@ namespace CV_ManagementSystem
                 dt = (DataTable)Session["dt_SectionB"];
                 SectionB_ComputerSkills.DataSource = dt;
                 SectionB_ComputerSkills.DataBind();
+                BindReportsSection();
             }
         }
         protected void SectionB_ComputerSkills_NeedDataSource(object sender, GridNeedDataSourceEventArgs e)
@@ -387,11 +402,14 @@ namespace CV_ManagementSystem
             DataSet ds = new DataSet();
             DataTable dtSkills = new DataTable();
             DataTable dtPersonal = new DataTable();
+            DataTable dt_Qualification = new DataTable();
+            DataTable dt_Hobbies = new DataTable();
+
             ds = GetCVData();
             dtPersonal = ds.Tables[0];
             dtSkills = ds.Tables[2];
-
-
+            dt_Qualification = ds.Tables[5];
+            dt_Hobbies = ds.Tables[6];
             #region PersonalDetails
             if (dtPersonal.Rows.Count > 0)
             {
@@ -484,6 +502,54 @@ namespace CV_ManagementSystem
                     Session["dt_SectionB"] = dt_ComputerSkills;
                     SectionB_ComputerSkills.DataSource = dt_ComputerSkills;
                     SectionB_ComputerSkills.DataBind();
+            }
+            #endregion
+
+            #region Qualification
+
+            DataTable dt_Quali = new DataTable();
+            dt_Quali.Columns.Add("QualificationID");
+            dt_Quali.Columns.Add("GraduationYear");
+            dt_Quali.Columns.Add("QualificationName");
+
+            foreach (DataRow rows in dt_Qualification.Rows)
+            {
+
+                DataRow dr = dt_Quali.NewRow();
+                dr["QualificationID"] = rows["QualificationID"];
+                dr["GraduationYear"] = rows["GraduationYear"];
+                dr["QualificationName"] = rows["QualificationName"];
+                dt_Quali.Rows.Add(dr);
+            }
+
+            if (dt_Quali != null && dt_Quali.Rows.Count > 0)
+            {
+                Session["dt_Qualification"] = dt_Quali;
+                RadGrid_Qualification.DataSource = dt_Quali;
+                RadGrid_Qualification.DataBind();
+            }
+            #endregion
+            #region Hobbies
+
+            DataTable dt_Hobs = new DataTable();
+            dt_Hobs.Columns.Add("HobbiesID");
+            dt_Hobs.Columns.Add("Hobbies"); 
+
+
+            foreach (DataRow rows in dt_Hobbies.Rows)
+            {
+
+                DataRow dr = dt_Hobs.NewRow();
+                dr["HobbiesID"] = rows["HobbiesID"];
+                dr["Hobbies"] = rows["Hobbies"]; 
+                dt_Hobs.Rows.Add(dr);
+            }
+           
+            if (dt_Hobs != null && dt_Hobs.Rows.Count > 0)
+            {
+                Session["dt_Hobbies"] = dt_Hobs;
+                RadGrid_Hobbies.DataSource = dt_Hobs;
+                RadGrid_Hobbies.DataBind();
             }
             #endregion
         }
@@ -624,6 +690,8 @@ namespace CV_ManagementSystem
                 data.Client = txt_Client.Text.ToString();
                 data.ContractPrice = txt_ContractPrice.Text.ToString();
                 data.Consultant = txt_Consultant.Text.ToString();
+                data.Position=txt_PositionForEachPrjct.Text.ToString();
+                data.Description=txt_DecriptionForProjct.Text.ToString();
                 int Result = obj.Insert_ExperienceProject(data);
                 if (Result > 0)
                 {
@@ -633,6 +701,8 @@ namespace CV_ManagementSystem
                     txt_ContractPrice.Text = "";
                     txt_Consultant.Text = "";
                     Combo_NewProject.ClearSelection();
+                    txt_PositionForEachPrjct.Text = "";
+                    txt_DecriptionForProjct.Text = "";
                 }
                 SetCurretlyInserting_Experience(data.ExperienceTranID);
             }
@@ -769,6 +839,8 @@ namespace CV_ManagementSystem
                 dt.Columns.Add("Client", typeof(string));
                 dt.Columns.Add("ContractPrice", typeof(string));
                 dt.Columns.Add("Consultant", typeof(string));
+                dt.Columns.Add("Position", typeof(string));
+                dt.Columns.Add("Description", typeof(string));
 
                 foreach (RadListViewDataItem item in RadListView_EditProjects.Items)
                 {
@@ -783,8 +855,10 @@ namespace CV_ManagementSystem
                     TextBox txtContractPrice = (TextBox)item.FindControl("txt_EditContractPrice");
                     TextBox txtScopeOfWork = (TextBox)item.FindControl("txt_EditScopeOfWork");
                     TextBox txtConsultant = (TextBox)item.FindControl("txt_EditConsultant");
+                    TextBox txtPosition = (TextBox)item.FindControl("txt_Edit_PositionForEachPrjct");
+                    TextBox txtDescription = (TextBox)item.FindControl("txt_Edit_DescriptionForProjct");
 
-                    dt.Rows.Add( ProjectTranID, txtProject.Text.Trim(), txtScopeOfWork.Text.Trim(), txtClient.Text.Trim(), txtContractPrice.Text.Trim(), txtConsultant.Text.Trim());
+                    dt.Rows.Add( ProjectTranID, txtProject.Text.Trim(), txtScopeOfWork.Text.Trim(), txtClient.Text.Trim(), txtContractPrice.Text.Trim(), txtConsultant.Text.Trim(), txtPosition.Text.Trim(), txtDescription.Text.Trim());
                 }
                 int result = obj.BulkUpdate_ExperienceProjects(dt, Convert.ToInt32(edit_ExperienceTranID.Value));
                 if (result > 0)
@@ -897,6 +971,8 @@ namespace CV_ManagementSystem
                 data.Client = txt_NewClient.Text.ToString();
                 data.ContractPrice = txt_NewContractPrice.Text.ToString();
                 data.Consultant = txt_NewConsultant.Text.ToString();
+                data.Position = txt_New_PositionForEachPrjct.Text.ToString();
+                data.Description = txt_New_DescriptionForProjct.Text.ToString();
                 int Result = obj.Insert_ExperienceProject(data);
                 if (Result > 0)
                 {
@@ -906,6 +982,8 @@ namespace CV_ManagementSystem
                     txt_NewContractPrice.Text = "";
                     txt_NewConsultant.Text = "";
                     ComboProject.ClearSelection();
+                    txt_New_PositionForEachPrjct.Text = "";
+                    txt_New_DescriptionForProjct.Text = "";
                     EditClick_VisibleSection();
                     BindReportsSection();
                 }
@@ -954,6 +1032,8 @@ namespace CV_ManagementSystem
                 txt_ScopeOfWork.Text = "";
                 txt_Client.Text = "";
                 txt_Consultant.Text = "";
+                txt_PositionForEachPrjct.Text = "";
+                txt_DecriptionForProjct.Text = "";
             }
             else
             {
@@ -967,6 +1047,8 @@ namespace CV_ManagementSystem
                     txt_ScopeOfWork.Text = dt.Rows[0]["ProjectDescription"].ToString();
                     txt_Client.Text = dt.Rows[0]["Client"].ToString();
                     txt_Consultant.Text = dt.Rows[0]["Consultant"].ToString();
+                    txt_PositionForEachPrjct.Text = "";
+                    txt_DecriptionForProjct.Text = "";
                 }
             }
             
@@ -986,7 +1068,9 @@ namespace CV_ManagementSystem
                 DataTable dt_Experience = ds.Tables[3];
                 DataTable dt_Experience2 = ds.Tables[4];
                 DataTable dt_Projects = ds.Tables[5];
-           
+                DataTable dt_Qualification = ds.Tables[6];
+                DataTable dt_Hobbies = ds.Tables[7];
+
 
 
                 //DataTable dtParam = new DataTable();
@@ -1030,6 +1114,8 @@ namespace CV_ManagementSystem
                     ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Experience", dt_Experience));
                     ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Projects", dt_Projects));
                     ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Experience2", dt_Experience2));
+                    ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Qualification", dt_Qualification));
+                    ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Hobbies", dt_Hobbies));
                     ReportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(ReportProcessing);
                     ReportViewer1.AsyncRendering = false;
                     ReportViewer1.Visible = false;
@@ -1090,6 +1176,245 @@ namespace CV_ManagementSystem
         protected void Combo_Template_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
         {
             BindReportsSection();
+        }
+        #endregion
+        #region Qualification Entry
+        public void Set_SessionDt_Qualification()
+        {
+            DataTable dtRecords = new DataTable();
+            dtRecords.Columns.Add("QualificationID", typeof(string));  
+            dtRecords.Columns.Add("GraduationYear", typeof(string));  
+            dtRecords.Columns.Add("QualificationName", typeof(string));  
+            foreach (GridDataItem item in RadGrid_Qualification.Items)
+            {
+                DataRow dr = dtRecords.NewRow();
+                TextBox txt_Quali = (TextBox)item.FindControl("txt_QualificationName_Edit");
+                TextBox txt_Year = (TextBox)item.FindControl("txt_GraduationYear_Edit");
+                dr["QualificationID"] = item.GetDataKeyValue("QualificationID").ToString();
+                dr["GraduationYear"] = txt_Year.Text;
+                dr["QualificationName"] = txt_Quali.Text;
+                dtRecords.Rows.Add(dr);
+            }
+            Session["dt_Qualification"] = dtRecords;
+        }
+        protected void btn_Add_Qualification_Click(object sender, EventArgs e)
+        {
+            var Flag = false;
+            int count = RadGrid_Qualification.MasterTableView.Items.Count;
+            if (count > 0)
+            {
+                Set_SessionDt_Qualification();//for setting Datatable
+                DataTable Check_dt = (DataTable)Session["dt_Qualification"];
+                string new_Qualification = txt_QualificationEntry.Text.ToString();
+                string new_QualificationYear = cmb_GraduationYear.SelectedValue.ToString();
+                if (new_Qualification != "" && new_QualificationYear!="")
+                {
+                    DataRow newRow = Check_dt.NewRow();
+                    newRow["QualificationID"] = "0";
+                    newRow["GraduationYear"] = new_QualificationYear;
+                    newRow["QualificationName"] = new_Qualification;
+                    Check_dt.Rows.Add(newRow);
+                    txt_QualificationEntry.Text = "";
+                    cmb_GraduationYear.ClearSelection();
+                    Session["dt_Qualification"] = Check_dt;
+                }
+                else
+                {
+                    Flag = true;
+                }
+            }
+            else
+            {
+                string new_Qualification = txt_QualificationEntry.Text.ToString();
+                string new_QualificationYear = cmb_GraduationYear.SelectedValue.ToString();
+                if (new_Qualification != "" && new_QualificationYear != "")
+                {
+                    DataTable dt_crs = new DataTable();
+                    dt_crs.Columns.Add("QualificationID");
+                    dt_crs.Columns.Add("GraduationYear");
+                    dt_crs.Columns.Add("QualificationName");
+                    DataRow dr = dt_crs.NewRow();
+                    dr["QualificationID"] = "0";
+                    dr["GraduationYear"] = new_QualificationYear;
+                    dr["QualificationName"] = new_Qualification;
+                    dt_crs.Rows.Add(dr);
+                    txt_QualificationEntry.Text = "";
+                    cmb_GraduationYear.ClearSelection();
+                    Session["dt_Qualification"] = dt_crs;
+
+                }
+                else
+                {
+                    Flag = true;
+                }
+            }
+            DataTable Radgrid_dt = (DataTable)Session["dt_Qualification"];
+            RadGrid_Qualification.DataSource = Radgrid_dt;
+            RadGrid_Qualification.DataBind();
+            if (Flag)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Qualification_Validation();", true);
+            }
+
+        }
+
+        protected void RadGrid_Qualification_ItemCommand(object sender, GridCommandEventArgs e)
+        {
+            if (e.CommandName == "Delete")
+            {
+                Set_SessionDt_Qualification();
+                DataTable dt = (DataTable)Session["dt_Qualification"];
+                GridDataItem dataItem = (GridDataItem)e.Item;
+                string _QualificationName = dataItem.GetDataKeyValue("QualificationName").ToString().Trim();
+                for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                {
+                    DataRow dr = dt.Rows[i];
+                    string ss = dr["QualificationName"].ToString().Trim();
+                    if (dr["QualificationName"].ToString().Trim() == _QualificationName)
+                    {
+                        dr.Delete();
+                    }
+                }
+                //-------------------------------------
+                Session["dt_Qualification"] = dt;
+                dt = (DataTable)Session["dt_Qualification"];
+                RadGrid_Qualification.DataSource = dt;
+                RadGrid_Qualification.DataBind();
+            }
+        }
+
+        protected void RadGrid_Qualification_NeedDataSource(object sender, GridNeedDataSourceEventArgs e)
+        {
+
+        }
+
+        protected void btn_SaveQualification_Click(object sender, EventArgs e)
+        {
+            Set_SessionDt_Qualification();
+            DataTable dt_Qualification = (DataTable)Session["dt_Qualification"];
+            //dt_Qualification.Columns.Remove("QualificationID");
+            int Result = obj.InsertQualification(dt_Qualification,Session["LOGIN_Epromise"].ToString());
+            if (Result > 0)
+            {
+                BindReportsSection();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(5);", true);
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(0);", true);
+            }
+        }
+        #endregion
+        #region Hobbies
+        public void Set_SessionDt_Hobbies()
+        {
+            DataTable dtRecords = new DataTable();
+            dtRecords.Columns.Add("HobbiesID", typeof(string));
+            dtRecords.Columns.Add("Hobbies", typeof(string));
+            foreach (GridDataItem item in RadGrid_Hobbies.Items)
+            {
+                DataRow dr = dtRecords.NewRow();
+                TextBox txt_Hobbies = (TextBox)item.FindControl("txt_Hobbies_Edit"); 
+                dr["HobbiesID"] = item.GetDataKeyValue("HobbiesID").ToString();
+                dr["Hobbies"] =txt_Hobbies.Text; 
+                dtRecords.Rows.Add(dr);
+            }
+            Session["dt_Hobbies"] = dtRecords;
+        }
+        protected void btn_Add_Hobbies_Click(object sender, EventArgs e)
+        {
+            var Flag = false;
+            int count = RadGrid_Hobbies.MasterTableView.Items.Count;
+            if (count > 0)
+            {
+                Set_SessionDt_Hobbies();//for setting Datatable
+                DataTable Check_dt = (DataTable)Session["dt_Hobbies"];
+                string new_Hobbies = txt_Hobbies.Text.ToString();
+                
+                if (new_Hobbies != "" && new_Hobbies != "")
+                {
+                    DataRow newRow = Check_dt.NewRow();
+                    newRow["HobbiesID"] = "0";
+                    newRow["Hobbies"] = new_Hobbies;
+                    Check_dt.Rows.Add(newRow);
+                    txt_Hobbies.Text = ""; 
+                    Session["dt_Hobbies"] = Check_dt;
+                }
+                else
+                {
+                    Flag = true;
+                }
+            }
+            else
+            {
+                string new_Hobbies = txt_Hobbies.Text.ToString(); 
+                if (new_Hobbies != "" && new_Hobbies != "")
+                {
+                    DataTable dt_crs = new DataTable();
+                    dt_crs.Columns.Add("HobbiesID");
+                    dt_crs.Columns.Add("Hobbies"); 
+                    DataRow dr = dt_crs.NewRow();
+                    dr["HobbiesID"] = "0";
+                    dr["Hobbies"] = new_Hobbies; 
+                    dt_crs.Rows.Add(dr);
+                    txt_Hobbies.Text = ""; 
+                    Session["dt_Hobbies"] = dt_crs;
+
+                }
+                else
+                {
+                    Flag = true;
+                }
+            }
+            DataTable Radgrid_dt = (DataTable)Session["dt_Hobbies"];
+            RadGrid_Hobbies.DataSource = Radgrid_dt;
+            RadGrid_Hobbies.DataBind();
+            if (Flag)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Hobbies_Validation();", true);
+            }
+        }
+
+        protected void RadGrid_Hobbies_ItemCommand(object sender, GridCommandEventArgs e)
+        {
+            if (e.CommandName == "Delete")
+            {
+                Set_SessionDt_Qualification();
+                DataTable dt = (DataTable)Session["dt_Hobbies"];
+                GridDataItem dataItem = (GridDataItem)e.Item;
+                string _Hobbies = dataItem.GetDataKeyValue("Hobbies").ToString().Trim();
+                for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                {
+                    DataRow dr = dt.Rows[i];
+                    string ss = dr["Hobbies"].ToString().Trim();
+                    if (dr["Hobbies"].ToString().Trim() == _Hobbies)
+                    {
+                        dr.Delete();
+                    }
+                }
+                //-------------------------------------
+                Session["dt_Hobbies"] = dt;
+                dt = (DataTable)Session["dt_Hobbies"];
+                RadGrid_Hobbies.DataSource = dt;
+                RadGrid_Hobbies.DataBind();
+            }
+        }
+
+        protected void btn_Save_Hobbies_Click(object sender, EventArgs e)
+        {
+
+            Set_SessionDt_Hobbies();
+            DataTable dt_Hobbies = (DataTable)Session["dt_Hobbies"]; 
+            int Result = obj.InsertHobbies(dt_Hobbies, Session["LOGIN_Epromise"].ToString());
+            if (Result > 0)
+            {
+                BindReportsSection();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(6);", true);
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SuccessAlert(0);", true);
+            }
         }
         #endregion
     }

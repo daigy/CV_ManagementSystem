@@ -13,5 +13,7 @@ namespace CV_ManagementSystem.App_Code.BO
         public string Client { get; set; }
         public string ContractPrice { get; set; }
         public string Consultant { get; set; }
+        public string Position { get; set; }
+        public string Description { get; set; }
     }
 }

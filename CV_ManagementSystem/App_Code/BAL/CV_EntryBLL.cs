@@ -107,7 +107,7 @@ namespace CV_ManagementSystem.App_Code.BAL
                 obj.getcommand.CommandType = CommandType.StoredProcedure;
                 obj.getcommand.Parameters.Clear();
                 obj.getcommand.CommandText = "USP_GetUserCVData";
-                obj.getcommand.Parameters.AddWithValue("@EpromisID ", EpromisID); 
+                obj.getcommand.Parameters.AddWithValue("@EpromisID", EpromisID); 
                 SqlDataAdapter dataAdapter = new SqlDataAdapter();
                 DataSet ds = new DataSet();
                 dataAdapter.SelectCommand = obj.getcommand;
@@ -199,7 +199,9 @@ namespace CV_ManagementSystem.App_Code.BAL
                 obj.getcommand.Parameters.AddWithValue("@ScopeOfWork", data.ScopeOfWork);
                 obj.getcommand.Parameters.AddWithValue("@Client", data.Client);
                 obj.getcommand.Parameters.AddWithValue("@ContractPrice", data.ContractPrice);
-                obj.getcommand.Parameters.AddWithValue("@Consultant", data.Consultant); 
+                obj.getcommand.Parameters.AddWithValue("@Consultant", data.Consultant);
+                obj.getcommand.Parameters.AddWithValue("@Position", data.Position);
+                obj.getcommand.Parameters.AddWithValue("@Description", data.Description);
 
                 int result = obj.getcommand.ExecuteNonQuery();
                 obj.Closeconnection();
@@ -374,6 +376,54 @@ namespace CV_ManagementSystem.App_Code.BAL
                 dataAdapter.SelectCommand = obj.getcommand;
                 dataAdapter.Fill(ds);
                 return ds.Tables[0];
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                obj.getcommand.Dispose();
+                obj.Closeconnection();
+            }
+        }
+        public int InsertQualification(DataTable dt_Qualification, string Epromis)
+        {
+            try
+            {
+                obj.Openconnection();
+                obj.getcommand.CommandType = CommandType.StoredProcedure;
+                obj.getcommand.Parameters.Clear();
+                obj.getcommand.CommandText = "USP_InsertQualification";
+                obj.getcommand.Parameters.AddWithValue("@dt_Qualification", dt_Qualification);
+                obj.getcommand.Parameters.AddWithValue("@Epromis", Epromis);
+                int result = obj.getcommand.ExecuteNonQuery();
+                obj.Closeconnection();
+                return result;
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                obj.getcommand.Dispose();
+                obj.Closeconnection();
+            }
+        } 
+        public int InsertHobbies(DataTable dt_Hobbies, string Epromis)
+        {
+            try
+            {
+                obj.Openconnection();
+                obj.getcommand.CommandType = CommandType.StoredProcedure;
+                obj.getcommand.Parameters.Clear();
+                obj.getcommand.CommandText = "USP_InsertHobbies";
+                obj.getcommand.Parameters.AddWithValue("@dt_Hobbies", dt_Hobbies);
+                obj.getcommand.Parameters.AddWithValue("@Epromis", Epromis);
+                int result = obj.getcommand.ExecuteNonQuery();
+                obj.Closeconnection();
+                return result;
             }
             catch
             {

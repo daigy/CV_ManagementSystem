@@ -150,6 +150,51 @@ namespace CV_ManagementSystem
         protected global::System.Web.UI.WebControls.Button btn_SavePersonalDetails;
 
         /// <summary>
+        /// txt_QualificationEntry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_QualificationEntry;
+
+        /// <summary>
+        /// cmb_GraduationYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadComboBox cmb_GraduationYear;
+
+        /// <summary>
+        /// btn_Add_Qualification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Add_Qualification;
+
+        /// <summary>
+        /// RadGrid_Qualification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadGrid RadGrid_Qualification;
+
+        /// <summary>
+        /// btn_SaveQualification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_SaveQualification;
+
+        /// <summary>
         /// txt_Courses control.
         /// </summary>
         /// <remarks>
@@ -402,6 +447,24 @@ namespace CV_ManagementSystem
         protected global::System.Web.UI.WebControls.TextBox txt_Project;
 
         /// <summary>
+        /// txt_PositionForEachPrjct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_PositionForEachPrjct;
+
+        /// <summary>
+        /// txt_DecriptionForProjct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_DecriptionForProjct;
+
+        /// <summary>
         /// txt_Client control.
         /// </summary>
         /// <remarks>
@@ -636,6 +699,24 @@ namespace CV_ManagementSystem
         protected global::System.Web.UI.WebControls.TextBox txt_NewProject;
 
         /// <summary>
+        /// txt_New_PositionForEachPrjct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_New_PositionForEachPrjct;
+
+        /// <summary>
+        /// txt_New_DescriptionForProjct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_New_DescriptionForProjct;
+
+        /// <summary>
         /// txt_NewClient control.
         /// </summary>
         /// <remarks>
@@ -679,6 +760,42 @@ namespace CV_ManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Edit_NewProject;
+
+        /// <summary>
+        /// txt_Hobbies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Hobbies;
+
+        /// <summary>
+        /// btn_Add_Hobbies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Add_Hobbies;
+
+        /// <summary>
+        /// RadGrid_Hobbies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadGrid RadGrid_Hobbies;
+
+        /// <summary>
+        /// btn_Save_Hobbies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Save_Hobbies;
 
         /// <summary>
         /// Combo_Template control.

@@ -182,9 +182,9 @@
         </div>
         <div class="card-body">
             <div class="demo-container size-medium">
-                <telerik:RadWizard RenderMode="Lightweight" ID="RadWizard1" runat="server" Height="1050px">
+                <telerik:RadWizard RenderMode="Lightweight" ID="RadWizard1" runat="server">
                     <WizardSteps>
-                        <telerik:RadWizardStep Title="Personal Info" CssClass="loginStep">
+                        <telerik:RadWizardStep Title="Personal Info" CssClass="loginStep" >
                             <div class="photo-cv-container">
                                 <div class="img-placeholder "><i class="fa fa-user-circle-o user-icon" runat="server" id="Profilephot0_Icon"></i>
                                     <asp:Image ID="img_ProfilePhoto"   runat="server" Height="100%" Width="100%" Visible="false" />
@@ -221,7 +221,7 @@
                                             <label for="pobox">P.O. Box</label>
                                             <asp:TextBox ID="txt_POBOx" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
-                                        <div class="form-group col-md-12">
+                                        <div class="form-group col-md-12" style="display:none;">
                                             <label for="Qualification">Qualification</label>
                                             <asp:TextBox ID="txt_Qualification" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
@@ -240,6 +240,77 @@
                                 </div>
                             </div>
                         </telerik:RadWizardStep>
+                        <telerik:RadWizardStep Title="Qualification">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <fieldset class="custom-fieldset">
+                                                        <legend class="custom-legend">QUALIFICATIONS</legend>
+                                                        <span style="color: #0d4fcd;">* Start with your latest completed graduation, then add previous ones in order.</span>
+                                                        <div class="form-row mt-3">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="lb_Qualification">Qualification</label>
+                                                                <asp:TextBox ID="txt_QualificationEntry" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                                            </div>
+                                                            <div class="form-group col-md-2">
+                                                                <label for="faxno">Graduation Year</label>
+                                                                <telerik:RadComboBox ID="cmb_GraduationYear" runat="server" RenderMode="Lightweight" CausesValidation="false" Filter="Contains" AllowCustomText="true" Width="100%" Skin="Silk" CssClass="minfo" EmptyMessage="Select Year">
+                                                                </telerik:RadComboBox>
+                                                            </div>
+                                                            <div class="form-group col-md-3 mt-3">
+                                                                <asp:Button ID="btn_Add_Qualification" runat="server" Text="ADD &#xf067;" CssClass="fa btn input-group-text " Style="font-weight: bold; border-radius: 8px; margin-right: -14px; background-color: #1f497d; color: white;" OnClick="btn_Add_Qualification_Click" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-12">
+                                                                <telerik:RadGrid ID="RadGrid_Qualification" Skin="Default" CssClass="myGridStyle" AutoGenerateColumns="false" runat="server" OnItemCommand="RadGrid_Qualification_ItemCommand" HeaderStyle-BackColor="#1f497d" HeaderStyle-ForeColor="White" OnNeedDataSource="RadGrid_Qualification_NeedDataSource">
+                                                                    <MasterTableView DataKeyNames="QualificationID,GraduationYear,QualificationName" ShowHeader="false" BorderWidth="1" HeaderStyle-Height="30" HeaderStyle-Font-Size="13px" HeaderStyle-Font-Bold="true" Font-Bold="false" Font-Size="15px">
+                                                                        <Columns>
+                                                                            <telerik:GridBoundColumn DataField="QualificationID" HeaderText="QualificationID" UniqueName="QualificationID" Display="false" />
+                                                                            <telerik:GridTemplateColumn HeaderText="Qualification" UniqueName="QualificationName" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="75%">
+                                                                                <ItemTemplate>
+                                                                                    <div>
+                                                                                        <ul>
+                                                                                            <li>
+                                                                                                <asp:TextBox ID="txt_QualificationName_Edit" CssClass="form-control" Text='<%#Eval("QualificationName") %>' runat="server" Width="100%"></asp:TextBox>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </ItemTemplate>
+                                                                            </telerik:GridTemplateColumn>
+                                                                            <telerik:GridTemplateColumn HeaderText="GraduationYear" UniqueName="GraduationYear" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="20%">
+                                                                                <ItemTemplate>
+                                                                                    <div>
+                                                                                        <asp:TextBox ID="txt_GraduationYear_Edit" CssClass="form-control" Text='<%#Eval("GraduationYear") %>' runat="server" Width="100%"></asp:TextBox>
+                                                                                    </div>
+                                                                                </ItemTemplate>
+                                                                            </telerik:GridTemplateColumn>
+                                                                            <telerik:GridTemplateColumn HeaderText="Delete" HeaderStyle-Width="5%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                                                <ItemTemplate>
+                                                                                    <div>
+                                                                                        <telerik:RadImageButton ID="btn_Qualification" runat="server" Height="30px" Width="30px" Image-Url="~/Resources/Images/TrashBin.png"
+                                                                                            CommandArgument='<%#Eval("QualificationName")%>' CommandName="Delete" ToolTip=" Delete " data-toggle="tooltip">
+                                                                                        </telerik:RadImageButton>
+                                                                                    </div>
+                                                                                </ItemTemplate>
+                                                                            </telerik:GridTemplateColumn>
+                                                                        </Columns>
+                                                                    </MasterTableView>
+                                                                </telerik:RadGrid>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-2">
+                                                                <asp:Button ID="btn_SaveQualification" runat="server" Text="Save Qualifications" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_SaveQualification_Click" />
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </telerik:RadWizardStep>
                         <telerik:RadWizardStep Title="Skils">
                             <div class="card mb-4">
                                 <div class="card-body">
@@ -481,6 +552,28 @@
                                                                                                                     <p><%# Eval("ProjectName") %></p>
                                                                                                                 </td>
                                                                                                             </tr>
+                                                                                                            <tr runat="server" visible='<%# !string.IsNullOrEmpty(Eval("Position").ToString()) %>'>
+                                                                                                                <td>
+                                                                                                                    <p><strong>Position </strong></p>
+                                                                                                                </td>
+                                                                                                                <td style="width: 1%;">
+                                                                                                                    <p>:</p>
+                                                                                                                </td>
+                                                                                                                <td>
+                                                                                                                    <p><%# Eval("Position") %></p>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                             <tr runat="server" visible='<%# !string.IsNullOrEmpty(Eval("Description").ToString()) %>'>
+                                                                                                                <td>
+                                                                                                                    <p><strong>Description </strong></p>
+                                                                                                                </td>
+                                                                                                                <td style="width: 1%;">
+                                                                                                                    <p>:</p>
+                                                                                                                </td>
+                                                                                                                <td>
+                                                                                                                    <p><%# Eval("Description") %></p>
+                                                                                                                </td>
+                                                                                                            </tr>
                                                                                                             <tr>
                                                                                                                 <td>
                                                                                                                     <p><strong>ScopeOfWork </strong></p>
@@ -576,6 +669,18 @@
                                                     <div class="form-group  col-md-6" runat="server" style="display: none;" id="Other_newEntryProject">
                                                         <label for="Project">Project Name</label>
                                                         <asp:TextBox ID="txt_Project" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                                 <div class="form-row">
+                                                    <div class="form-group  col-md-12">
+                                                        <label for="Position">Position </label>
+                                                        <asp:TextBox ID="txt_PositionForEachPrjct" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                                 <div class="form-row">
+                                                    <div class="form-group  col-md-12">
+                                                        <label for="Client">Describe what you did in this project</label>
+                                                        <asp:TextBox ID="txt_DecriptionForProjct" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
@@ -684,6 +789,28 @@
                                                                                                                     </td>
                                                                                                                     <td style="width: 60%;">
                                                                                                                         <p><%# Eval("ProjectName") %></p>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                                <tr runat="server" visible='<%# !string.IsNullOrEmpty(Eval("Position").ToString()) %>'>
+                                                                                                                    <td>
+                                                                                                                        <p><strong>Position </strong></p>
+                                                                                                                    </td>
+                                                                                                                    <td style="width: 1%;">
+                                                                                                                        <p>:</p>
+                                                                                                                    </td>
+                                                                                                                    <td>
+                                                                                                                        <p><%# Eval("Position") %></p>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                                <tr runat="server" visible='<%# !string.IsNullOrEmpty(Eval("Description").ToString()) %>'>
+                                                                                                                    <td>
+                                                                                                                        <p><strong>Description </strong></p>
+                                                                                                                    </td>
+                                                                                                                    <td style="width: 1%;">
+                                                                                                                        <p>:</p>
+                                                                                                                    </td>
+                                                                                                                    <td>
+                                                                                                                        <p><%# Eval("Description") %></p>
                                                                                                                     </td>
                                                                                                                 </tr>
                                                                                                                 <tr>
@@ -868,6 +995,20 @@
                                                                                                        </p>
                                                                                                     </td>
                                                                                                 </tr>
+                                                                                                <tr>
+                                                                                                    <td><p><strong>Position </strong></p> </td>
+                                                                                                        <td style="width:1%;"><p>:</p> </td>
+                                                                                                    <td><p>
+                                                                                                         <asp:TextBox ID="txt_Edit_PositionForEachPrjct" runat="server" Text='<%# Eval("Position") %>' CssClass="form-control" Width="100%"></asp:TextBox>
+                                                                                                     </p> </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td><p><strong>Describe what you did in this project </strong></p> </td>
+                                                                                                        <td style="width:1%;"><p>:</p> </td>
+                                                                                                    <td><p>
+                                                                                                         <asp:TextBox ID="txt_Edit_DescriptionForProjct" runat="server" Text='<%# Eval("Description") %>' CssClass="form-control" Width="100%"></asp:TextBox>
+                                                                                                     </p> </td>
+                                                                                                </tr>
                                                                                                  <tr>
                                                                                                     <td><p><strong>Client </strong></p> </td>
                                                                                                         <td style="width:1%;"><p>:</p> </td>
@@ -973,7 +1114,18 @@
                                                 <asp:TextBox ID="txt_NewProject" runat="server" CssClass="form-control" Width="100%" ></asp:TextBox>
                                             </div>
                                         </div>
-                                           
+                                            <div class="form-row">
+                                            <div class="form-group  col-md-12">
+                                                <label for="Client">Position </label>
+                                                <asp:TextBox ID="txt_New_PositionForEachPrjct" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <label for="ContractPrice">Describe what you did in this project</label>
+                                                <asp:TextBox ID="txt_New_DescriptionForProjct" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                            </div>
+                                        </div>
                                         <div class="form-row">
                                             <div class="form-group  col-md-12">
                                                 <label for="Client">Client</label>
@@ -1010,6 +1162,64 @@
                                 </div>
                             </div>
                         </telerik:RadWizardStep>
+                         <telerik:RadWizardStep Title="Hobbies">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <fieldset class="custom-fieldset">
+                                                        <legend class="custom-legend">HOBBIES</legend>
+                                                        <div class="form-row mt-3">
+                                                            <div class="form-group col-md-8">
+                                                                <label for="lb_Hobbies">Hobbies</label>
+                                                                <asp:TextBox ID="txt_Hobbies" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                                            </div>
+                                                            <div class="form-group col-md-3 mt-3">
+                                                                <asp:Button ID="btn_Add_Hobbies" runat="server" Text="ADD &#xf067;" CssClass="fa btn input-group-text " Style="font-weight: bold; border-radius: 8px; margin-right: -14px; background-color: #1f497d; color: white;" OnClick="btn_Add_Hobbies_Click" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-12">
+                                                                <telerik:RadGrid ID="RadGrid_Hobbies" Skin="Default" CssClass="myGridStyle" AutoGenerateColumns="false" runat="server" OnItemCommand="RadGrid_Hobbies_ItemCommand" HeaderStyle-BackColor="#1f497d" HeaderStyle-ForeColor="White" >
+                                                                    <MasterTableView DataKeyNames="HobbiesID,Hobbies" ShowHeader="false" BorderWidth="1" HeaderStyle-Height="30" HeaderStyle-Font-Size="13px" HeaderStyle-Font-Bold="true" Font-Bold="false" Font-Size="15px">
+                                                                        <Columns>
+                                                                            <telerik:GridBoundColumn DataField="HobbiesID" HeaderText="HobbiesID" UniqueName="QualificationID" Display="false" />
+                                                                            <telerik:GridTemplateColumn HeaderText="Hobbies" UniqueName="Hobbies" HeaderStyle-HorizontalAlign="Center" HeaderStyle-Width="75%">
+                                                                                <ItemTemplate>
+                                                                                    <div>
+                                                                                        <ul>
+                                                                                            <li>
+                                                                                                <asp:TextBox ID="txt_Hobbies_Edit" CssClass="form-control" Text='<%#Eval("Hobbies") %>' runat="server" Width="100%"></asp:TextBox>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </ItemTemplate>
+                                                                            </telerik:GridTemplateColumn>
+                                                                            <telerik:GridTemplateColumn HeaderText="Delete" HeaderStyle-Width="5%" ItemStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center">
+                                                                                <ItemTemplate>
+                                                                                    <div>
+                                                                                        <telerik:RadImageButton ID="btn_DeleteHobbies" runat="server" Height="30px" Width="30px" Image-Url="~/Resources/Images/TrashBin.png"
+                                                                                            CommandArgument='<%#Eval("Hobbies")%>' CommandName="Delete" ToolTip=" Delete " data-toggle="tooltip">
+                                                                                        </telerik:RadImageButton>
+                                                                                    </div>
+                                                                                </ItemTemplate>
+                                                                            </telerik:GridTemplateColumn>
+                                                                        </Columns>
+                                                                    </MasterTableView>
+                                                                </telerik:RadGrid>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-2">
+                                                                <asp:Button ID="btn_Save_Hobbies" runat="server" Text="Save Hobbies" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_Save_Hobbies_Click" />
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </telerik:RadWizardStep>
                         <telerik:RadWizardStep Title="DOWNLOAD" >
                             <div class="card mb-4">
                                 <div class="card-body">
@@ -1048,6 +1258,7 @@
                                 </div>
                             </div>
                         </telerik:RadWizardStep>
+
                     </WizardSteps>
                 </telerik:RadWizard>
             </div>
@@ -1126,6 +1337,17 @@
                 }
             });
         }
+        function Hobbies_Validation() {
+            swal.fire({
+                title: 'Please add the Hobbies details.',
+                icon: "warning",
+                buttonsStyling: false,
+                confirmButtonText: "OK",
+                customClass: {
+                    confirmButton: "btn btn-info"
+                }
+            });
+        }
         function ComputerSkills_Validation() {
             swal.fire({
                 title: 'Please add the computer skills details.',
@@ -1137,9 +1359,20 @@
                 }
             });
         }
+        function Qualification_Validation() {
+            swal.fire({
+                title: 'Please add the Qualification & year.',
+                icon: "warning",
+                buttonsStyling: false,
+                confirmButtonText: "OK",
+                customClass: {
+                    confirmButton: "btn btn-info"
+                }
+            });
+        }
         function SuccessAlert(val) {
             var titlemsg = "";
-            if (val == 1 || val == 2 || val == 3) {
+            if (val == 1 || val == 2 || val == 3 || val == 4 || val == 5 || val == 6) {
                 if (val == "1") {
                     titlemsg = 'Your Personal information updated successfully!!!'
                 }
@@ -1151,6 +1384,12 @@
                 }
                 if (val == "4") {
                     titlemsg = 'Profile photo uploaded successfully!!!'
+                }
+                if (val == "5") {
+                    titlemsg = 'Graduation details updated successfully!!!'
+                }
+                if (val == "6") {
+                    titlemsg = 'Hobbies details updated successfully!!!'
                 }
                 swal.fire({
                     title: titlemsg,
