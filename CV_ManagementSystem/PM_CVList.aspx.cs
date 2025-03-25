@@ -77,6 +77,8 @@ namespace CV_ManagementSystem
             DataTable dt_Experience = ds.Tables[3];
             DataTable dt_Experience2 = ds.Tables[4];
             DataTable dt_Projects = ds.Tables[5];
+            DataTable dt_Qualification = ds.Tables[6];
+            DataTable dt_Hobbies = ds.Tables[7];
             if (dt_Personal.Rows.Count > 0)
             {
                 ReportViewer ReportViewer_1 = new ReportViewer();
@@ -110,6 +112,9 @@ namespace CV_ManagementSystem
                 ReportViewer_1.LocalReport.DataSources.Add(new ReportDataSource("Experience", dt_Experience));
                 ReportViewer_1.LocalReport.DataSources.Add(new ReportDataSource("Projects", dt_Projects));
                 ReportViewer_1.LocalReport.DataSources.Add(new ReportDataSource("Experience2", dt_Experience2));
+                ReportViewer_1.LocalReport.DataSources.Add(new ReportDataSource("Qualification", dt_Qualification));
+                ReportViewer_1.LocalReport.DataSources.Add(new ReportDataSource("Hobbies", dt_Hobbies));
+
                 ReportViewer_1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(ReportProcessing);
                 ReportViewer_1.AsyncRendering = false;
                 ReportViewer_1.Visible = true;
