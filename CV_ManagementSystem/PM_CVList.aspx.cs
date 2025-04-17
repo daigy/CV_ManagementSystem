@@ -79,28 +79,32 @@ namespace CV_ManagementSystem
             DataTable dt_Projects = ds.Tables[5];
             DataTable dt_Qualification = ds.Tables[6];
             DataTable dt_Hobbies = ds.Tables[7];
+            string DownloadedFileName = "";
+            string EmployeeName = dt_Personal.Rows[0]["EmployeeName"].ToString();
+            string CurrentPosition = dt_Personal.Rows[0]["CurrentPosition"].ToString();
+            DownloadedFileName="ECC_" + CurrentPosition.Replace(" ", "_") +"_"+ EmployeeName.Replace(" ", "_");
             if (dt_Personal.Rows.Count > 0)
             {
                 ReportViewer ReportViewer_1 = new ReportViewer();
-                string DownloadedFileName = "";
+                
                 if (TemplateVal == "1")
                 {
-                    DownloadedFileName = epromis + "_CV_Template1.";
+                    //DownloadedFileName = epromis + "_CV_Template1.";
                     ReportViewer_1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp.rdlc");
                 }
                 else if (TemplateVal == "2")
                 {
-                    DownloadedFileName = epromis + "_CV_Template2.";
+                    //DownloadedFileName = epromis + "_CV_Template2.";
                     ReportViewer_1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_2.rdlc");
                 }
                 else if (TemplateVal == "3")
                 {
-                    DownloadedFileName = epromis + "_CV_Template3.";
+                    //DownloadedFileName = epromis + "_CV_Template3.";
                     ReportViewer_1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_3.rdlc");
                 }
                 else if (TemplateVal == "4")
                 {
-                    DownloadedFileName = epromis + "_CV_Template4.";
+                    //DownloadedFileName = epromis + "_CV_Template4.";
                     ReportViewer_1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_4.rdlc");
                 }
 

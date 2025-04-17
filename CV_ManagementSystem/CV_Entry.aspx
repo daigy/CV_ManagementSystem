@@ -230,11 +230,15 @@
                                             <asp:TextBox ID="txt_Nationality" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <label for="Languages">Languages (Comma separated)</label>
+                                            <label for="Languages">Languages (Comma separated)
+                                                <span>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txt_Languages" ValidationGroup="Validation4"></asp:RequiredFieldValidator>
+                                                             </span>
+                                            </label>
                                             <asp:TextBox ID="txt_Languages" runat="server" CssClass="form-control" Width="100%" placeholder="e.g. English, Arabic"></asp:TextBox>
                                         </div>
                                         <div class="form-group col-md-12">
-                                             <asp:Button ID="btn_SavePersonalDetails" runat="server" Text="Update Personal Deatils" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_SavePersonalDetails_Click" />
+                                             <asp:Button ID="btn_SavePersonalDetails"  ValidationGroup="Validation4" runat="server" Text="Update Personal Deatils" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_SavePersonalDetails_Click" />
                                         </div>
                                     </div>
                                 </div>
@@ -673,7 +677,10 @@
                                                 </div>
                                                  <div class="form-row">
                                                     <div class="form-group  col-md-12">
-                                                        <label for="Position">Position </label>
+                                                        <label for="Position">Position 
+                                                            <span>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txt_PositionForEachPrjct" ValidationGroup="Validation1"></asp:RequiredFieldValidator>
+                                                             </span></label>
                                                         <asp:TextBox ID="txt_PositionForEachPrjct" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                                     </div>
                                                 </div>
@@ -709,7 +716,7 @@
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-2">
-                                                        <asp:Button ID="btn_SaveProject" runat="server" Text="Save" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_SaveProject_Click" />
+                                                        <asp:Button ID="btn_SaveProject" runat="server" Text="Save" ValidationGroup="Validation1" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_SaveProject_Click" />
                                                     </div>
                                                     <div class="form-group col-md-3" style="margin-top: -2px; padding: 5px; border: 1px dashed #ccc;">
                                                         <div class="text-center">
@@ -996,7 +1003,11 @@
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td><p><strong>Position </strong></p> </td>
+                                                                                                    <td><p><strong>Position 
+                                                                                                        <span>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="txt_Edit_PositionForEachPrjct" ForeColor="Red" ValidationGroup="Validation3"></asp:RequiredFieldValidator>
+                                                             </span>
+                                                                                                           </strong></p> </td>
                                                                                                         <td style="width:1%;"><p>:</p> </td>
                                                                                                     <td><p>
                                                                                                          <asp:TextBox ID="txt_Edit_PositionForEachPrjct" runat="server" Text='<%# Eval("Position") %>' CssClass="form-control" Width="100%"></asp:TextBox>
@@ -1043,7 +1054,7 @@
                                                                                                      <td></td>
                                                                                                     <td style="text-align:right;">
                                                                                                         <telerik:RadImageButton ID="btn_Project_Delete" runat="server" Height="30px" Width="30px" Image-Url="~/Resources/Images/TrashBin.png"
-                                                                                    CommandArgument='<%#Eval("ProjectTranID")%>' CommandName="DeleteProject" ToolTip=" Delete " data-toggle="tooltip">
+                                                                                    CommandArgument='<%#Eval("ProjectTranID")%>' CommandName="DeleteProject" ToolTip=" Delete " data-toggle="tooltip" >
                                                                                 </telerik:RadImageButton>
                                                                                                     </td>
                                                                                                 </tr>
@@ -1089,7 +1100,7 @@
                                     </div>
                                       <div id="btn_Update_Main_And_Project_Section" class="form-row">
                                             <div class="form-group col-md-12">
-                                                  <asp:Button ID="btn_SaveEditMainExperience" runat="server" Text="Update Details" CssClass="fa btn input-group-text custom-save-button MainExperienceSection" Style="font-weight: bold;" OnClick="btn_SaveEditMainExperience_Click" />
+                                                  <asp:Button ID="btn_SaveEditMainExperience" runat="server" Text="Update Details" ValidationGroup="Validation3" CssClass="fa btn input-group-text custom-save-button MainExperienceSection" Style="font-weight: bold;" OnClick="btn_SaveEditMainExperience_Click" />
                                               <%--  <button type="button" id="Save_Edit_MainExperienceButton" class="fa btn input-group-text custom-save-button MainExperienceSection">Update Details</button>
                                                 <asp:Button ID="btn_SaveEditMainExperience" runat="server" Style="visibility: hidden;" OnClick="btn_SaveEditMainExperience_Click" />--%>
                                             </div>
@@ -1116,7 +1127,11 @@
                                         </div>
                                             <div class="form-row">
                                             <div class="form-group  col-md-12">
-                                                <label for="Client">Position </label>
+                                                <label for="Client">Position 
+                                                     <span>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txt_New_PositionForEachPrjct" ValidationGroup="Validation2"></asp:RequiredFieldValidator>
+                                                             </span>
+                                                </label>
                                                 <asp:TextBox ID="txt_New_PositionForEachPrjct" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                             </div>
                                         </div>
@@ -1152,7 +1167,7 @@
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
-                                                <asp:Button ID="btn_Edit_NewProject" runat="server" Text="Save New Project Details" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_Edit_NewProject_Click" />
+                                                <asp:Button ID="btn_Edit_NewProject" ValidationGroup="Validation2" runat="server" Text="Save New Project Details" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_Edit_NewProject_Click" />
                                             </div>
                                         </div>
                                       </div>
