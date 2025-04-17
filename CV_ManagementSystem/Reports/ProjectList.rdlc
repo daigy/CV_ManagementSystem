@@ -502,6 +502,77 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
+                  <Height>0.23622in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox7">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Consultant</Value>
+                                  <Style>
+                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Bottom</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Consultant">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Consultant.Value</Value>
+                                  <Style>
+                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Consultant</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <VerticalAlign>Bottom</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
                   <Height>0.14583in</Height>
                   <TablixCells>
                     <TablixCell>
@@ -583,7 +654,11 @@
                 <TablixMember>
                   <Group Name="Details" />
                   <TablixMembers>
-                    <TablixMember />
+                    <TablixMember>
+                      <Visibility>
+                        <Hidden>=IIf(Fields!ProjectName.Value&lt;&gt;"",false,true)</Hidden>
+                      </Visibility>
+                    </TablixMember>
                     <TablixMember>
                       <Visibility>
                         <Hidden>=IIf(Fields!Position.Value&lt;&gt;"",false,true)</Hidden>
@@ -609,6 +684,11 @@
                         <Hidden>=IIf(Fields!ScopeOfWork.Value&lt;&gt;"",false,true)</Hidden>
                       </Visibility>
                     </TablixMember>
+                    <TablixMember>
+                      <Visibility>
+                        <Hidden>=IIf(Fields!Consultant.Value&lt;&gt;"",false,true)</Hidden>
+                      </Visibility>
+                    </TablixMember>
                     <TablixMember />
                   </TablixMembers>
                 </TablixMember>
@@ -617,7 +697,7 @@
             <DataSetName>Projects</DataSetName>
             <Top>0.34667in</Top>
             <Left>0.10292in</Left>
-            <Height>1.59071in</Height>
+            <Height>1.82693in</Height>
             <Width>4.82291in</Width>
             <Style>
               <Border>
@@ -659,7 +739,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>5.09679cm</Height>
+        <Height>5.65242cm</Height>
         <Style />
       </Body>
       <Width>12.74973cm</Width>
