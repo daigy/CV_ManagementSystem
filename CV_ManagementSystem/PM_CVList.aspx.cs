@@ -166,7 +166,8 @@ namespace CV_ManagementSystem
             DataTable dt = new DataTable();
             dt.Columns.Add("CV_TranID", typeof(int));
             dt.Columns.Add("Epromis", typeof(string));
-
+            dt.Columns.Add("EmployeeName", typeof(string));
+            dt.Columns.Add("CurrentPosition", typeof(string));
             // Get selected CVs
             foreach (GridDataItem item in RadGrid_CV.MasterTableView.Items)
             {
@@ -175,10 +176,12 @@ namespace CV_ManagementSystem
                 {
                     int cvTranID = Convert.ToInt32(item.GetDataKeyValue("CV_TranID"));
                     string epromis = item["Epromis"].Text.Trim();
-                    dt.Rows.Add(cvTranID, epromis);
+                    string EmployeeName = item["EmployeeName"].Text.Trim();
+                    string CurrentPosition = item["CurrentPosition"].Text.Trim();
+                    dt.Rows.Add(cvTranID, epromis, EmployeeName, CurrentPosition);
                 }
             }
-
+            string DownloadedFileName = "";
             if (dt.Rows.Count > 0)
             {
                 using (MemoryStream zipStream = new MemoryStream())
@@ -188,12 +191,15 @@ namespace CV_ManagementSystem
                         foreach (DataRow rw in dt.Rows)
                         {
                             string epromis = rw["Epromis"].ToString();
+                            string Employee_Name = rw["EmployeeName"].ToString();
+                            string Current_Position = rw["CurrentPosition"].ToString();
                             int cvTranID = Convert.ToInt32(rw["CV_TranID"]);
                             byte[] reportBytes = GenerateReports_Zip(epromis, cvTranID);
 
                             if (reportBytes != null)
                             {
-                                ZipArchiveEntry zipEntry = zip.CreateEntry(epromis + "_CV.pdf");
+                                DownloadedFileName = "ECC_" + Current_Position.Replace(" ", "_") + "_" + Employee_Name.Replace(" ", "_");
+                                ZipArchiveEntry zipEntry = zip.CreateEntry(DownloadedFileName + ".pdf");
                                 using (var entryStream = zipEntry.Open())
                                 {
                                     entryStream.Write(reportBytes, 0, reportBytes.Length);
@@ -220,12 +226,17 @@ namespace CV_ManagementSystem
         {
             string TemplateVal = Combo_Template.SelectedValue.ToString();
             DataSet ds = obj.GetUserCVData_Report(epromis);
+           
+
             DataTable dt_Personal = ds.Tables[0];
             DataTable dt_Courses = ds.Tables[1];
             DataTable dt_Skills = ds.Tables[2];
+
             DataTable dt_Experience = ds.Tables[3];
             DataTable dt_Experience2 = ds.Tables[4];
             DataTable dt_Projects = ds.Tables[5];
+            DataTable dt_Qualification = ds.Tables[6];
+            DataTable dt_Hobbies = ds.Tables[7];
 
             if (dt_Personal.Rows.Count > 0)
             {
@@ -248,6 +259,8 @@ namespace CV_ManagementSystem
                 ReportViewer_1.LocalReport.DataSources.Add(new ReportDataSource("Experience", dt_Experience));
                 ReportViewer_1.LocalReport.DataSources.Add(new ReportDataSource("Projects", dt_Projects));
                 ReportViewer_1.LocalReport.DataSources.Add(new ReportDataSource("Experience2", dt_Experience2));
+                ReportViewer_1.LocalReport.DataSources.Add(new ReportDataSource("Qualification", dt_Qualification));
+                ReportViewer_1.LocalReport.DataSources.Add(new ReportDataSource("Hobbies", dt_Hobbies));
                 ReportViewer_1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(ReportProcessing);
                 ReportViewer_1.LocalReport.Refresh();
 
