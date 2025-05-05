@@ -1440,6 +1440,7 @@
             $("#loader").hide();
         }
         function BulkDataUpdated() {
+            $("#loader").hide();
             swal.fire({
                 title: "Your Experience updated successfully!!!",
                 text: 'Redirecting...',
@@ -1453,11 +1454,25 @@
             });
         }
         function DeleteAlert() {
+            $("#loader").hide();
             swal.fire({
                 title: 'Deleted successfully!!!',
                 text: 'Redirecting...',
                 timer: 2000,
                 icon: "success",
+                buttonsStyling: false,
+                confirmButtonText: "OK",
+                customClass: {
+                    confirmButton: "btn btn-info"
+                }
+            });
+        }
+        function ProjectNameValidation_Others() {
+            $("#loader").hide();
+            swal.fire({
+                title: 'Please enter Project Name',
+                timer: 5000,
+                icon: "warning",
                 buttonsStyling: false,
                 confirmButtonText: "OK",
                 customClass: {

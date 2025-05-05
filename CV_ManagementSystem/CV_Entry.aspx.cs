@@ -685,26 +685,33 @@ namespace CV_ManagementSystem
                 {
                     data.ProjectName = selectedPRJCT;
                 }
-                data.ExperienceTranID =Convert.ToInt32(CurrentInserted_hdnTranID.Value);
-                data.ScopeOfWork = txt_ScopeOfWork.Text.ToString();
-                data.Client = txt_Client.Text.ToString();
-                data.ContractPrice = txt_ContractPrice.Text.ToString();
-                data.Consultant = txt_Consultant.Text.ToString();
-                data.Position=txt_PositionForEachPrjct.Text.ToString();
-                data.Description=txt_DecriptionForProjct.Text.ToString();
-                int Result = obj.Insert_ExperienceProject(data);
-                if (Result > 0)
+                if (data.ProjectName != "")
                 {
-                    txt_Project.Text = "";
-                    txt_ScopeOfWork.Text = "";
-                    txt_Client.Text = "";
-                    txt_ContractPrice.Text = "";
-                    txt_Consultant.Text = "";
-                    Combo_NewProject.ClearSelection();
-                    txt_PositionForEachPrjct.Text = "";
-                    txt_DecriptionForProjct.Text = "";
+                    data.ExperienceTranID = Convert.ToInt32(CurrentInserted_hdnTranID.Value);
+                    data.ScopeOfWork = txt_ScopeOfWork.Text.ToString();
+                    data.Client = txt_Client.Text.ToString();
+                    data.ContractPrice = txt_ContractPrice.Text.ToString();
+                    data.Consultant = txt_Consultant.Text.ToString();
+                    data.Position = txt_PositionForEachPrjct.Text.ToString();
+                    data.Description = txt_DecriptionForProjct.Text.ToString();
+                    int Result = obj.Insert_ExperienceProject(data);
+                    if (Result > 0)
+                    {
+                        txt_Project.Text = "";
+                        txt_ScopeOfWork.Text = "";
+                        txt_Client.Text = "";
+                        txt_ContractPrice.Text = "";
+                        txt_Consultant.Text = "";
+                        Combo_NewProject.ClearSelection();
+                        txt_PositionForEachPrjct.Text = "";
+                        txt_DecriptionForProjct.Text = "";
+                    }
+                    SetCurretlyInserting_Experience(data.ExperienceTranID);
                 }
-                SetCurretlyInserting_Experience(data.ExperienceTranID);
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "ProjectNameValidation_Others();", true);
+                }
             }
         }
         protected void AllExperience_RadListView_ItemDataBound(object sender, RadListViewItemEventArgs e)
@@ -966,28 +973,33 @@ namespace CV_ManagementSystem
                 {
                     data.ProjectName = selectedPRJCT;
                 }
-                   
-                data.ScopeOfWork = txt_NewScopeOfWork.Text.ToString();
-                data.Client = txt_NewClient.Text.ToString();
-                data.ContractPrice = txt_NewContractPrice.Text.ToString();
-                data.Consultant = txt_NewConsultant.Text.ToString();
-                data.Position = txt_New_PositionForEachPrjct.Text.ToString();
-                data.Description = txt_New_DescriptionForProjct.Text.ToString();
-                int Result = obj.Insert_ExperienceProject(data);
-                if (Result > 0)
+                if (data.ProjectName != "")
                 {
-                    txt_NewProject.Text = "";
-                    txt_NewScopeOfWork.Text = "";
-                    txt_NewClient.Text = "";
-                    txt_NewContractPrice.Text = "";
-                    txt_NewConsultant.Text = "";
-                    ComboProject.ClearSelection();
-                    txt_New_PositionForEachPrjct.Text = "";
-                    txt_New_DescriptionForProjct.Text = "";
-                    EditClick_VisibleSection();
-                    BindReportsSection();
+                    data.ScopeOfWork = txt_NewScopeOfWork.Text.ToString();
+                    data.Client = txt_NewClient.Text.ToString();
+                    data.ContractPrice = txt_NewContractPrice.Text.ToString();
+                    data.Consultant = txt_NewConsultant.Text.ToString();
+                    data.Position = txt_New_PositionForEachPrjct.Text.ToString();
+                    data.Description = txt_New_DescriptionForProjct.Text.ToString();
+                    int Result = obj.Insert_ExperienceProject(data);
+                    if (Result > 0)
+                    {
+                        txt_NewProject.Text = "";
+                        txt_NewScopeOfWork.Text = "";
+                        txt_NewClient.Text = "";
+                        txt_NewContractPrice.Text = "";
+                        txt_NewConsultant.Text = "";
+                        ComboProject.ClearSelection();
+                        txt_New_PositionForEachPrjct.Text = "";
+                        txt_New_DescriptionForProjct.Text = "";
+                        EditClick_VisibleSection();
+                        BindReportsSection();
+                    }
                 }
-              
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "ProjectNameValidation_Others();", true);
+                }
             }
         }
         protected void ComboProject_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
