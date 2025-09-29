@@ -719,7 +719,7 @@ namespace CV_ManagementSystem
                 }
                 else
                 {
-                    data.ProjectName = selectedPRJCT;
+                    data.ProjectName = ExtractProjectName(selectedPRJCT);
                 }
                 if (data.ProjectName != "")
                 {
@@ -1007,7 +1007,7 @@ namespace CV_ManagementSystem
                 }
                 else
                 {
-                    data.ProjectName = selectedPRJCT;
+                    data.ProjectName = ExtractProjectName(selectedPRJCT);
                 }
                 if (data.ProjectName != "")
                 {
@@ -1052,6 +1052,7 @@ namespace CV_ManagementSystem
             }
             else
             {
+                selectedPRJCT = ExtractProjectName(selectedPRJCT);
                 Other_NewProject.Style["display"] = "none";
                 DataTable dt = obj.GetExistingProjectsDeatils(selectedPRJCT);
                 if(dt.Rows.Count > 0)
@@ -1085,6 +1086,7 @@ namespace CV_ManagementSystem
             }
             else
             {
+                selectedPRJCT = ExtractProjectName(selectedPRJCT);
                 Other_newEntryProject.Style["display"] = "none";
                 DataTable dt = obj.GetExistingProjectsDeatils(selectedPRJCT);
                 if (dt.Rows.Count > 0)
@@ -1481,5 +1483,10 @@ namespace CV_ManagementSystem
             }
         }
         #endregion
+        private string ExtractProjectName(string fullText)
+        {
+            var parts = fullText.Split('-');
+            return parts.Length > 1 ? string.Join("-", parts.Skip(1)).Trim() : fullText;
+        }
     }
 }
