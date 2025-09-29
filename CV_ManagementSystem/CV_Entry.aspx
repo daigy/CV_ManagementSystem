@@ -306,7 +306,7 @@
                                                         </div>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-2">
-                                                                <asp:Button ID="btn_SaveQualification" runat="server" Text="Save Qualifications" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_SaveQualification_Click" />
+                                                                <asp:Button ID="btn_SaveQualification" runat="server" Text="Save Qualifications" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_SaveQualification_Click"   />
                                                             </div>
                                                         </div>
                                                     </fieldset>

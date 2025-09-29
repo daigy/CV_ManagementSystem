@@ -166,7 +166,7 @@ namespace CV_ManagementSystem
                 dr["Courses"] = txt1.Text;
                 dtRecords.Rows.Add(dr);
             }
-            Session["dt_SectionA"] = dtRecords;
+            Session["dt_SectionA"] = dtRecords; 
         }
         protected void btn_AddCOURSES_Click(object sender, EventArgs e)
         {
@@ -215,6 +215,14 @@ namespace CV_ManagementSystem
             DataTable Radgrid_dt = (DataTable)Session["dt_SectionA"];
             SectionA_Courses.DataSource = Radgrid_dt;
             SectionA_Courses.DataBind();
+            if (Radgrid_dt.Rows.Count > 0)
+            {
+                btn_SaveCourses.Visible = true;
+            }
+            else
+            {
+                btn_SaveCourses.Visible = false;
+            }
             if (Flag)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Courses_Validation();", true);
@@ -334,6 +342,14 @@ namespace CV_ManagementSystem
             DataTable Radgrid_dt = (DataTable)Session["dt_SectionB"];
             SectionB_ComputerSkills.DataSource = Radgrid_dt;
             SectionB_ComputerSkills.DataBind();
+            if(Radgrid_dt.Rows.Count>0)
+            {
+                btn_SaveComputerSkills.Visible = true;
+            }
+            else
+            {
+                btn_SaveComputerSkills.Visible = false;
+            }
             if (Flag)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "ComputerSkills_Validation();", true);
@@ -496,12 +512,22 @@ namespace CV_ManagementSystem
                     Session["dt_SectionA"] = dt_Courses;
                     SectionA_Courses.DataSource = dt_Courses;
                     SectionA_Courses.DataBind();
+                    btn_SaveCourses.Visible = true;
             }
-            if (dt_ComputerSkills != null && dt_ComputerSkills.Rows.Count>0)
+            else
             {
-                    Session["dt_SectionB"] = dt_ComputerSkills;
-                    SectionB_ComputerSkills.DataSource = dt_ComputerSkills;
-                    SectionB_ComputerSkills.DataBind();
+                btn_SaveCourses.Visible = false;
+            }
+            if (dt_ComputerSkills != null && dt_ComputerSkills.Rows.Count > 0)
+            {
+                Session["dt_SectionB"] = dt_ComputerSkills;
+                SectionB_ComputerSkills.DataSource = dt_ComputerSkills;
+                SectionB_ComputerSkills.DataBind();
+                btn_SaveComputerSkills.Visible = true;
+            }
+            else
+            {
+                btn_SaveComputerSkills.Visible = false;
             }
             #endregion
 
@@ -527,11 +553,16 @@ namespace CV_ManagementSystem
                 Session["dt_Qualification"] = dt_Quali;
                 RadGrid_Qualification.DataSource = dt_Quali;
                 RadGrid_Qualification.DataBind();
+                btn_SaveQualification.Visible = true;
             }
-            #endregion
-            #region Hobbies
+            else
+            {
+                btn_SaveQualification.Visible = false;
+            }
+                #endregion
+                #region Hobbies
 
-            DataTable dt_Hobs = new DataTable();
+                DataTable dt_Hobs = new DataTable();
             dt_Hobs.Columns.Add("HobbiesID");
             dt_Hobs.Columns.Add("Hobbies"); 
 
@@ -550,6 +581,11 @@ namespace CV_ManagementSystem
                 Session["dt_Hobbies"] = dt_Hobs;
                 RadGrid_Hobbies.DataSource = dt_Hobs;
                 RadGrid_Hobbies.DataBind();
+                btn_Save_Hobbies.Visible = true;
+            }
+            else
+            {
+                btn_Save_Hobbies.Visible = false;
             }
             #endregion
         }
@@ -1263,6 +1299,14 @@ namespace CV_ManagementSystem
             DataTable Radgrid_dt = (DataTable)Session["dt_Qualification"];
             RadGrid_Qualification.DataSource = Radgrid_dt;
             RadGrid_Qualification.DataBind();
+            if (Radgrid_dt.Rows.Count > 0)
+            {
+                btn_SaveQualification.Visible = true;
+            }
+            else
+            {
+                btn_SaveQualification.Visible = false;
+            }
             if (Flag)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Qualification_Validation();", true);
@@ -1381,6 +1425,14 @@ namespace CV_ManagementSystem
             DataTable Radgrid_dt = (DataTable)Session["dt_Hobbies"];
             RadGrid_Hobbies.DataSource = Radgrid_dt;
             RadGrid_Hobbies.DataBind();
+            if (Radgrid_dt.Rows.Count > 0)
+            {
+                btn_Save_Hobbies.Visible = true;
+            }
+            else
+            {
+                btn_Save_Hobbies.Visible = false;
+            }
             if (Flag)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "Hobbies_Validation();", true);
