@@ -339,11 +339,11 @@
             if (ROLE == "IT") {
 
             }
-            else if (ROLE == "PM") {
+            else if (ROLE == "PM") {//all users role is PM except IT & HR
                 $("#PM_CV_List").addClass("disable-click");
             }
-            else if (ROLE == "HR") {
-                $("#CV_Entry").addClass("disable-click");
+            else if (ROLE == "HR") { //HR needs to view the kog page & entry page also
+                //$("#CV_Entry").addClass("disable-click");
                
             }
             
