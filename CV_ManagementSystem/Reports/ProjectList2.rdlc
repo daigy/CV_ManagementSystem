@@ -563,7 +563,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.14583in</Height>
+                  <Height>0.09375in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -589,14 +589,25 @@
                             <Border>
                               <Style>None</Style>
                             </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.1008in</Height>
+                  <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox2">
@@ -627,8 +638,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
@@ -676,6 +689,7 @@
                     </TablixMember>
                     <TablixMember />
                     <TablixMember />
+                    <TablixMember />
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
@@ -683,7 +697,7 @@
             <DataSetName>Projects</DataSetName>
             <Top>0.34667in</Top>
             <Left>0.10292in</Left>
-            <Height>1.8061in</Height>
+            <Height>1.85482in</Height>
             <Width>7.76041in</Width>
             <Style>
               <Border>
@@ -725,7 +739,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>5.81116cm</Height>
+        <Height>5.75054cm</Height>
         <Style />
       </Body>
       <Width>20.10515cm</Width>
