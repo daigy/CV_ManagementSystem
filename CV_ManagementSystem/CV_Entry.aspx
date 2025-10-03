@@ -153,6 +153,9 @@
             font-family: FontAwesome;
             margin-right: 8px;
         }
+        .custom-save-button{
+           cursor:pointer!important;
+        }
     </style>
     <link href="Resources/Custom/css/my_legend.css" rel="stylesheet" />
     <link href="Resources/Custom/css/profilePhoto.css" rel="stylesheet" />
