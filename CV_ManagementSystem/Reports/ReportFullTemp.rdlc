@@ -1676,7 +1676,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="JobDescription1">
+                    <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1684,15 +1684,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!JobDescription.Value</Value>
-                              <Style>
-                                <FontFamily>Trebuchet MS</FontFamily>
-                              </Style>
+                              <MarkupType>HTML</MarkupType>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>JobDescription1</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>

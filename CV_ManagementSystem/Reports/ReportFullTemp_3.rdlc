@@ -125,7 +125,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1686,6 +1685,7 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!JobDescription.Value</Value>
+                              <MarkupType>HTML</MarkupType>
                               <Style>
                                 <FontFamily>Trebuchet MS</FontFamily>
                               </Style>
