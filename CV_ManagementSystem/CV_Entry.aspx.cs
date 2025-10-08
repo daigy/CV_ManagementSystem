@@ -668,7 +668,7 @@ namespace CV_ManagementSystem
                 data.EndMonth = Convert.ToInt32(ddl_EndMonth.SelectedValue);
                 data.EndYear = Convert.ToInt32(date1.Year);
             }
-            data.JobDescription=txt_JobDescription.Text.ToString();
+            data.JobDescription=txt_JobDescription1.Content.ToString();
             int LastInserted_TranID= obj.InsertExperience(data);
            
             CurrentInserted_hdnTranID.Value=LastInserted_TranID.ToString();
@@ -793,7 +793,7 @@ namespace CV_ManagementSystem
             txt_JobTitle.Text = "";
             txt_StartYear.Clear();
             txt_EndYear.Clear();
-            txt_JobDescription.Text = "";
+            txt_JobDescription1.Content = "";
 
         }
         protected void ViewAllExperience_FromProjects_Click(object sender, EventArgs e)
@@ -815,7 +815,7 @@ namespace CV_ManagementSystem
             txt_JobTitle.Text = "";
             txt_StartYear.Clear();
             txt_EndYear.Clear();
-            txt_JobDescription.Text = "";
+            txt_JobDescription1.Content = "";
             BindExperience();
         }
         public void EditClick_VisibleSection()
@@ -867,7 +867,7 @@ namespace CV_ManagementSystem
                 data.EndMonth = Convert.ToInt32(ddl_EditEndMonth.SelectedValue);
                 data.EndYear = Convert.ToInt32(date1.Year);
             }
-            data.JobDescription = txt_EditJobDescription.Text.ToString();
+            data.JobDescription = txt_EditJobDescription1.Content.ToString();
             int LastInserted_TranID = obj.InsertExperience(data);
             #endregion
             #region EmployerProjects
@@ -968,7 +968,7 @@ namespace CV_ManagementSystem
                     int endYear = Convert.ToInt32(dt.Rows[0]["EndYear"]);
                     txt_EditEndYear.SelectedDate = new DateTime(endYear, 1, 1);
                 }
-                txt_EditJobDescription.Text = dt.Rows[0]["JobDescription"].ToString();
+                txt_EditJobDescription1.Content = dt.Rows[0]["JobDescription"].ToString();
             }
             DataTable dt_projects = obj.GetExperienceProjectData(ExperienceTranID);
             if (dt_projects.Rows.Count > 0)

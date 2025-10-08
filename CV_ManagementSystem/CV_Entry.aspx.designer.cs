@@ -366,13 +366,13 @@ namespace CV_ManagementSystem
         protected global::Telerik.Web.UI.RadMonthYearPicker txt_EndYear;
 
         /// <summary>
-        /// txt_JobDescription control.
+        /// txt_JobDescription1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_JobDescription;
+        protected global::Telerik.Web.UI.RadEditor txt_JobDescription1;
 
         /// <summary>
         /// chk_CurrentlyWorking control.
@@ -636,13 +636,13 @@ namespace CV_ManagementSystem
         protected global::Telerik.Web.UI.RadMonthYearPicker txt_EditEndYear;
 
         /// <summary>
-        /// txt_EditJobDescription control.
+        /// txt_EditJobDescription1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_EditJobDescription;
+        protected global::Telerik.Web.UI.RadEditor txt_EditJobDescription1;
 
         /// <summary>
         /// chk_EditCurrentlyWorking control.

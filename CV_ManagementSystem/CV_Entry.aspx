@@ -153,9 +153,35 @@
             font-family: FontAwesome;
             margin-right: 8px;
         }
-        .custom-save-button{
-           cursor:pointer!important;
+
+        .custom-save-button {
+            cursor: pointer !important;
         }
+       div.RadEditor .reContent ol {
+    list-style-type: decimal !important;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+/* Unordered list (bullets) */
+div.RadEditor .reContent ul {
+    list-style-type: disc !important;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+/* Make sure li elements display correctly */
+div.RadEditor .reContent li {
+    display: list-item !important;
+}
+/* Ensure bold tags render correctly inside RadEditor */
+.RadEditor .reContent strong,
+.RadEditor .reContent b {
+    font-weight: bold !important;
+}
+.dataGroup ul{
+        list-style-type: disc!important;
+}
     </style>
     <link href="Resources/Custom/css/my_legend.css" rel="stylesheet" />
     <link href="Resources/Custom/css/profilePhoto.css" rel="stylesheet" />
@@ -486,7 +512,46 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label for="JobDescription">Describe what you did in this position</label>
-                                                <asp:TextBox ID="txt_JobDescription" TextMode="MultiLine" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                                <%--<asp:TextBox ID="txt_JobDescription" TextMode="MultiLine" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>--%>
+                                            <%-- <telerik:RadEditor RenderMode="Lightweight" runat="server" ID="txt_JobDescription1"  SkinID="DefaultSetOfTools" Width="850px">
+        </telerik:RadEditor>--%>
+                                                 <telerik:RadEditor  RenderMode="Lightweight" runat="server" ID="txt_JobDescription1"  Width="100%" Skin="Silk"   ContentAreaMode="Div">
+                                                    <Tools>
+                                                        <telerik:EditorToolGroup dockingzone="Top">
+                                                            <telerik:EditorTool Name="Bold"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="Italic"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="Underline"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="StrikeThrough"></telerik:EditorTool>
+                                                            <telerik:EditorSeparator Visible="true"></telerik:EditorSeparator>
+                                                            <telerik:EditorTool Name="JustifyLeft"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="JustifyCenter"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="JustifyRight"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="JustifyFull"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="JustifyNone"></telerik:EditorTool>
+                                                            <telerik:EditorSeparator Visible="true"></telerik:EditorSeparator>
+                                                            <telerik:EditorTool Name="Superscript"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="Subscript"></telerik:EditorTool>
+                                                            <telerik:EditorSeparator Visible="true"></telerik:EditorSeparator>
+                                                            <telerik:EditorTool Name="ConvertToLower"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="ConvertToUpper"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="Indent"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="Outdent"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="InsertOrderedList"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="InsertUnorderedList"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="ToggleTableBorder"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="ToggleScreenMode"></telerik:EditorTool>
+                                                            <telerik:EditorSeparator Visible="true"></telerik:EditorSeparator>
+                                                        </telerik:EditorToolGroup>
+                                                        <telerik:EditorToolGroup dockingzone="Bottom">
+                                                            <telerik:EditorTool Name="Undo"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="Redo"></telerik:EditorTool>
+                                                            <telerik:EditorSeparator Visible="true"></telerik:EditorSeparator>
+                                                            <telerik:EditorTool Name="Cut"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="Copy"></telerik:EditorTool>
+                                                            <telerik:EditorTool Name="Paste" ShortCut="CTRL+!"></telerik:EditorTool>
+                                                        </telerik:EditorToolGroup>
+                                                    </Tools>
+                                                </telerik:RadEditor>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -966,8 +1031,45 @@
                                       <div class="form-row">
                                           <div class="form-group col-md-12">
                                               <label for="JobDescription">Describe what you did in this position</label>
-                                              <asp:TextBox ID="txt_EditJobDescription" TextMode="MultiLine" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
-                                          </div>
+                                              <%--<asp:TextBox ID="txt_EditJobDescription" TextMode="MultiLine" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>--%>
+                                        <telerik:RadEditor  RenderMode="Lightweight" runat="server" ID="txt_EditJobDescription1"  Width="100%" Skin="Silk"   ContentAreaMode="Div">
+    <Tools>
+        <telerik:EditorToolGroup dockingzone="Top">
+            <telerik:EditorTool Name="Bold"></telerik:EditorTool>
+            <telerik:EditorTool Name="Italic"></telerik:EditorTool>
+            <telerik:EditorTool Name="Underline"></telerik:EditorTool>
+            <telerik:EditorTool Name="StrikeThrough"></telerik:EditorTool>
+            <telerik:EditorSeparator Visible="true"></telerik:EditorSeparator>
+            <telerik:EditorTool Name="JustifyLeft"></telerik:EditorTool>
+            <telerik:EditorTool Name="JustifyCenter"></telerik:EditorTool>
+            <telerik:EditorTool Name="JustifyRight"></telerik:EditorTool>
+            <telerik:EditorTool Name="JustifyFull"></telerik:EditorTool>
+            <telerik:EditorTool Name="JustifyNone"></telerik:EditorTool>
+            <telerik:EditorSeparator Visible="true"></telerik:EditorSeparator>
+            <telerik:EditorTool Name="Superscript"></telerik:EditorTool>
+            <telerik:EditorTool Name="Subscript"></telerik:EditorTool>
+            <telerik:EditorSeparator Visible="true"></telerik:EditorSeparator>
+            <telerik:EditorTool Name="ConvertToLower"></telerik:EditorTool>
+            <telerik:EditorTool Name="ConvertToUpper"></telerik:EditorTool>
+            <telerik:EditorTool Name="Indent"></telerik:EditorTool>
+            <telerik:EditorTool Name="Outdent"></telerik:EditorTool>
+            <telerik:EditorTool Name="InsertOrderedList"></telerik:EditorTool>
+            <telerik:EditorTool Name="InsertUnorderedList"></telerik:EditorTool>
+            <telerik:EditorTool Name="ToggleTableBorder"></telerik:EditorTool>
+            <telerik:EditorTool Name="ToggleScreenMode"></telerik:EditorTool>
+            <telerik:EditorSeparator Visible="true"></telerik:EditorSeparator>
+        </telerik:EditorToolGroup>
+        <telerik:EditorToolGroup dockingzone="Bottom">
+            <telerik:EditorTool Name="Undo"></telerik:EditorTool>
+            <telerik:EditorTool Name="Redo"></telerik:EditorTool>
+            <telerik:EditorSeparator Visible="true"></telerik:EditorSeparator>
+            <telerik:EditorTool Name="Cut"></telerik:EditorTool>
+            <telerik:EditorTool Name="Copy"></telerik:EditorTool>
+            <telerik:EditorTool Name="Paste" ShortCut="CTRL+!"></telerik:EditorTool>
+        </telerik:EditorToolGroup>
+    </Tools>
+</telerik:RadEditor>
+                                              </div>
                                       </div>
                                       <div class="form-row">
                                           <div class="form-group col-md-12">
