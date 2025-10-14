@@ -687,7 +687,11 @@
                         <Hidden>=IIf(Fields!ScopeOfWork.Value&lt;&gt;"",false,true)</Hidden>
                       </Visibility>
                     </TablixMember>
-                    <TablixMember />
+                    <TablixMember>
+                      <Visibility>
+                        <Hidden>=IIf(Fields!Consultant.Value&lt;&gt;"",false,true)</Hidden>
+                      </Visibility>
+                    </TablixMember>
                     <TablixMember />
                     <TablixMember />
                   </TablixMembers>
