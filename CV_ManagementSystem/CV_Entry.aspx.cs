@@ -904,11 +904,12 @@ namespace CV_ManagementSystem
                     dt.Rows.Add( ProjectTranID, txtProject.Text.Trim(), txtScopeOfWork.Text.Trim(), txtClient.Text.Trim(), txtContractPrice.Text.Trim(), txtConsultant.Text.Trim(), txtPosition.Text.Trim(), txtDescription.Text.Trim());
                 }
                 int result = obj.BulkUpdate_ExperienceProjects(dt, Convert.ToInt32(edit_ExperienceTranID.Value));
-                if (result > 0)
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "BulkDataUpdated();", true);
-                }
+                //if (result > 0)
+                //{
+                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "BulkDataUpdated();", true);
+                //}
             }
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "BulkDataUpdated();", true);
             #endregion
             BindReportsSection();
             EditClick_VisibleSection();

@@ -1685,6 +1685,7 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!JobDescription.Value</Value>
+                              <MarkupType>HTML</MarkupType>
                               <Style>
                                 <FontFamily>Trebuchet MS</FontFamily>
                               </Style>
