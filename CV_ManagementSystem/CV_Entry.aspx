@@ -1357,6 +1357,9 @@ div.RadEditor .reContent li {
                                                 </Items>
                                             </telerik:RadComboBox>
                                             </div>
+                                          <div class="form-group col-md-3" style="margin-top:20px;">
+                                                <asp:Button ID="btn_Download_Word" runat="server" Text="Downlaod (Word Format)" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_Download_Word_Click" />
+                                              </div>
                                          </div>
                                       <div class="form-row" style="margin-top: -1%;">
                                         <div class="form-group col-md-12">
@@ -1368,7 +1371,7 @@ div.RadEditor .reContent li {
                                             <div id="ReportSection" style="height: 950px; overflow-x: auto; width: 100%; margin-top: -1%; margin-bottom: 0px;">
                                                 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%" Height="800px">
                                                 </rsweb:ReportViewer>
-                                                <GleamTech:DocumentViewerControl ID="DocumentViewerControl1" Width="1425px" Height="800px" runat="server"></GleamTech:DocumentViewerControl>
+                                                <GleamTech:DocumentViewerControl ID="DocumentViewerControl1" Width="1425px" Height="800px" runat="server" ></GleamTech:DocumentViewerControl>
                                                 <div id="NoData" runat="server" visible="false" style="margin-left: 40%; margin-top: 10%;">
                                                     <h5 style="color: #17a2b8">No records found.</h5>
                                                 </div>

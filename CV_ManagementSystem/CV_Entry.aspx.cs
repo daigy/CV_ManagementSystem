@@ -1,7 +1,9 @@
 ﻿using CV_ManagementSystem.App_Code.BAL;
 using CV_ManagementSystem.App_Code.BO;
+using GleamTech.DocumentUltimate;
 using GleamTech.DocumentUltimate.AspNet.WebForms;
 using Microsoft.Reporting.WebForms;
+using Microsoft.ReportingServices.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -166,7 +168,7 @@ namespace CV_ManagementSystem
                 dr["Courses"] = txt1.Text;
                 dtRecords.Rows.Add(dr);
             }
-            Session["dt_SectionA"] = dtRecords; 
+            Session["dt_SectionA"] = dtRecords;
         }
         protected void btn_AddCOURSES_Click(object sender, EventArgs e)
         {
@@ -342,7 +344,7 @@ namespace CV_ManagementSystem
             DataTable Radgrid_dt = (DataTable)Session["dt_SectionB"];
             SectionB_ComputerSkills.DataSource = Radgrid_dt;
             SectionB_ComputerSkills.DataBind();
-            if(Radgrid_dt.Rows.Count>0)
+            if (Radgrid_dt.Rows.Count > 0)
             {
                 btn_SaveComputerSkills.Visible = true;
             }
@@ -436,7 +438,7 @@ namespace CV_ManagementSystem
                 txt_FaxNo.Text = dtPersonal.Rows[0]["Fax_No"].ToString();
                 txt_POBOx.Text = dtPersonal.Rows[0]["PO_Box"].ToString();
                 txt_Qualification.Text = dtPersonal.Rows[0]["Qualification"].ToString();
-                txt_Languages.Text = dtPersonal.Rows[0]["Languages"].ToString(); 
+                txt_Languages.Text = dtPersonal.Rows[0]["Languages"].ToString();
             }
             else
             {
@@ -456,18 +458,18 @@ namespace CV_ManagementSystem
             #region SkillsSection
 
 
-            var courses_dt= new DataTable() ;
+            var courses_dt = new DataTable();
             var computerSkills_dt = new DataTable();
             var filteredRows = dtSkills.AsEnumerable()
                            .Where(row => row.Field<int>("SkillsSectionID") == 1);
 
-            if (filteredRows.Any())  
+            if (filteredRows.Any())
             {
-                 courses_dt = filteredRows.CopyToDataTable();
+                courses_dt = filteredRows.CopyToDataTable();
             }
             else
             {
-                 courses_dt = dtSkills.Clone();
+                courses_dt = dtSkills.Clone();
             }
 
             var filteredRows2 = dtSkills.AsEnumerable()
@@ -481,7 +483,7 @@ namespace CV_ManagementSystem
             {
                 computerSkills_dt = dtSkills.Clone();
             }
-          
+
 
             DataTable dt_Courses = new DataTable();
             dt_Courses.Columns.Add("SkillsTranID");
@@ -493,7 +495,7 @@ namespace CV_ManagementSystem
 
             foreach (DataRow rows in courses_dt.Rows)
             {
-               
+
                 DataRow dr = dt_Courses.NewRow();
                 dr["SkillsTranID"] = rows["SkillsTranID"];
                 dr["Courses"] = rows["Details"];
@@ -501,18 +503,18 @@ namespace CV_ManagementSystem
             }
             foreach (DataRow rows in computerSkills_dt.Rows)
             {
-                
+
                 DataRow dr = dt_ComputerSkills.NewRow();
                 dr["SkillsTranID"] = rows["SkillsTranID"];
                 dr["ComputerSkills"] = rows["Details"];
                 dt_ComputerSkills.Rows.Add(dr);
             }
-            if (dt_Courses != null && dt_Courses.Rows.Count>0)
+            if (dt_Courses != null && dt_Courses.Rows.Count > 0)
             {
-                    Session["dt_SectionA"] = dt_Courses;
-                    SectionA_Courses.DataSource = dt_Courses;
-                    SectionA_Courses.DataBind();
-                    btn_SaveCourses.Visible = true;
+                Session["dt_SectionA"] = dt_Courses;
+                SectionA_Courses.DataSource = dt_Courses;
+                SectionA_Courses.DataBind();
+                btn_SaveCourses.Visible = true;
             }
             else
             {
@@ -559,12 +561,12 @@ namespace CV_ManagementSystem
             {
                 btn_SaveQualification.Visible = false;
             }
-                #endregion
-                #region Hobbies
+            #endregion
+            #region Hobbies
 
-                DataTable dt_Hobs = new DataTable();
+            DataTable dt_Hobs = new DataTable();
             dt_Hobs.Columns.Add("HobbiesID");
-            dt_Hobs.Columns.Add("Hobbies"); 
+            dt_Hobs.Columns.Add("Hobbies");
 
 
             foreach (DataRow rows in dt_Hobbies.Rows)
@@ -572,10 +574,10 @@ namespace CV_ManagementSystem
 
                 DataRow dr = dt_Hobs.NewRow();
                 dr["HobbiesID"] = rows["HobbiesID"];
-                dr["Hobbies"] = rows["Hobbies"]; 
+                dr["Hobbies"] = rows["Hobbies"];
                 dt_Hobs.Rows.Add(dr);
             }
-           
+
             if (dt_Hobs != null && dt_Hobs.Rows.Count > 0)
             {
                 Session["dt_Hobbies"] = dt_Hobs;
@@ -644,17 +646,17 @@ namespace CV_ManagementSystem
         }
         protected void btn_SaveMainExperience_Click(object sender, EventArgs e)
         {
-            Experience_BO data=new Experience_BO();
+            Experience_BO data = new Experience_BO();
             data.ExperienceTranID = 0;
             data.Epromis = Session["LOGIN_Epromise"].ToString();
             data.Employer = txt_Employer.Text.ToString();
             data.JobTitle = txt_JobTitle.Text.ToString();
-            data.StartMonth=Convert.ToInt32(ddl_StartMonth.SelectedValue);
+            data.StartMonth = Convert.ToInt32(ddl_StartMonth.SelectedValue);
             string PYear = txt_StartYear.SelectedDate.ToString();
             DateTime date = Convert.ToDateTime(PYear);
             data.StartYear = Convert.ToInt32(date.Year);
-            
-            if (chk_CurrentlyWorking.Checked==true)
+
+            if (chk_CurrentlyWorking.Checked == true)
             {
                 data.CurrentlyWorkStatus = true;
                 data.EndMonth = 0;
@@ -668,10 +670,10 @@ namespace CV_ManagementSystem
                 data.EndMonth = Convert.ToInt32(ddl_EndMonth.SelectedValue);
                 data.EndYear = Convert.ToInt32(date1.Year);
             }
-            data.JobDescription=txt_JobDescription1.Content.ToString();
-            int LastInserted_TranID= obj.InsertExperience(data);
-           
-            CurrentInserted_hdnTranID.Value=LastInserted_TranID.ToString();
+            data.JobDescription = txt_JobDescription1.Content.ToString();
+            int LastInserted_TranID = obj.InsertExperience(data);
+
+            CurrentInserted_hdnTranID.Value = LastInserted_TranID.ToString();
             if (LastInserted_TranID > 0)
             {
                 SetCurretlyInserting_Experience(LastInserted_TranID);
@@ -772,12 +774,12 @@ namespace CV_ManagementSystem
         {
             if (e.Item is RadListViewDataItem dataItem)
             {
-                
+
                 RadListView lvProjects = (RadListView)dataItem.FindControl("lvProjects");
 
                 if (lvProjects != null)
                 {
-                   
+
 
                 }
             }
@@ -826,9 +828,9 @@ namespace CV_ManagementSystem
             AllExperience_List.Style["display"] = "none";
             EditWorkExperience.Style["display"] = "block";
             Other_NewProject.Style["display"] = "none";
-            int ExperienceTranID=Convert.ToInt32(edit_ExperienceTranID.Value);
+            int ExperienceTranID = Convert.ToInt32(edit_ExperienceTranID.Value);
             BindData_WhenClickEditButton(ExperienceTranID);
-            
+
         }
         protected void btn_EditGoBack_FromAddExperience_Click(object sender, EventArgs e)
         {
@@ -844,7 +846,7 @@ namespace CV_ManagementSystem
             #region Employer
 
             Experience_BO data = new Experience_BO();
-            data.ExperienceTranID =Convert.ToInt32(edit_ExperienceTranID.Value);
+            data.ExperienceTranID = Convert.ToInt32(edit_ExperienceTranID.Value);
             data.Epromis = Session["LOGIN_Epromise"].ToString();
             data.Employer = txt_EditEmployer.Text.ToString();
             data.JobTitle = txt_EditJobTitle.Text.ToString();
@@ -887,7 +889,7 @@ namespace CV_ManagementSystem
 
                 foreach (RadListViewDataItem item in RadListView_EditProjects.Items)
                 {
-                   
+
                     HiddenField hd_ExperienceTranID = (HiddenField)item.FindControl("hdn_ExperienceTranID");
                     int experienceTranID = Convert.ToInt32(hd_ExperienceTranID.Value);
                     HiddenField hd_ProjectTranID = (HiddenField)item.FindControl("hdn_ProjectTranID");
@@ -901,7 +903,7 @@ namespace CV_ManagementSystem
                     TextBox txtPosition = (TextBox)item.FindControl("txt_Edit_PositionForEachPrjct");
                     TextBox txtDescription = (TextBox)item.FindControl("txt_Edit_DescriptionForProjct");
 
-                    dt.Rows.Add( ProjectTranID, txtProject.Text.Trim(), txtScopeOfWork.Text.Trim(), txtClient.Text.Trim(), txtContractPrice.Text.Trim(), txtConsultant.Text.Trim(), txtPosition.Text.Trim(), txtDescription.Text.Trim());
+                    dt.Rows.Add(ProjectTranID, txtProject.Text.Trim(), txtScopeOfWork.Text.Trim(), txtClient.Text.Trim(), txtContractPrice.Text.Trim(), txtConsultant.Text.Trim(), txtPosition.Text.Trim(), txtDescription.Text.Trim());
                 }
                 int result = obj.BulkUpdate_ExperienceProjects(dt, Convert.ToInt32(edit_ExperienceTranID.Value));
                 //if (result > 0)
@@ -928,7 +930,7 @@ namespace CV_ManagementSystem
             if (e.CommandName == "EditItem")
             {
                 int ExperienceTranID = Convert.ToInt32(e.CommandArgument.ToString());
-                edit_ExperienceTranID.Value= ExperienceTranID.ToString();
+                edit_ExperienceTranID.Value = ExperienceTranID.ToString();
                 BindData_WhenClickEditButton(ExperienceTranID);
 
                 ShowMainExperienceEntry.Visible = false;
@@ -937,10 +939,10 @@ namespace CV_ManagementSystem
                 AllExperience_List.Style["display"] = "none";
                 EditWorkExperience.Style["display"] = "block";
             }
-            if(e.CommandName== "DeleteItem")
+            if (e.CommandName == "DeleteItem")
             {
                 int ExperienceTranID = Convert.ToInt32(e.CommandArgument.ToString());
-                int DeleResult=obj.DeleteExperienceData(ExperienceTranID);
+                int DeleResult = obj.DeleteExperienceData(ExperienceTranID);
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "DeleteAlert();", true);
 
                 BindExperience();
@@ -1056,9 +1058,9 @@ namespace CV_ManagementSystem
                 selectedPRJCT = ExtractProjectName(selectedPRJCT);
                 Other_NewProject.Style["display"] = "none";
                 DataTable dt = obj.GetExistingProjectsDeatils(selectedPRJCT);
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
-                    
+
                     txt_NewClient.Text = dt.Rows[0]["Client"].ToString();
                     txt_NewContractPrice.Text = dt.Rows[0]["ContractPrice_M_AED"].ToString();
                     txt_NewScopeOfWork.Text = dt.Rows[0]["ProjectDescription"].ToString();
@@ -1066,9 +1068,9 @@ namespace CV_ManagementSystem
                     txt_NewConsultant.Text = dt.Rows[0]["Consultant"].ToString();
                 }
             }
-            
-    
-            
+
+
+
         }
         protected void Combo_NewProject_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
         {
@@ -1102,7 +1104,7 @@ namespace CV_ManagementSystem
                     txt_DecriptionForProjct.Text = "";
                 }
             }
-            
+
         }
         #endregion
         #region Report Section
@@ -1111,51 +1113,44 @@ namespace CV_ManagementSystem
             try
             {
                 string TemplateVal = Combo_Template.SelectedValue.ToString();
-                DataSet ds =obj.GetUserCVData_Report(Session["LOGIN_Epromise"].ToString());
+                DataSet ds = obj.GetUserCVData_Report(Session["LOGIN_Epromise"].ToString());
                 DataTable dt_Personal = ds.Tables[0];
                 DataTable dt_Courses = ds.Tables[1];
                 DataTable dt_Skills = ds.Tables[2];
-                
+
                 DataTable dt_Experience = ds.Tables[3];
                 DataTable dt_Experience2 = ds.Tables[4];
                 DataTable dt_Projects = ds.Tables[5];
                 DataTable dt_Qualification = ds.Tables[6];
                 DataTable dt_Hobbies = ds.Tables[7];
 
-
-
-                //DataTable dtParam = new DataTable();
-                //dtParam.Columns.AddRange(new DataColumn[9] { new DataColumn("SupplierName", typeof(string)),
-                //                                new DataColumn("TypeOfBusiness", typeof(string)),
-                //                                new DataColumn("Address",typeof(string)),
-                //                                new DataColumn("ContactDetails",typeof(string)),
-                //                                new DataColumn("Category",typeof(string)),
-                //                                new DataColumn("PaymentTerms",typeof(string)),
-                //                                new DataColumn("NoOfComplaint",typeof(string)),
-                //                                 new DataColumn("Company",typeof(string)),
-                //                                new DataColumn("ProjectName",typeof(string)),
-                // });
+                 
                 if (dt_Personal.Rows.Count > 0)
                 {
                     string DownloadedFileName = "";
+                    string EmployeeName = dt_Personal.Rows[0]["EmployeeName"].ToString();
+                    string CurrentPosition = dt_Personal.Rows[0]["CurrentPosition"].ToString();
+                    string year = DateTime.Now.Year.ToString(); // e.g. "2025"
+                    string date = DateTime.Now.ToString("MM-dd"); // e.g. "10-22"
+                    DownloadedFileName = "ECC_" + CurrentPosition.Replace(" ", "_") + "_" + EmployeeName.Replace(" ", "_") + "_" + year + "-" + date; ;
                     if (TemplateVal == "1")
                     {
-                        DownloadedFileName = "CV_Template1.";
+                        //DownloadedFileName = "CV_Template1.";
                         ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp.rdlc");
                     }
                     else if (TemplateVal == "2")
                     {
-                        DownloadedFileName = "CV_Template2.";
+                        //DownloadedFileName = "CV_Template2.";
                         ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_2.rdlc");
                     }
                     else if (TemplateVal == "3")
                     {
-                        DownloadedFileName = "CV_Template3.";
+                        //DownloadedFileName = "CV_Template3.";
                         ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_3.rdlc");
                     }
                     else if (TemplateVal == "4")
                     {
-                        DownloadedFileName = "CV_Template4.";
+                        //DownloadedFileName = "CV_Template4.";
                         ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_4.rdlc");
                     }
                     ReportViewer1.LocalReport.DataSources.Clear();
@@ -1187,7 +1182,7 @@ namespace CV_ManagementSystem
                     }
                     else
                     {
-                        serverFilePath = Server.MapPath("~/FileView_Data/" + Path.GetFileName(DownloadedFileName + extension));
+                        serverFilePath = Server.MapPath("~/FileView_Data/" + Path.GetFileName(DownloadedFileName + "." + extension));
 
                         FileInfo file = new FileInfo(serverFilePath);
                         if (file.Exists)//check file exsit or not  
@@ -1195,7 +1190,7 @@ namespace CV_ManagementSystem
                             file.Delete();
                         }
                     }
-                    string filePath = Path.Combine(folderPath, DownloadedFileName + extension);
+                    string filePath = Path.Combine(folderPath, DownloadedFileName + "." + extension);
                     try
                     {
                         File.WriteAllBytes(filePath, bytes);
@@ -1217,12 +1212,12 @@ namespace CV_ManagementSystem
         }
         void ReportProcessing(object sender, SubreportProcessingEventArgs e)
         {
-            int ExperienceTranID =Convert.ToInt32(e.Parameters["ExperienceTranID"].Values[0]);
-            DataTable dt_Projects = obj.GetExperienceProjectData(ExperienceTranID); 
+            int ExperienceTranID = Convert.ToInt32(e.Parameters["ExperienceTranID"].Values[0]);
+            DataTable dt_Projects = obj.GetExperienceProjectData(ExperienceTranID);
 
             ReportDataSource ds_Project = new ReportDataSource("Projects", dt_Projects);
             e.DataSources.Add(ds_Project);
-           
+
         }
         protected void Combo_Template_SelectedIndexChanged(object sender, RadComboBoxSelectedIndexChangedEventArgs e)
         {
@@ -1233,9 +1228,9 @@ namespace CV_ManagementSystem
         public void Set_SessionDt_Qualification()
         {
             DataTable dtRecords = new DataTable();
-            dtRecords.Columns.Add("QualificationID", typeof(string));  
-            dtRecords.Columns.Add("GraduationYear", typeof(string));  
-            dtRecords.Columns.Add("QualificationName", typeof(string));  
+            dtRecords.Columns.Add("QualificationID", typeof(string));
+            dtRecords.Columns.Add("GraduationYear", typeof(string));
+            dtRecords.Columns.Add("QualificationName", typeof(string));
             foreach (GridDataItem item in RadGrid_Qualification.Items)
             {
                 DataRow dr = dtRecords.NewRow();
@@ -1258,7 +1253,7 @@ namespace CV_ManagementSystem
                 DataTable Check_dt = (DataTable)Session["dt_Qualification"];
                 string new_Qualification = txt_QualificationEntry.Text.ToString();
                 string new_QualificationYear = cmb_GraduationYear.SelectedValue.ToString();
-                if (new_Qualification != "" && new_QualificationYear!="")
+                if (new_Qualification != "" && new_QualificationYear != "")
                 {
                     DataRow newRow = Check_dt.NewRow();
                     newRow["QualificationID"] = "0";
@@ -1352,7 +1347,7 @@ namespace CV_ManagementSystem
             Set_SessionDt_Qualification();
             DataTable dt_Qualification = (DataTable)Session["dt_Qualification"];
             //dt_Qualification.Columns.Remove("QualificationID");
-            int Result = obj.InsertQualification(dt_Qualification,Session["LOGIN_Epromise"].ToString());
+            int Result = obj.InsertQualification(dt_Qualification, Session["LOGIN_Epromise"].ToString());
             if (Result > 0)
             {
                 BindReportsSection();
@@ -1373,9 +1368,9 @@ namespace CV_ManagementSystem
             foreach (GridDataItem item in RadGrid_Hobbies.Items)
             {
                 DataRow dr = dtRecords.NewRow();
-                TextBox txt_Hobbies = (TextBox)item.FindControl("txt_Hobbies_Edit"); 
+                TextBox txt_Hobbies = (TextBox)item.FindControl("txt_Hobbies_Edit");
                 dr["HobbiesID"] = item.GetDataKeyValue("HobbiesID").ToString();
-                dr["Hobbies"] =txt_Hobbies.Text; 
+                dr["Hobbies"] = txt_Hobbies.Text;
                 dtRecords.Rows.Add(dr);
             }
             Session["dt_Hobbies"] = dtRecords;
@@ -1389,14 +1384,14 @@ namespace CV_ManagementSystem
                 Set_SessionDt_Hobbies();//for setting Datatable
                 DataTable Check_dt = (DataTable)Session["dt_Hobbies"];
                 string new_Hobbies = txt_Hobbies.Text.ToString();
-                
+
                 if (new_Hobbies != "" && new_Hobbies != "")
                 {
                     DataRow newRow = Check_dt.NewRow();
                     newRow["HobbiesID"] = "0";
                     newRow["Hobbies"] = new_Hobbies;
                     Check_dt.Rows.Add(newRow);
-                    txt_Hobbies.Text = ""; 
+                    txt_Hobbies.Text = "";
                     Session["dt_Hobbies"] = Check_dt;
                 }
                 else
@@ -1406,17 +1401,17 @@ namespace CV_ManagementSystem
             }
             else
             {
-                string new_Hobbies = txt_Hobbies.Text.ToString(); 
+                string new_Hobbies = txt_Hobbies.Text.ToString();
                 if (new_Hobbies != "" && new_Hobbies != "")
                 {
                     DataTable dt_crs = new DataTable();
                     dt_crs.Columns.Add("HobbiesID");
-                    dt_crs.Columns.Add("Hobbies"); 
+                    dt_crs.Columns.Add("Hobbies");
                     DataRow dr = dt_crs.NewRow();
                     dr["HobbiesID"] = "0";
-                    dr["Hobbies"] = new_Hobbies; 
+                    dr["Hobbies"] = new_Hobbies;
                     dt_crs.Rows.Add(dr);
-                    txt_Hobbies.Text = ""; 
+                    txt_Hobbies.Text = "";
                     Session["dt_Hobbies"] = dt_crs;
 
                 }
@@ -1471,7 +1466,7 @@ namespace CV_ManagementSystem
         {
 
             Set_SessionDt_Hobbies();
-            DataTable dt_Hobbies = (DataTable)Session["dt_Hobbies"]; 
+            DataTable dt_Hobbies = (DataTable)Session["dt_Hobbies"];
             int Result = obj.InsertHobbies(dt_Hobbies, Session["LOGIN_Epromise"].ToString());
             if (Result > 0)
             {
@@ -1488,6 +1483,75 @@ namespace CV_ManagementSystem
         {
             var parts = fullText.Split('-');
             return parts.Length > 1 ? string.Join("-", parts.Skip(1)).Trim() : fullText;
+        }
+
+        protected void btn_Download_Word_Click(object sender, EventArgs e)
+        {
+            string TemplateVal = Combo_Template.SelectedValue.ToString();
+            DataSet ds = obj.GetUserCVData_Report(Session["LOGIN_Epromise"].ToString());
+            DataTable dt_Personal = ds.Tables[0];
+            DataTable dt_Courses = ds.Tables[1];
+            DataTable dt_Skills = ds.Tables[2];
+
+            DataTable dt_Experience = ds.Tables[3];
+            DataTable dt_Experience2 = ds.Tables[4];
+            DataTable dt_Projects = ds.Tables[5];
+            DataTable dt_Qualification = ds.Tables[6];
+            DataTable dt_Hobbies = ds.Tables[7];
+
+            if (dt_Personal.Rows.Count > 0)
+            {
+                string DownloadedFileName = "";
+                if (TemplateVal == "1")
+                {
+                    DownloadedFileName = "CV_Template1.";
+                    ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp.rdlc");
+                }
+                else if (TemplateVal == "2")
+                {
+                    DownloadedFileName = "CV_Template2.";
+                    ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_2.rdlc");
+                }
+                else if (TemplateVal == "3")
+                {
+                    DownloadedFileName = "CV_Template3.";
+                    ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_3.rdlc");
+                }
+                else if (TemplateVal == "4")
+                {
+                    DownloadedFileName = "CV_Template4.";
+                    ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_4.rdlc");
+                }
+                ReportViewer1.LocalReport.DataSources.Clear();
+                ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Personal_Info", dt_Personal));
+                ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Skills", dt_Skills));
+                ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Courses", dt_Courses));
+                ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Experience", dt_Experience));
+                ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Projects", dt_Projects));
+                ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Experience2", dt_Experience2));
+                ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Qualification", dt_Qualification));
+                ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Hobbies", dt_Hobbies));
+                ReportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(ReportProcessing);
+                ReportViewer1.AsyncRendering = false;
+                ReportViewer1.Visible = false;
+                ReportViewer1.LocalReport.Refresh();
+
+                Warning[] warnings;
+                string[] streamIds;
+                string contentType;
+                string encoding;
+                string extension;
+
+                byte[] bytes = ReportViewer1.LocalReport.Render("WORDOPENXML", null, out contentType, out encoding, out extension, out streamIds, out warnings);
+
+                Response.Clear();
+                Response.Buffer = true;
+                Response.ContentType = contentType; // ✅ Corrected line
+                Response.AddHeader("content-disposition", "attachment; filename=" + DownloadedFileName + "docx");
+                Response.BinaryWrite(bytes);
+                Response.End();
+
+            }
         }
     }
 }
