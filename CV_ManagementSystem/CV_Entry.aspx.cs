@@ -178,20 +178,28 @@ namespace CV_ManagementSystem
             {
                 Set_SessionDt_Courses();//for setting Datatable
                 DataTable Check_dt = (DataTable)Session["dt_SectionA"];
-                string new_courses = txt_Courses.Text.ToString();
-                if (new_courses != "")
+                if(Check_dt.Rows.Count<5)
                 {
-                    DataRow newRow = Check_dt.NewRow();
-                    newRow["SkillsTranID"] = "0";
-                    newRow["Courses"] = new_courses;
-                    Check_dt.Rows.Add(newRow);
-                    txt_Courses.Text = "";
-                    Session["dt_SectionA"] = Check_dt;
+                    string new_courses = txt_Courses.Text.ToString();
+                    if (new_courses != "")
+                    {
+                        DataRow newRow = Check_dt.NewRow();
+                        newRow["SkillsTranID"] = "0";
+                        newRow["Courses"] = new_courses;
+                        Check_dt.Rows.Add(newRow);
+                        txt_Courses.Text = "";
+                        Session["dt_SectionA"] = Check_dt;
+                    }
+                    else
+                    {
+                        Flag = true;
+                    }
                 }
                 else
                 {
-                    Flag = true;
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "SkillExceed_Validation();", true);
                 }
+                
             }
             else
             {
@@ -306,19 +314,26 @@ namespace CV_ManagementSystem
             {
                 Set_SessionDt_ComputerSkills();//for setting Datatable
                 DataTable Check_dt = (DataTable)Session["dt_SectionB"];
-                string new_ComputerSkills = txt_ComputerSkills.Text.ToString();
-                if (new_ComputerSkills != "")
+                if(Check_dt.Rows.Count < 2)
                 {
-                    DataRow newRow = Check_dt.NewRow();
-                    newRow["SkillsTranID"] = "0";
-                    newRow["ComputerSkills"] = new_ComputerSkills;
-                    Check_dt.Rows.Add(newRow);
-                    txt_ComputerSkills.Text = "";
-                    Session["dt_SectionB"] = Check_dt;
+                    string new_ComputerSkills = txt_ComputerSkills.Text.ToString();
+                    if (new_ComputerSkills != "")
+                    {
+                        DataRow newRow = Check_dt.NewRow();
+                        newRow["SkillsTranID"] = "0";
+                        newRow["ComputerSkills"] = new_ComputerSkills;
+                        Check_dt.Rows.Add(newRow);
+                        txt_ComputerSkills.Text = "";
+                        Session["dt_SectionB"] = Check_dt;
+                    }
+                    else
+                    {
+                        Flag = true;
+                    }
                 }
                 else
                 {
-                    Flag = true;
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "ComputerSkillExceed_Validation();", true);
                 }
             }
             else
@@ -1383,20 +1398,28 @@ namespace CV_ManagementSystem
             {
                 Set_SessionDt_Hobbies();//for setting Datatable
                 DataTable Check_dt = (DataTable)Session["dt_Hobbies"];
-                string new_Hobbies = txt_Hobbies.Text.ToString();
-
-                if (new_Hobbies != "" && new_Hobbies != "")
+                if(Check_dt.Rows.Count<2)
                 {
-                    DataRow newRow = Check_dt.NewRow();
-                    newRow["HobbiesID"] = "0";
-                    newRow["Hobbies"] = new_Hobbies;
-                    Check_dt.Rows.Add(newRow);
-                    txt_Hobbies.Text = "";
-                    Session["dt_Hobbies"] = Check_dt;
+                    string new_Hobbies = txt_Hobbies.Text.ToString();
+
+                    if (new_Hobbies != "" && new_Hobbies != "")
+                    {
+                        DataRow newRow = Check_dt.NewRow();
+                        newRow["HobbiesID"] = "0";
+                        newRow["Hobbies"] = new_Hobbies;
+                        Check_dt.Rows.Add(newRow);
+                        txt_Hobbies.Text = "";
+                        Session["dt_Hobbies"] = Check_dt;
+                    }
+                    else
+                    {
+                        Flag = true;
+                    }
                 }
                 else
                 {
-                    Flag = true;
+                    txt_Hobbies.Text = "";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "HobbiesExceed_Validation();", true);
                 }
             }
             else

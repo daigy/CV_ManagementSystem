@@ -344,16 +344,16 @@ div.RadEditor .reContent li {
                                         </div>
                                     </div>
                                 </telerik:RadWizardStep>
-                        <telerik:RadWizardStep Title="Skils">
+                        <telerik:RadWizardStep Title="Skills">
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <div class="form-row">
                                         <div class="form-group col-md-12">
                                             <fieldset class="custom-fieldset">
-                                                <legend class="custom-legend">COURSES / SEMINARS</legend>
+                                                <legend class="custom-legend">COURSES / SEMINARS<asp:Label id="Course1" runat="server" Font-Size="9px" ForeColor="Red"> ( Maximum 100 Words Per Courses )</asp:Label></legend>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-9">
-                                                        <asp:TextBox ID="txt_Courses" CssClass="form-control custom-textbox" runat="server" Width="100%"></asp:TextBox>
+                                                        <asp:TextBox ID="txt_Courses" CssClass="form-control custom-textbox" MaxLength="100" runat="server" Width="100%"></asp:TextBox>
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <asp:Button ID="btn_AddCOURSES" runat="server" Text="ADD &#xf067;" CssClass="fa btn input-group-text " Style="font-weight: bold; border-radius: 8px; margin-right: -14px; background-color: #1f497d; color: white;" OnClick="btn_AddCOURSES_Click" /><!--Text="ADD &#xf067;"-->
@@ -370,7 +370,7 @@ div.RadEditor .reContent li {
                                                                             <div>
                                                                                 <ul>
                                                                                     <li>
-                                                                                        <asp:TextBox ID="txt_Courses_Edit" CssClass="form-control" Text='<%#Eval("Courses") %>' runat="server" Width="100%"></asp:TextBox>
+                                                                                        <asp:TextBox ID="txt_Courses_Edit" MaxLength="100" CssClass="form-control" Text='<%#Eval("Courses") %>' runat="server" Width="100%"></asp:TextBox>
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>
@@ -401,10 +401,10 @@ div.RadEditor .reContent li {
                                      <div class="form-row">
                                         <div class="form-group col-md-12">
                                             <fieldset class="custom-fieldset">
-                                                <legend class="custom-legend">COMPUTER SKILLS</legend>
+                                                <legend class="custom-legend">COMPUTER SKILLS<asp:Label id="Label1" runat="server" Font-Size="9px" ForeColor="Red"> ( Maximum 100 Words Per Skills )</asp:Label></legend>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-9">
-                                                          <asp:TextBox ID="txt_ComputerSkills" CssClass="form-control custom-textbox" runat="server" Width="100%"></asp:TextBox>
+                                                          <asp:TextBox ID="txt_ComputerSkills" CssClass="form-control custom-textbox" MaxLength="100" runat="server" Width="100%"></asp:TextBox>
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <asp:Button ID="btn_AddComputerSkills" runat="server" Text="ADD &#xf067;" CssClass="fa btn input-group-text " Style="font-weight: bold; border-radius: 8px; margin-right: -14px; background-color: #1f497d; color: white;" OnClick="btn_AddComputerSkills_Click" /><!--Text="ADD &#xf067;"-->
@@ -421,7 +421,7 @@ div.RadEditor .reContent li {
                                                                 <div>
                                                                     <ul>
                                                                         <li>
-                                                                            <asp:TextBox ID="txt_ComputerSkills_Edit" CssClass="form-control" Text='<%#Eval("ComputerSkills") %>' runat="server" Width="100%"></asp:TextBox>
+                                                                            <asp:TextBox ID="txt_ComputerSkills_Edit" CssClass="form-control" MaxLength="100" Text='<%#Eval("ComputerSkills") %>' runat="server" Width="100%"></asp:TextBox>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -1288,11 +1288,11 @@ div.RadEditor .reContent li {
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <fieldset class="custom-fieldset">
-                                                        <legend class="custom-legend">HOBBIES</legend>
+                                                        <legend class="custom-legend">HOBBIES<asp:Label id="Label2" runat="server" Font-Size="9px" ForeColor="Red"> ( Maximum 50 Words Per Hobbies )</asp:Label></legend>
                                                         <div class="form-row mt-3">
                                                             <div class="form-group col-md-8">
                                                                 <label for="lb_Hobbies">Hobbies</label>
-                                                                <asp:TextBox ID="txt_Hobbies" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                                                                <asp:TextBox ID="txt_Hobbies" runat="server" CssClass="form-control" MaxLength="50" Width="100%"></asp:TextBox>
                                                             </div>
                                                             <div class="form-group col-md-3 mt-3">
                                                                 <asp:Button ID="btn_Add_Hobbies" runat="server" Text="ADD &#xf067;" CssClass="fa btn input-group-text " Style="font-weight: bold; border-radius: 8px; margin-right: -14px; background-color: #1f497d; color: white;" OnClick="btn_Add_Hobbies_Click" />
@@ -1309,7 +1309,7 @@ div.RadEditor .reContent li {
                                                                                     <div>
                                                                                         <ul>
                                                                                             <li>
-                                                                                                <asp:TextBox ID="txt_Hobbies_Edit" CssClass="form-control" Text='<%#Eval("Hobbies") %>' runat="server" Width="100%"></asp:TextBox>
+                                                                                                <asp:TextBox ID="txt_Hobbies_Edit" MaxLength="50" CssClass="form-control" Text='<%#Eval("Hobbies") %>' runat="server" Width="100%"></asp:TextBox>
                                                                                             </li>
                                                                                         </ul>
                                                                                     </div>
@@ -1448,7 +1448,50 @@ div.RadEditor .reContent li {
                 $('#<%=btn_SaveEditMainExperience.ClientID %>').click();
             });--%>
         });
-
+        function SkillExceed_Validation() {
+            swal.fire({
+                title: 'Sorry you reached maximum Limit of Courses!!!.',
+                icon: "warning",
+                buttonsStyling: false,
+                confirmButtonText: "OK",
+                customClass: {
+                    confirmButton: "btn btn-info"
+                }
+            });
+        }
+        function ComputerSkillExceed_Validation() {
+            swal.fire({
+                title: 'Sorry you reached maximum Limit of Computer Skills!!!.',
+                icon: "warning",
+                buttonsStyling: false,
+                confirmButtonText: "OK",
+                customClass: {
+                    confirmButton: "btn btn-info"
+                }
+            });
+        }
+        function HobbiesExceed_Validation() {
+            swal.fire({
+                title: 'Sorry you reached maximum Limit of Hobbies!!!.',
+                icon: "warning",
+                buttonsStyling: false,
+                confirmButtonText: "OK",
+                customClass: {
+                    confirmButton: "btn btn-info"
+                }
+            });
+        }
+        function SkillExceed_Validation() {
+            swal.fire({
+                title: 'Sorry you reached maximum Limit!!!.',
+                icon: "warning",
+                buttonsStyling: false,
+                confirmButtonText: "OK",
+                customClass: {
+                    confirmButton: "btn btn-info"
+                }
+            });
+        }
         function Courses_Validation() {
             swal.fire({
                 title: 'Please add the course details.',
