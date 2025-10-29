@@ -81,8 +81,11 @@ namespace CV_ManagementSystem
             DataTable dt_Hobbies = ds.Tables[7];
             string DownloadedFileName = "";
             string EmployeeName = dt_Personal.Rows[0]["EmployeeName"].ToString();
-            string CurrentPosition = dt_Personal.Rows[0]["CurrentPosition"].ToString();
-            DownloadedFileName="ECC_" + CurrentPosition.Replace(" ", "_") +"_"+ EmployeeName.Replace(" ", "_");
+            string CurrentPosition = dt_Personal.Rows[0]["CurrentPosition"].ToString(); 
+            string year = DateTime.Now.Year.ToString(); // e.g. "2025"
+            string date = DateTime.Now.ToString("MM-dd"); // e.g. "10-22"
+            DownloadedFileName = "ECC_" + CurrentPosition.Replace(" ", "_") + "_" + EmployeeName.Replace(" ", "_") + "_" + year + "-" + date; ;
+
             if (dt_Personal.Rows.Count > 0)
             {
                 ReportViewer ReportViewer_1 = new ReportViewer();
@@ -198,7 +201,9 @@ namespace CV_ManagementSystem
 
                             if (reportBytes != null)
                             {
-                                DownloadedFileName = "ECC_" + Current_Position.Replace(" ", "_") + "_" + Employee_Name.Replace(" ", "_");
+                                string year = DateTime.Now.Year.ToString(); // e.g. "2025"
+                                string date = DateTime.Now.ToString("MM-dd"); // e.g. "10-22"
+                                DownloadedFileName = "ECC_" + Current_Position.Replace(" ", "_") + "_" + Employee_Name.Replace(" ", "_") + "_" + year + "-" + date; 
                                 ZipArchiveEntry zipEntry = zip.CreateEntry(DownloadedFileName + ".pdf");
                                 using (var entryStream = zipEntry.Open())
                                 {
