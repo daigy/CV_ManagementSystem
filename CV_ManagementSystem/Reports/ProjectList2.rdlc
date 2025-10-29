@@ -89,7 +89,7 @@
                                 <TextRun>
                                   <Value>Project</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -121,7 +121,7 @@
                                 <TextRun>
                                   <Value>=Fields!ProjectName.Value</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -158,7 +158,7 @@
                                 <TextRun>
                                   <Value>Position</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -190,7 +190,7 @@
                                 <TextRun>
                                   <Value>=Fields!Position.Value</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -227,7 +227,7 @@
                                 <TextRun>
                                   <Value>Description</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -259,7 +259,7 @@
                                 <TextRun>
                                   <Value>=Fields!Description.Value</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -296,7 +296,7 @@
                                 <TextRun>
                                   <Value>Client</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -328,7 +328,7 @@
                                 <TextRun>
                                   <Value>=Fields!Client.Value</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -365,7 +365,7 @@
                                 <TextRun>
                                   <Value>Contract Price</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -397,7 +397,7 @@
                                 <TextRun>
                                   <Value>=Fields!ContractPrice.Value</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -434,7 +434,7 @@
                                 <TextRun>
                                   <Value>Scope of Work</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -466,7 +466,7 @@
                                 <TextRun>
                                   <Value>=Fields!ScopeOfWork.Value</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -505,7 +505,7 @@
                                 <TextRun>
                                   <Value>Consultant</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -537,7 +537,7 @@
                                 <TextRun>
                                   <Value>=Fields!Consultant.Value</Value>
                                   <Style>
-                                    <FontFamily>Trebuchet MS</FontFamily>
+                                    <FontFamily>Sofia Pro Regular</FontFamily>
                                     <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -718,7 +718,7 @@
                   <TextRun>
                     <Value>PROJECTS</Value>
                     <Style>
-                      <FontFamily>Trebuchet MS</FontFamily>
+                      <FontFamily>Sofia Pro Bold</FontFamily>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
