@@ -1358,7 +1358,7 @@ div.RadEditor .reContent li {
                                             </telerik:RadComboBox>
                                             </div>
                                           <div class="form-group col-md-3" style="margin-top:20px;">
-                                                <asp:Button ID="btn_Download_Word" runat="server" Text="Downlaod (Word Format)" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_Download_Word_Click" />
+                                                <asp:Button ID="btn_Download_Word" runat="server" Visible="false" Text="Downlaod (Word Format)" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_Download_Word_Click" />
                                               </div>
                                          </div>
                                       <div class="form-row" style="margin-top: -1%;">
