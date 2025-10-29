@@ -1351,9 +1351,9 @@ div.RadEditor .reContent li {
                                                 AutoPostBack="true" OnSelectedIndexChanged="Combo_Template_SelectedIndexChanged">
                                                 <Items>
                                                     <telerik:RadComboBoxItem Text="Template 1" Value="1" Selected="true" />
-                                                    <telerik:RadComboBoxItem Text="Template 2" Value="2" />
+                                                   <%-- <telerik:RadComboBoxItem Text="Template 2" Value="2" />
                                                     <telerik:RadComboBoxItem Text="Template 3" Value="3" />
-                                                    <telerik:RadComboBoxItem Text="Template 4" Value="4" />
+                                                    <telerik:RadComboBoxItem Text="Template 4" Value="4" />--%>
                                                 </Items>
                                             </telerik:RadComboBox>
                                             </div>

@@ -2227,7 +2227,7 @@
         <Image Name="Image1">
           <Source>Embedded</Source>
           <Value>ECC50YearLogo1</Value>
-          <Sizing>FitProportional</Sizing>
+          <Sizing>Fit</Sizing>
           <Top>0.3076cm</Top>
           <Left>0.29104cm</Left>
           <Height>1.41696cm</Height>
@@ -2516,9 +2516,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox46</rd:DefaultName>
           <Top>0.32551cm</Top>
-          <Left>4.69898cm</Left>
+          <Left>5.30752cm</Left>
           <Height>0.6cm</Height>
-          <Width>16.09026cm</Width>
+          <Width>15.48172cm</Width>
           <ZIndex>8</ZIndex>
           <Visibility>
             <Hidden>=IIf(Globals!PageNumber &gt; 1, False,True)</Hidden>
@@ -2530,7 +2530,7 @@
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
+            <PaddingBottom>1pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="Textbox48">
@@ -2550,9 +2550,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox46</rd:DefaultName>
           <Top>0.96051cm</Top>
-          <Left>4.7272cm</Left>
+          <Left>5.30752cm</Left>
           <Height>0.6cm</Height>
-          <Width>16.05498cm</Width>
+          <Width>15.48172cm</Width>
           <ZIndex>9</ZIndex>
           <Visibility>
             <Hidden>=IIf(Globals!PageNumber &gt; 1, False,True)</Hidden>
@@ -2602,7 +2602,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox47</rd:DefaultName>
-              <Top>0.10583cm</Top>
+              <Top>0.07408cm</Top>
               <Left>4.03475cm</Left>
               <Height>0.57354cm</Height>
               <Width>2.5cm</Width>
@@ -2612,17 +2612,16 @@
                 </Border>
                 <BackgroundColor>Black</BackgroundColor>
                 <VerticalAlign>Top</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
+                <PaddingLeft>1pt</PaddingLeft>
+                <PaddingRight>1pt</PaddingRight>
+                <PaddingBottom>1pt</PaddingBottom>
               </Style>
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
           <Top>0cm</Top>
           <Left>13.95714cm</Left>
-          <Height>0.77126cm</Height>
+          <Height>0.69189cm</Height>
           <Width>6.9874cm</Width>
           <Style>
             <Border>

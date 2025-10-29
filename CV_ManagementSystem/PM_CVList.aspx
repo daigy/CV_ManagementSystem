@@ -17,9 +17,9 @@
                 <telerik:RadComboBox ID="Combo_Template" runat="server" RenderMode="Lightweight" CausesValidation="false" Filter="Contains" AllowCustomText="true" Width="150px"   Skin="Silk" CssClass="minfo">
                     <Items>
                         <telerik:RadComboBoxItem Text="Template 1" Value="1" Selected="true" />
-                        <telerik:RadComboBoxItem Text="Template 2" Value="2" />
+                       <%-- <telerik:RadComboBoxItem Text="Template 2" Value="2" />
                         <telerik:RadComboBoxItem Text="Template 3" Value="3" />
-                        <telerik:RadComboBoxItem Text="Template 4" Value="4" />
+                        <telerik:RadComboBoxItem Text="Template 4" Value="4" />--%>
                     </Items>
                 </telerik:RadComboBox>
                 <telerik:RadButton ID="btn_DownloadAllCV"  runat="server" Text="Download"  CssClass="btn btn-info ml-5" Width="30%" RenderMode="Lightweight" Skin="Silk" OnClick="btn_DownloadAllCV_Click">
