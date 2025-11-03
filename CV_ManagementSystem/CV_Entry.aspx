@@ -456,8 +456,8 @@ div.RadEditor .reContent li {
                         <telerik:RadWizardStep Title="WORK EXPERIENCE" >
                             <div class="card mb-4">
                                 <div class="card-body">
-                                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                        <ContentTemplate>
+                                     <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                        <ContentTemplate>--%>
                                      <div class="form-row" id="Btn_ForAddExperience" runat="server">
                                          <div class="form-group col-md-10"></div>
                                             <div class="form-group col-md-2 text-center">
@@ -1277,8 +1277,8 @@ div.RadEditor .reContent li {
                                         </div>
                                       </div>
                                   </div>
-                                             </ContentTemplate>
-                                            </asp:UpdatePanel>
+                                           <%--  </ContentTemplate>
+                                            </asp:UpdatePanel>--%>
                                 </div>
                             </div>
                         </telerik:RadWizardStep>

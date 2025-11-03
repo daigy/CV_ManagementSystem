@@ -1948,7 +1948,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
+                              <Label>Exp_JobDescription</Label>
                               <Value>=Fields!JobDescription.Value</Value>
+                              <MarkupType>HTML</MarkupType>
                               <Style>
                                 <FontFamily>Sofia Pro Regular</FontFamily>
                               </Style>

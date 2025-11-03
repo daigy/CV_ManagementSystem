@@ -10,6 +10,7 @@ using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
@@ -1148,6 +1149,8 @@ namespace CV_ManagementSystem
                     string year = DateTime.Now.Year.ToString(); // e.g. "2025"
                     string date = DateTime.Now.ToString("MM-dd"); // e.g. "10-22"
                     DownloadedFileName = "ECC_" + CurrentPosition.Replace(" ", "_") + "_" + EmployeeName.Replace(" ", "_") + "_" + year + "-" + date; ;
+                    DownloadedFileName = Regex.Replace(DownloadedFileName, @"[\\/:*?""<>|]", "_");
+
                     if (TemplateVal == "1")
                     {
                         //DownloadedFileName = "CV_Template1.";
