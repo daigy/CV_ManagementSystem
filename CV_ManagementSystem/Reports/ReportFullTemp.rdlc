@@ -459,7 +459,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.65435cm</Height>
+                  <Height>1.43755cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -587,7 +587,7 @@
             <DataSetName>Personal_Info</DataSetName>
             <Top>3.90878cm</Top>
             <Left>0.33867cm</Left>
-            <Height>2.14826cm</Height>
+            <Height>2.93146cm</Height>
             <Width>6.52165cm</Width>
             <Style>
               <Border>

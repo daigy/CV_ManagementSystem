@@ -267,7 +267,7 @@ div.RadEditor .reContent li {
                                             <asp:TextBox ID="txt_Languages" runat="server" CssClass="form-control" Width="100%" placeholder="e.g. English, Arabic"></asp:TextBox>
                                         </div>
                                         <div class="form-group col-md-12">
-                                             <asp:Button ID="btn_SavePersonalDetails"  ValidationGroup="Validation4" runat="server" Text="Update Personal Deatils" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_SavePersonalDetails_Click" />
+                                             <asp:Button ID="btn_SavePersonalDetails"  ValidationGroup="Validation4" runat="server" Text="Update Personal Details" CssClass="fa btn input-group-text custom-save-button" Style="font-weight: bold;" OnClick="btn_SavePersonalDetails_Click" />
                                         </div>
                                     </div>
                                 </div>
