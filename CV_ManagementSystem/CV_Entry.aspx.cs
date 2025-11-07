@@ -1513,6 +1513,11 @@ namespace CV_ManagementSystem
 
         protected void btn_Download_Word_Click(object sender, EventArgs e)
         {
+
+            DownloadFiles("WORDOPENXML");
+        }
+        public void DownloadFiles(string FileCategory)
+        {
             string TemplateVal = Combo_Template.SelectedValue.ToString();
             DataSet ds = obj.GetUserCVData_Report(Session["LOGIN_Epromise"].ToString());
             DataTable dt_Personal = ds.Tables[0];
@@ -1528,24 +1533,30 @@ namespace CV_ManagementSystem
             if (dt_Personal.Rows.Count > 0)
             {
                 string DownloadedFileName = "";
+                string EmployeeName = dt_Personal.Rows[0]["EmployeeName"].ToString();
+                string CurrentPosition = dt_Personal.Rows[0]["CurrentPosition"].ToString();
+                string year = DateTime.Now.Year.ToString(); // e.g. "2025"
+                string date = DateTime.Now.ToString("MM-dd"); // e.g. "10-22"
+                DownloadedFileName = "ECC_" + CurrentPosition.Replace(" ", "_") + "_" + EmployeeName.Replace(" ", "_") + "_" + year + "-" + date; ;
+
                 if (TemplateVal == "1")
                 {
-                    DownloadedFileName = "CV_Template1.";
+                    //DownloadedFileName = "CV_Template1.";
                     ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp.rdlc");
                 }
                 else if (TemplateVal == "2")
                 {
-                    DownloadedFileName = "CV_Template2.";
+                    //DownloadedFileName = "CV_Template2.";
                     ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_2.rdlc");
                 }
                 else if (TemplateVal == "3")
                 {
-                    DownloadedFileName = "CV_Template3.";
+                    //DownloadedFileName = "CV_Template3.";
                     ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_3.rdlc");
                 }
                 else if (TemplateVal == "4")
                 {
-                    DownloadedFileName = "CV_Template4.";
+                    //DownloadedFileName = "CV_Template4.";
                     ReportViewer1.LocalReport.ReportPath = HttpContext.Current.Request.MapPath("Reports/ReportFullTemp_4.rdlc");
                 }
                 ReportViewer1.LocalReport.DataSources.Clear();
@@ -1568,16 +1579,19 @@ namespace CV_ManagementSystem
                 string encoding;
                 string extension;
 
-                byte[] bytes = ReportViewer1.LocalReport.Render("WORDOPENXML", null, out contentType, out encoding, out extension, out streamIds, out warnings);
+                byte[] bytes = ReportViewer1.LocalReport.Render(FileCategory, null, out contentType, out encoding, out extension, out streamIds, out warnings);
 
                 Response.Clear();
                 Response.Buffer = true;
                 Response.ContentType = contentType; // ✅ Corrected line
-                Response.AddHeader("content-disposition", "attachment; filename=" + DownloadedFileName + "docx");
+                Response.AppendHeader("Content-Disposition", "attachment; filename=" + DownloadedFileName + "." + extension);
                 Response.BinaryWrite(bytes);
                 Response.End();
-
             }
+        }
+        protected void RadWizard1_FinishButtonClick(object sender, WizardEventArgs e)
+        {
+            DownloadFiles("PDF");
         }
     }
 }

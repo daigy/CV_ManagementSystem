@@ -10,6 +10,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Telerik.Web.UI;
 using System.IO.Compression;
+using System.Security.Cryptography.Xml;
 
 namespace CV_ManagementSystem
 {
@@ -292,5 +293,34 @@ namespace CV_ManagementSystem
             return null;  // Return null if no data
         }
         #endregion
+
+        protected void RadGrid_CV_ItemDataBound(object sender, GridItemEventArgs e)
+        {
+            try
+            {
+                if (e.Item is GridDataItem)
+                {
+                    GridDataItem dataBoundItem = e.Item as GridDataItem;
+                    TableCell Missing_Sections = dataBoundItem["Missing_Sections"];
+                    RadButton btn_Download = dataBoundItem.FindControl("btn_Download") as RadButton;
+                    Label lb_pendingDetails = dataBoundItem.FindControl("lb_pendingDetails") as Label;
+                    if (Missing_Sections.Text.Trim() == "Done")
+                    {
+                        btn_Download.Visible = true;
+                        lb_pendingDetails.Visible = false;
+                    }
+                    else 
+                    {
+                        btn_Download.Visible = false;
+                        lb_pendingDetails.Visible = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }

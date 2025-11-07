@@ -30,8 +30,8 @@
             <div class="form-group row" style="overflow-x: scroll; overflow-y: scroll; height: 600px;">
                 <div class="col-sm-12">
                     <telerik:RadGrid ID="RadGrid_CV" AutoGenerateColumns="false" runat="server" OnNeedDataSource="RadGrid_CV_NeedDataSource"
-                        RenderMode="Lightweight" Skin="Silk"  OnItemCommand="RadGrid_CV_ItemCommand" >
-                        <MasterTableView DataKeyNames="CV_TranID,Epromis"
+                        RenderMode="Lightweight" Skin="Silk"  OnItemCommand="RadGrid_CV_ItemCommand" OnItemDataBound="RadGrid_CV_ItemDataBound">
+                        <MasterTableView DataKeyNames="CV_TranID,Epromis,Missing_Sections"
                             BorderWidth="1" HeaderStyle-Height="50" EditMode="InPlace"
                             HeaderStyle-Font-Size="12px" HeaderStyle-Font-Bold="true" AllowPaging="false">
                             <Columns>
@@ -53,13 +53,15 @@
                                  <telerik:GridBoundColumn DataField="EmployeeName" HeaderText="PM Name" ReadOnly="true" ForceExtractValue="Always" />  
                                 <telerik:GridBoundColumn DataField="CurrentPosition" HeaderText="Designation" ReadOnly="true" ForceExtractValue="Always" />
                                 <telerik:GridBoundColumn DataField="EntryDate" HeaderText="Updated Date" DataFormatString="{0:dd/MM/yyyy}" ReadOnly="true" ForceExtractValue="Always" ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="50px" />
-                             <telerik:GridTemplateColumn UniqueName="DownLoad" HeaderText="" HeaderStyle-Width="40px" ItemStyle-HorizontalAlign="Center"  EnableHeaderContextMenu="false" Exportable="false">
+                             <telerik:GridTemplateColumn UniqueName="DownLoad" HeaderText="" HeaderStyle-Width="40px"  EnableHeaderContextMenu="false" Exportable="false">
                                     <ItemTemplate>
+                                        <asp:Label ID="lb_pendingDetails" runat="server" Text='<%#Eval("Missing_Sections")%>' ForeColor="Red" ></asp:Label>
                                         <telerik:RadButton ID="btn_Download" runat="server" Text="DownLoad" CssClass="btn btn-info"
-                                            Width="100%" RenderMode="Lightweight" Skin="Silk" CommandArgument='<%#Eval("CV_TranID")%>' CommandName="DownLoad">
+                                            Width="100px" RenderMode="Lightweight" Skin="Silk" CommandArgument='<%#Eval("CV_TranID")%>' CommandName="DownLoad">
                                         </telerik:RadButton>
                                     </ItemTemplate>
                                 </telerik:GridTemplateColumn>
+                                 <telerik:GridBoundColumn DataField="Missing_Sections" Display="false" />
                             </Columns>
                             <HeaderStyle Width="150px" />
                         </MasterTableView>

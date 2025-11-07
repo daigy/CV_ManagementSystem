@@ -157,31 +157,33 @@
         .custom-save-button {
             cursor: pointer !important;
         }
-       div.RadEditor .reContent ol {
-    list-style-type: decimal !important;
-    margin-left: 20px;
-    padding-left: 20px;
-}
 
-/* Unordered list (bullets) */
-div.RadEditor .reContent ul {
-    list-style-type: disc !important;
-    margin-left: 20px;
-    padding-left: 20px;
-}
+        div.RadEditor .reContent ol {
+            list-style-type: decimal !important;
+            margin-left: 20px;
+            padding-left: 20px;
+        }
 
-/* Make sure li elements display correctly */
-div.RadEditor .reContent li {
-    display: list-item !important;
-}
-/* Ensure bold tags render correctly inside RadEditor */
-.RadEditor .reContent strong,
-.RadEditor .reContent b {
-    font-weight: bold !important;
-}
-.dataGroup ul{
-        list-style-type: disc!important;
-}
+        /* Unordered list (bullets) */
+        div.RadEditor .reContent ul {
+            list-style-type: disc !important;
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+
+        /* Make sure li elements display correctly */
+        div.RadEditor .reContent li {
+            display: list-item !important;
+        }
+        /* Ensure bold tags render correctly inside RadEditor */
+        .RadEditor .reContent strong,
+        .RadEditor .reContent b {
+            font-weight: bold !important;
+        }
+
+        .dataGroup ul {
+            list-style-type: disc !important;
+        }
     </style>
     <link href="Resources/Custom/css/my_legend.css" rel="stylesheet" />
     <link href="Resources/Custom/css/profilePhoto.css" rel="stylesheet" />
@@ -211,7 +213,7 @@ div.RadEditor .reContent li {
         </div>
         <div class="card-body">
             <div class="demo-container size-medium">
-                <telerik:RadWizard RenderMode="Lightweight" ID="RadWizard1" runat="server">
+                <telerik:RadWizard RenderMode="Lightweight" ID="RadWizard1" Localization-Finish="Finish & Download" runat="server" OnFinishButtonClick="RadWizard1_FinishButtonClick">
                     <WizardSteps>
                         <telerik:RadWizardStep Title="Personal Info" CssClass="loginStep" >
                             <div class="photo-cv-container">
@@ -470,7 +472,7 @@ div.RadEditor .reContent li {
                                     <div id="MainExperience_Entry" class="MainExperience_Entry" runat="server" style="display:none;">
                                         <h5>Add Your <span style="color: #15b5cf">experience</span></h5>
                                         <div class="form-row">
-                                            <div class="form-group  col-md-12">
+                                            <div class="form-group  col-md- 12 12">
                                                 <label for="Employer">Employer</label>
                                                 <asp:TextBox ID="txt_Employer" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                             </div>
@@ -729,7 +731,11 @@ div.RadEditor .reContent li {
                                                         </telerik:RadListView>
                                                     </div>
                                                 </div>
-                                                <h5>Add Your <span style="color: #15b5cf">Projects at this company</span></h5>
+                                                <div class="form-row" style="margin-top: 2%;">
+                                                <h5>Add Your <span style="color: #15b5cf">Projects at this company 
+                                                    <asp:Label id="Label3" runat="server" Font-Size="14px" ForeColor="Red"> ( From most recent project to oldest project )</asp:Label>
+                                                    </span></h5>
+                                                    </div>
                                                 <div class="form-row">
                                                     <div class="form-group  col-md-6">
                                                         <label for="Project">Project List</label>
@@ -745,7 +751,7 @@ div.RadEditor .reContent li {
                                                 </div>
                                                  <div class="form-row">
                                                     <div class="form-group  col-md-12">
-                                                        <label for="Position">Position 
+                                                         <label for="Client">Position and year worked on this project<asp:Label id="Label7" runat="server" Font-Size="14px" ForeColor="Red">  ( Eg : Site Engineer - Nov 2024 / Feb 2025 )</asp:Label> 
                                                             <span>
                                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txt_PositionForEachPrjct" ValidationGroup="Validation1"></asp:RequiredFieldValidator>
                                                              </span></label>
@@ -974,8 +980,8 @@ div.RadEditor .reContent li {
                                                     </div>
                                                 </div>
                                             </div>
-                                   <%-- <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                                        <ContentTemplate>--%>
+                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                        <ContentTemplate>
                                   <div id="EditWorkExperience" runat="server" style="display: none;">
 
                                       <div class="row" style="margin-top: -2%;">
@@ -1081,7 +1087,7 @@ div.RadEditor .reContent li {
                                         <div class="form-group col-md-12">
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
-                                                        <h5 style="text-decoration:underline;">Edit Your <span style="color: #15b5cf">Projects at this company</span></h5>
+                                                        <h5 style="text-decoration:underline;">Edit Your <span style="color: #15b5cf">Projects at this company  <asp:Label id="Label4" runat="server" Font-Size="14px" ForeColor="Red"> ( From most recent project to oldest project )</asp:Label></span></h5>
                                                         <telerik:RadListView ID="RadListView_EditProjects" runat="server" RenderMode="Lightweight" ItemPlaceholderID="DataGroupPlaceHolder3"
                                                             InsertItemPosition="BeforeDataGroups" AllowMultiFieldSorting="True"
                                                             AllowPaging="false" GroupAggregatesScope="AllItems" DataKeyNames="ExperienceTranID,ProjectTranID"  
@@ -1108,15 +1114,20 @@ div.RadEditor .reContent li {
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td><p><strong>Position 
+                                                                                                    <td><p><strong>Position and year worked on this project 
                                                                                                         <span>
-                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="txt_Edit_PositionForEachPrjct" ForeColor="Red" ValidationGroup="Validation3"></asp:RequiredFieldValidator>
-                                                             </span>
-                                                                                                           </strong></p> </td>
-                                                                                                        <td style="width:1%;"><p>:</p> </td>
-                                                                                                    <td><p>
-                                                                                                         <asp:TextBox ID="txt_Edit_PositionForEachPrjct" runat="server" Text='<%# Eval("Position") %>' CssClass="form-control" Width="100%"></asp:TextBox>
-                                                                                                     </p> </td>
+                                                                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="txt_Edit_PositionForEachPrjct" ForeColor="Red" ValidationGroup="Validation3"></asp:RequiredFieldValidator>
+                                                                                                        </span>
+                                                                                                            </strong>
+                                                                                                        </p>
+                                                                                                    </td>
+                                                                                                    <td style="width: 1%;">
+                                                                                                        <p>:</p>
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                        <span style="color:red!important;font-size: 13px;" > ( Eg : Site Engineer - Nov 2024 / Feb 2025 )</span>
+                                                                                                        <p><asp:TextBox ID="txt_Edit_PositionForEachPrjct" runat="server" Text='<%# Eval("Position") %>' CssClass="form-control" Width="100%"></asp:TextBox></p>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td><p><strong>Describe what you did in this project </strong></p> </td>
@@ -1214,7 +1225,7 @@ div.RadEditor .reContent li {
                                       <div id="Edit_AddNewProject" runat="server">
                                            <div class="form-row" style="margin-top: 0%;">
                                             <div class="form-group  col-md-12">
-                                                  <h5 style="text-decoration: underline;">Add New Projects at this company</h5>
+                                                  <h5 style="text-decoration: underline;">Add New Projects at this company    <asp:Label id="Label5" runat="server" Font-Size="14px" ForeColor="Red"> ( From most recent project to oldest project )</asp:Label></h5>
                                             </div>
                                         </div>
                                           <div class="form-row">
@@ -1231,11 +1242,11 @@ div.RadEditor .reContent li {
                                             </div>
                                         </div>
                                             <div class="form-row">
-                                            <div class="form-group  col-md-12">
-                                                <label for="Client">Position 
+                                            <div class="form-group  col-md-6">
+                                                <label for="Client">Position and year worked on this project<asp:Label id="Label6" runat="server" Font-Size="14px" ForeColor="Red">  ( Eg : Site Engineer - Nov 2024 / Feb 2025 )</asp:Label> 
                                                      <span>
-                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txt_New_PositionForEachPrjct" ValidationGroup="Validation2"></asp:RequiredFieldValidator>
-                                                             </span>
+                                                       <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txt_New_PositionForEachPrjct" ValidationGroup="Validation2"></asp:RequiredFieldValidator>
+                                                      </span>
                                                 </label>
                                                 <asp:TextBox ID="txt_New_PositionForEachPrjct" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
                                             </div>
@@ -1277,8 +1288,8 @@ div.RadEditor .reContent li {
                                         </div>
                                       </div>
                                   </div>
-                                           <%--  </ContentTemplate>
-                                            </asp:UpdatePanel>--%>
+                                             </ContentTemplate>
+                                            </asp:UpdatePanel>
                                 </div>
                             </div>
                         </telerik:RadWizardStep>
@@ -1383,6 +1394,7 @@ div.RadEditor .reContent li {
                         </telerik:RadWizardStep>
 
                     </WizardSteps>
+                    
                 </telerik:RadWizard>
             </div>
             
