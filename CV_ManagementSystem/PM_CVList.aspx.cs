@@ -11,6 +11,8 @@ using System.Web.UI.WebControls;
 using Telerik.Web.UI;
 using System.IO.Compression;
 using System.Security.Cryptography.Xml;
+using iText.Kernel.Pdf;
+using iText.Kernel.Utils;
 
 namespace CV_ManagementSystem
 {
@@ -173,55 +175,97 @@ namespace CV_ManagementSystem
             dt.Columns.Add("EmployeeName", typeof(string));
             dt.Columns.Add("CurrentPosition", typeof(string));
             // Get selected CVs
+            string Missing_Sections = "";
             foreach (GridDataItem item in RadGrid_CV.MasterTableView.Items)
             {
-                CheckBox chk = (item.FindControl("chkSelect") as CheckBox);
+                CheckBox chk = (item.FindControl("chkSelect") as CheckBox); 
+                Missing_Sections = item["Missing_Sections"].Text.Trim();
+
                 if (chk != null && chk.Checked)
                 {
-                    int cvTranID = Convert.ToInt32(item.GetDataKeyValue("CV_TranID"));
-                    string epromis = item["Epromis"].Text.Trim();
-                    string EmployeeName = item["EmployeeName"].Text.Trim();
-                    string CurrentPosition = item["CurrentPosition"].Text.Trim();
-                    dt.Rows.Add(cvTranID, epromis, EmployeeName, CurrentPosition);
+                    if (Missing_Sections == "Done")
+                    {
+                        int cvTranID = Convert.ToInt32(item.GetDataKeyValue("CV_TranID"));
+                        string epromis = item["Epromis"].Text.Trim();
+                        string EmployeeName = item["EmployeeName"].Text.Trim();
+                        string CurrentPosition = item["CurrentPosition"].Text.Trim();
+                        dt.Rows.Add(cvTranID, epromis, EmployeeName, CurrentPosition);
+                    }
                 }
             }
             string DownloadedFileName = "";
             if (dt.Rows.Count > 0)
             {
-                using (MemoryStream zipStream = new MemoryStream())
+                // Use a memory stream for merged PDF
+                using (MemoryStream mergedStream = new MemoryStream())
                 {
-                    using (ZipArchive zip = new ZipArchive(zipStream, ZipArchiveMode.Create, true))
+                    using (PdfDocument pdf = new PdfDocument(new PdfWriter(mergedStream)))
                     {
+                        PdfMerger merger = new PdfMerger(pdf);
+
                         foreach (DataRow rw in dt.Rows)
                         {
                             string epromis = rw["Epromis"].ToString();
-                            string Employee_Name = rw["EmployeeName"].ToString();
-                            string Current_Position = rw["CurrentPosition"].ToString();
                             int cvTranID = Convert.ToInt32(rw["CV_TranID"]);
                             byte[] reportBytes = GenerateReports_Zip(epromis, cvTranID);
 
                             if (reportBytes != null)
                             {
-                                string year = DateTime.Now.Year.ToString(); // e.g. "2025"
-                                string date = DateTime.Now.ToString("MM-dd"); // e.g. "10-22"
-                                DownloadedFileName = "ECC_" + Current_Position.Replace(" ", "_") + "_" + Employee_Name.Replace(" ", "_") + "_" + year + "-" + date; 
-                                ZipArchiveEntry zipEntry = zip.CreateEntry(DownloadedFileName + ".pdf");
-                                using (var entryStream = zipEntry.Open())
+                                using (MemoryStream tempStream = new MemoryStream(reportBytes))
+                                using (PdfDocument tempPdf = new PdfDocument(new PdfReader(tempStream)))
                                 {
-                                    entryStream.Write(reportBytes, 0, reportBytes.Length);
+                                    merger.Merge(tempPdf, 1, tempPdf.GetNumberOfPages());
                                 }
                             }
                         }
                     }
 
-                    // Send ZIP file to client
+                    // Send merged PDF to client
                     Response.Clear();
-                    Response.ContentType = "application/zip";
-                    Response.AddHeader("Content-Disposition", "attachment; filename=CV_Reports.zip");
-                    Response.BinaryWrite(zipStream.ToArray());
+                    Response.ContentType = "application/pdf";
+                    Response.AddHeader("Content-Disposition", "attachment; filename=Merged_CVs.pdf");
+                    Response.BinaryWrite(mergedStream.ToArray());
                     Response.Flush();
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
+                #region Zip
+                //using (MemoryStream zipStream = new MemoryStream())
+                //{
+                //    using (ZipArchive zip = new ZipArchive(zipStream, ZipArchiveMode.Create, true))
+                //    {
+                //        foreach (DataRow rw in dt.Rows)
+                //        {
+                //            string epromis = rw["Epromis"].ToString();
+                //            string Employee_Name = rw["EmployeeName"].ToString();
+                //            string Current_Position = rw["CurrentPosition"].ToString();
+                //            int cvTranID = Convert.ToInt32(rw["CV_TranID"]);
+                //            byte[] reportBytes = GenerateReports_Zip(epromis, cvTranID);
+
+                //            if (reportBytes != null)
+                //            {
+                //                string year = DateTime.Now.Year.ToString(); // e.g. "2025"
+                //                string date = DateTime.Now.ToString("MM-dd"); // e.g. "10-22"
+                //                DownloadedFileName = "ECC_" + Current_Position.Replace(" ", "_") + "_" + Employee_Name.Replace(" ", "_") + "_" + year + "-" + date; 
+                //                ZipArchiveEntry zipEntry = zip.CreateEntry(DownloadedFileName + ".pdf");
+                //                using (var entryStream = zipEntry.Open())
+                //                {
+                //                    entryStream.Write(reportBytes, 0, reportBytes.Length);
+                //                }
+                //            }
+                //        }
+                //    }
+
+                //    // Send ZIP file to client
+                //    Response.Clear();
+                //    Response.ContentType = "application/zip";
+                //    Response.AddHeader("Content-Disposition", "attachment; filename=CV_Reports.zip");
+                //    Response.BinaryWrite(zipStream.ToArray());
+                //    Response.Flush();
+                //    HttpContext.Current.ApplicationInstance.CompleteRequest();
+                //}
+                #endregion
+                ScriptManager.RegisterStartupScript(this, GetType(), "successAlert",
+    "Swal.fire('Done!', 'Your merged CV PDF has been downloaded.', 'success');", true);
             }
             else
             {

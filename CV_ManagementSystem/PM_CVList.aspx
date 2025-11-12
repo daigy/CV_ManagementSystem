@@ -73,10 +73,28 @@
     </div>
     <link href="Resources/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
     <script src="Resources/sweetalert2/sweetalert2.min.js"></script>
+  
     <script type="text/javascript">
         $(document).ready(function () {
 
         });
+        //function showDownloadLoader() {
+        //    debugger;
+        //    $("#loader").show();
+        //    Swal.fire({
+        //        title: 'Generating PDF...',
+        //        text: 'Please wait while we merge and download all CVs.',
+        //        allowOutsideClick: false,
+        //        allowEscapeKey: false,
+        //        didOpen: () => {
+        //            Swal.showLoading();
+        //            $("#loader").hide();
+        //        }
+        //    });
+
+        //    // return true to allow postback to continue
+        //    return true;
+        //}
         function checkAll(headerCheckbox) {
             var grid = $find('<%= RadGrid_CV.ClientID %>');
             var items = grid.get_masterTableView().get_dataItems();
