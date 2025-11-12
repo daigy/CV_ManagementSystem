@@ -28,7 +28,6 @@
                               <Value>=Fields!EmployeeName.Value</Value>
                               <Style>
                                 <FontFamily>Sofia Pro Bold</FontFamily>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -239,7 +238,6 @@
                               <Value>QUALIFICATION</Value>
                               <Style>
                                 <FontFamily>Sofia Pro Bold</FontFamily>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -326,7 +324,6 @@
                                   <Value>PERSONAL INFORMATION</Value>
                                   <Style>
                                     <FontFamily>Sofia Pro Bold</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
                                   </Style>
                                 </TextRun>
@@ -605,7 +602,6 @@
                     <Value>COURSES / SEMINARS</Value>
                     <Style>
                       <FontFamily>Sofia Pro Bold</FontFamily>
-                      <FontWeight>Bold</FontWeight>
                       <Color>White</Color>
                     </Style>
                   </TextRun>
@@ -655,7 +651,6 @@
                         <Value>COMPUTER SKILLS</Value>
                         <Style>
                           <FontFamily>Sofia Pro Bold</FontFamily>
-                          <FontWeight>Bold</FontWeight>
                           <Color>White</Color>
                         </Style>
                       </TextRun>
@@ -739,8 +734,7 @@
                       <TextRun>
                         <Value>HOBBIES</Value>
                         <Style>
-                          <FontFamily>Sofia Pro Regular</FontFamily>
-                          <FontWeight>Bold</FontWeight>
+                          <FontFamily>Sofia Pro Bold</FontFamily>
                           <Color>White</Color>
                         </Style>
                       </TextRun>
@@ -1420,7 +1414,7 @@
         <KeepTogether>true</KeepTogether>
         <Top>0cm</Top>
         <Left>13.95714cm</Left>
-        <Height>25.48177cm</Height>
+        <Height>25.5876cm</Height>
         <Width>6.9874cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -1456,7 +1450,6 @@
                               <Value>WORK EXPERIENCE</Value>
                               <Style>
                                 <FontFamily>Sofia Pro Bold</FontFamily>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1495,7 +1488,6 @@
                               <Value>=Fields!Employer.Value</Value>
                               <Style>
                                 <FontFamily>Sofia Pro Bold</FontFamily>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1563,7 +1555,6 @@
                               <Value>=StrConv(Fields!JobTitle.Value,3)</Value>
                               <Style>
                                 <FontFamily>Sofia Pro Bold</FontFamily>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1806,7 +1797,6 @@
                               <Value>=Fields!Employer.Value</Value>
                               <Style>
                                 <FontFamily>Sofia Pro Bold</FontFamily>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1871,10 +1861,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!JobTitle.Value</Value>
+                              <Value>=StrConv(Fields!JobTitle.Value,3)</Value>
                               <Style>
-                                <FontFamily>Sofia Pro Regular</FontFamily>
-                                <FontWeight>Bold</FontWeight>
+                                <FontFamily>Sofia Pro Bold</FontFamily>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1977,49 +1966,6 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.17667cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox7">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style>
-                                <FontFamily>Sofia Pro Regular</FontFamily>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox7</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BottomBorder>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <ColSpan>2</ColSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell />
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
               <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
@@ -2066,20 +2012,15 @@
                     <Hidden>=IIf(Fields!JobDescription.Value &lt;&gt; "", False, True)</Hidden>
                   </Visibility>
                 </TablixMember>
-                <TablixMember>
-                  <Visibility>
-                    <Hidden>=IIf(Fields!ProjectExists.Value &gt; 0, True, False)</Hidden>
-                  </Visibility>
-                </TablixMember>
                 <TablixMember />
               </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Experience2</DataSetName>
-        <Top>25.54174cm</Top>
+        <Top>25.66874cm</Top>
         <Left>0.59268cm</Left>
-        <Height>2.93854cm</Height>
+        <Height>2.76187cm</Height>
         <Width>20.12953cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
@@ -2216,7 +2157,7 @@
         </Style>
       </Line>
     </ReportItems>
-    <Height>28.56267cm</Height>
+    <Height>28.43061cm</Height>
     <Style />
   </Body>
   <Width>20.94454cm</Width>
@@ -2578,7 +2519,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.77126cm</Height>
+      <Height>0.69189cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>

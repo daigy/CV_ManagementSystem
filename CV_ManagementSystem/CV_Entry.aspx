@@ -980,8 +980,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                                        <ContentTemplate>
+                                  <%--  <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                        <ContentTemplate>--%>
                                   <div id="EditWorkExperience" runat="server" style="display: none;">
 
                                       <div class="row" style="margin-top: -2%;">
@@ -1288,8 +1288,8 @@
                                         </div>
                                       </div>
                                   </div>
-                                             </ContentTemplate>
-                                            </asp:UpdatePanel>
+                                           <%--  </ContentTemplate>
+                                            </asp:UpdatePanel>--%>
                                 </div>
                             </div>
                         </telerik:RadWizardStep>
